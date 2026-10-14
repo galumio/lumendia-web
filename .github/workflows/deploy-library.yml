@@ -47,8 +47,9 @@ jobs:
           test -f index.html && test -f 404.html && test -f sitemap.xml
           if grep -rlq noindex --include='*.html' .; then echo "Hay páginas con noindex"; exit 1; fi
           # Solo se admiten los recursos gratuitos aprobados; los PDF premium nunca se publican.
-          # Hoja de emergencia del cuidador · Plan de 7 días antes del final
-          allowed="abc5f12181054f412b911a93d75407dbb1a80124fbf726b7c7e0a009b7e26ba5 53f94ce95a64e10c62f69a57d81dc9960d75f9df377b771e05c5b26d20ca2e19"
+          # Hoja de emergencia del cuidador · Plan de 7 días antes del final · Hoja de referencia rápida (IA para docentes)
+          allowed="abc5f12181054f412b911a93d75407dbb1a80124fbf726b7c7e0a009b7e26ba5 53f94ce95a64e10c62f69a57d81dc9960d75f9df377b771e05c5b26d20ca2e19 814dbebca17b21268003b16514433c809fceccdb3469fb2a9e1b72c7bc29d97a"
+          if find . -iname '*.epub' -o -iname '*.mobi' -o -iname '*.azw*' -o -iname '*.zip' | grep -q .; then echo "Archivo de libro no permitido"; exit 1; fi
           find . -iname '*.pdf' -print0 | while IFS= read -r -d '' f; do
             case " $allowed " in *" $(sha256sum "$f" | cut -d' ' -f1) "*) ;; *) echo "PDF no permitido: $f"; exit 1;; esac
           done

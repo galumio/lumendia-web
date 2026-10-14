@@ -2,13 +2,13 @@
 
 Biblioteca digital en Astro y presentación institucional temporal para `lumendia.com.ar`.
 
-## Etapa actual: lanzamiento de la biblioteca preparado
+## Etapa actual: biblioteca publicada
 
-Este repositorio es público y contiene solo código: el texto de los libros y los PDF quedan en el equipo local. La biblioteca se publica desde un build local con `scripts/publish-library.mjs`; ver [docs/LANZAMIENTO.md](docs/LANZAMIENTO.md). Hasta el lanzamiento autorizado, `deploy.yml` sigue publicando la presentación institucional de `site/`.
+Biblioteca publicada en https://lumendia.com.ar desde el 14/10/2026. Este repositorio es público y contiene solo código: el texto de los libros y los PDF quedan en el equipo local. La biblioteca se publica desde un build local con `scripts/publish-library.mjs` (cada publicación requiere autorización); ver [docs/LANZAMIENTO.md](docs/LANZAMIENTO.md).
 
-## Presentación institucional (publicada)
+## Presentación institucional (respaldo)
 
-**Desplegada en GitHub Pages con HTTPS; DNS verificado.** La página temporal presenta el proyecto sin ebooks, PDF, formularios, publicidad ni analítica. La biblioteca sanitaria continúa pendiente de revisión profesional; no se cambió ninguna aprobación para esta etapa.
+Ya no está publicada. `node scripts/publish-library.mjs --rollback-institutional` la vuelve a desplegar desde `site/` mediante `deploy.yml`. La página temporal presenta el proyecto sin ebooks, PDF, formularios, publicidad ni analítica. La biblioteca sanitaria continúa pendiente de revisión profesional; no se cambió ninguna aprobación para esta etapa.
 
 ```powershell
 npm.cmd run prepare:publication

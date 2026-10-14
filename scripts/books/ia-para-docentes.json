@@ -1,0 +1,59 @@
+{
+  "slug": "ia-para-docentes",
+  "zip": ".local/originals/ia-para-docentes/Paginas-web-ia-para-docentes.zip",
+  "zipFolder": "ia-para-docentes",
+  "coverFromZip": "portada.jpg",
+  "coverImage": "public/images/ia-para-docentes-portada.jpg",
+  "printPages": 40,
+  "expectedChapters": 10,
+  "chapterOrder": [
+    "que-es-un-asistente-de-ia",
+    "la-formula-de-un-buen-prompt",
+    "chatgpt-para-docentes",
+    "gemini-para-docentes",
+    "claude-para-docentes",
+    "cual-usar-para-cada-tarea",
+    "tres-ejemplos-paso-a-paso",
+    "biblioteca-de-prompts",
+    "errores-comunes-y-como-revisar",
+    "plan-de-7-dias"
+  ],
+  "removeSelectors": ".migas,.nav,.anuncio,form",
+  "buyUrl": "https://galumio.com.ar/productos/ia-para-maestros/",
+  "allowedNumberedPrompts": [1, 11, 21, 31, 39, 47],
+  "book": {
+    "slug": "ia-para-docentes",
+    "title": "IA para docentes",
+    "shortTitle": "IA para docentes",
+    "subtitle": "Guía práctica con prompts listos para planificar, evaluar y ahorrar tiempo",
+    "category": "Educación y docentes",
+    "audience": "Docentes",
+    "cover": "/images/ia-para-docentes-portada.jpg",
+    "publisher": "Galumio Studio",
+    "healthContent": false,
+    "editorialStatus": "approved",
+    "resources": [
+      {
+        "slug": "hoja-de-referencia-rapida-ia-para-docentes",
+        "title": "Hoja de referencia rápida",
+        "description": "Una página para imprimir: las cinco piezas del prompt, cinco técnicas, qué no pegar nunca y un checklist.",
+        "file": ".local/originals/ia-para-docentes/hoja-de-referencia-rapida.pdf",
+        "sha256": "814dbebca17b21268003b16514433c809fceccdb3469fb2a9e1b72c7bc29d97a"
+      }
+    ],
+    "premium": {
+      "title": "IA para docentes (PDF)",
+      "description": "La guía completa para tener a mano, imprimir y consultar cuando planificás.",
+      "items": [
+        "Libro en PDF de 40 páginas.",
+        "Biblioteca de 50 prompts en 6 categorías.",
+        "Tres ejemplos paso a paso.",
+        "Plan de 7 días.",
+        "Hoja de referencia rápida."
+      ],
+      "note": "En la web se publican completos los capítulos 1 a 7, 9 y 10; del capítulo 8 se muestra un prompt por categoría.",
+      "url": "https://galumio.com.ar/productos/ia-para-maestros/",
+      "cta": "Ver el PDF en Galumio Studio"
+    }
+  }
+}

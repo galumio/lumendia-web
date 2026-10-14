@@ -35,6 +35,10 @@ Para habilitar Alzheimer: completar `healthReview` y `editorialStatus: "approved
 3. `python -I scripts/import_book.py scripts/books/<slug>.json` genera `src/content/books/<slug>.json` y la portada.
 4. Agregar el hash de cada PDF gratuito a la lista de `deploy-library.yml` y los de los PDF premium a `scripts/validate.mjs` y `scripts/repository-audit.mjs`.
 
+Opciones del manifiesto (ver `ia-para-docentes.json`): `coverFromZip` (portada incluida en el ZIP en lugar de renderizar el PDF), `printPages`, `chapterOrder` (verifica el índice), `removeSelectors` (bloques de la plantilla que se quitan), `buyUrl` (reemplaza `#COMPRAR` en los capítulos) y `allowedNumberedPrompts` (muestras parciales: falla si aparece otro prompt numerado).
+
+Estado al 2026-10-14: publicados "Cómo estudiar para un final" (sin premium por ahora); preparado "IA para docentes" (premium: galumio.com.ar/productos/ia-para-maestros/); Alzheimer excluido hasta cargar `healthReview`.
+
 ## Ensayo sin aprobaciones
 
 ```powershell

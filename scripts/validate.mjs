@@ -19,7 +19,7 @@ for(const b of books){
  const order=b.readingOrder??b.toc.map(c=>c.slug);
  assert(b.pages.every(p=>order.includes(p.slug))&&order.every(s=>b.pages.some(p=>p.slug===s)),`${b.slug}: el orden de lectura no coincide con las páginas`);
  for(const c of b.toc)assert(b.pages.some(p=>p.slug===c.slug),`${b.slug}: índice sin página ${c.slug}`);
- for(const p of b.pages){assert(!/COMPRAR|FORMULARIO|<script|<form|onsubmit=/.test(p.html),`${b.slug}: contenido importado no seguro: ${p.slug}`);if(b.healthContent!==false)assert(p.html.includes('aviso-salud'),`${b.slug}: falta advertencia sanitaria: ${p.slug}`)}
+ for(const p of b.pages){assert(!/#COMPRAR|FORMULARIO:|ANUNCIO:|ADSENSE|<script|<form[\s>]|<iframe|\son[a-z]+=/i.test(p.html),`${b.slug}: contenido importado no seguro: ${p.slug}`);if(b.healthContent!==false)assert(p.html.includes('aviso-salud'),`${b.slug}: falta advertencia sanitaria: ${p.slug}`)}
  if(b.slug==='cuidar-a-mama-o-papa'){
   assert(b.healthContent===true,'Alzheimer debe estar marcado como contenido sanitario');
   assert(b.toc.filter(c=>/^\d+$/.test(c.number)&&Number(c.number)>0).length===25,'Deben existir 25 capítulos');assert(b.situations.length===50,'Deben existir 50 situaciones');assert(new Set(b.situations.map(s=>s.id)).size===50,'Situaciones duplicadas');
@@ -27,12 +27,22 @@ for(const b of books){
   assert((b.pages.find(p=>p.slug==='cuatro-escenas')?.html.match(/<h2/g)||[]).length===4,'Deben existir cuatro escenas');
  }
  if(b.slug==='como-estudiar-para-un-final')assert(b.healthContent===false&&b.pages.length===10,'Cómo estudiar: 10 capítulos, contenido no sanitario');
+ if(b.slug==='ia-para-docentes'){
+  assert(b.healthContent===false&&b.pages.length===10,'IA para docentes: 10 capítulos, contenido no sanitario');
+  // Del capítulo 8 solo se publica la muestra; los otros 44 prompts de la biblioteca son premium.
+  const numbered=b.pages.flatMap(p=>[...p.html.replace(/<[^>]+>/g,' ').matchAll(/PROMPT\s+(\d+)/g)].map(m=>Number(m[1])));
+  assert(JSON.stringify(numbered.sort((x,y)=>x-y))==='[1,11,21,31,39,47]','IA para docentes: prompts numerados fuera de la muestra autorizada: '+numbered);
+  assert(b.pages.find(p=>p.slug==='biblioteca-de-prompts')?.html.match(/class="prompt"/g)?.length===6,'IA para docentes: el capítulo 8 debe tener exactamente 6 prompts');
+  assert(b.premium?.url==='https://galumio.com.ar/productos/ia-para-maestros/','IA para docentes: enlace premium');
+  for(const slug of ['la-formula-de-un-buen-prompt','tres-ejemplos-paso-a-paso','biblioteca-de-prompts','plan-de-7-dias'])assert(b.pages.find(p=>p.slug===slug)?.html.includes('href="https://galumio.com.ar/productos/ia-para-maestros/"'),`IA para docentes: falta el enlace de compra en ${slug}`);
+ }
 }
 
 const args=process.argv.slice(2);const dryRun=args.includes('--dry-run');
 const dirs=args.filter(a=>!a.startsWith('--'));
 for(const dir of dirs.length?dirs:['public','dist','.preview']){
  const files=walk(dir);
+ for(const path of files)assert(!/\.(epub|mobi|azw3?|zip)$/i.test(path),`Archivo de libro no permitido ${path}`);
  for(const path of files)if(path.toLowerCase().endsWith('.pdf')){const h=hash(path);assert(!premium.includes(h),`PDF premium en ${path}`);assert(freeResources.some(r=>r.sha256===h&&path.replaceAll('\\','/').endsWith(`/recursos/${r.slug}.pdf`)),`PDF no permitido ${path}`)}
  if(!existsSync(dir)||dir==='public')continue;
  const htmlFiles=files.filter(f=>f.endsWith('.html'));const titles=new Set();

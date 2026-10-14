@@ -17,7 +17,7 @@ export const publishable = (b:Book) => b.editorialStatus==='approved' && (b.heal
 export const dryRun = process.env.LUMENDIA_DRY_RUN === '1';
 export const available = books.filter(b=> preview || dryRun || publishable(b));
 export const featured = available.find(publishable) ?? available[0];
-export const categories = ['Salud y cuidados','Estudio y universidad','Seguridad e higiene','Medicina laboral','Primeros auxilios','Infografías'];
+export const categories = ['Salud y cuidados','Estudio y universidad','Educación y docentes','Seguridad e higiene','Medicina laboral','Primeros auxilios','Infografías'];
 export const bookUrl = (b:Book) => `/libros/${b.slug}/`;
 export const readingOrder = (b:Book) => b.readingOrder ?? b.toc.map(c=>c.slug);
 export const resources = available.flatMap(book=>(book.resources??[]).map(resource=>({book,resource})));

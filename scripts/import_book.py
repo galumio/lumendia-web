@@ -8,7 +8,7 @@ Se conserva el texto exacto de cada capítulo; solo se quitan navegación, anunc
 formularios y llamadas a compra, y se comprueba con un hash del texto retenido.
 """
 from pathlib import Path
-import sys, json, hashlib, zipfile
+import sys, json, hashlib, re, zipfile
 
 root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(root / '.local/python'))
@@ -22,6 +22,8 @@ book_url = f'/libros/{slug}/'
 with zipfile.ZipFile(root / manifest['zip']) as archive:
     files = {Path(n).name: archive.read(n).decode('utf-8') for n in archive.namelist()
              if n.startswith(manifest['zipFolder'] + '/') and n.endswith('.html')}
+    # Portada incluida en el ZIP (opcional); si no, se renderiza la primera página del PDF.
+    cover_bytes = archive.read(manifest['zipFolder'] + '/' + manifest['coverFromZip']) if manifest.get('coverFromZip') else None
 
 index = BeautifulSoup(files['index.html'], 'html.parser')
 toc = []
@@ -31,19 +33,29 @@ for a in index.select('.toc a'):
     toc.append({'slug': a['href'].replace('.html', ''), 'title': span.get_text(' ', strip=True),
                 'number': a.b.get_text(strip=True), 'description': small.get_text(' ', strip=True) if small else ''})
 assert len(toc) == manifest['expectedChapters'], f'Índice con {len(toc)} capítulos'
+if manifest.get('chapterOrder'):
+    assert [t['slug'] for t in toc] == manifest['chapterOrder'], 'El índice del ZIP no coincide con el orden del manifiesto'
+
+# Opciones por libro: qué bloques de la plantilla se quitan y a dónde apuntan los enlaces #COMPRAR.
+remove = manifest.get('removeSelectors', '.cta,.anuncio,.migas,.navcap,form')
+buy_url = manifest.get('buyUrl')
 
 pages = []
 for entry in toc:
     soup = BeautifulSoup(files[entry['slug'] + '.html'], 'html.parser')
     main = soup.main
-    for node in main.select('.cta,.anuncio,.migas,.navcap,form'):
+    for node in main.select(remove):
         node.decompose()
     for node in main.find_all(string=lambda t: isinstance(t, Comment)):
         node.extract()
     original_text = main.get_text(' ', strip=True)
     for a in main.select('a[href]'):
         href = a['href']
-        assert not href.startswith('#COMPRAR'), 'Quedó un enlace de compra sin destino'
+        if href.startswith('#COMPRAR'):
+            assert buy_url, 'Quedó un enlace de compra sin destino'
+            a['href'] = buy_url
+            a['rel'] = 'noopener'
+            continue
         if '.html' in href and not href.startswith(('https:', 'http:')):
             file, sep, anchor = href.partition('#')
             a['href'] = book_url + ('' if file == 'index.html' else file.replace('.html', '') + '/') + (('#' + anchor) if sep else '')
@@ -56,17 +68,26 @@ for entry in toc:
                   'description': soup.select_one('meta[name=description]')['content'], 'html': html,
                   'words': len(original_text.split()), 'textHash': hashlib.sha256(original_text.encode()).hexdigest()})
 
-pdf = fitz.open(root / manifest['pdf'])
-pdf[0].get_pixmap(matrix=fitz.Matrix(1.6, 1.6)).save(str(root / manifest['coverImage']), jpg_quality=82)
+# Muestras parciales: solo pueden aparecer los prompts numerados autorizados, una vez cada uno.
+if 'allowedNumberedPrompts' in manifest:
+    found = [int(n) for p in pages for n in re.findall(r'PROMPT\s+(\d+)', BeautifulSoup(p['html'], 'html.parser').get_text(' '))]
+    assert sorted(found) == sorted(manifest['allowedNumberedPrompts']), f'Prompts numerados no autorizados: {sorted(found)}'
+
+pdf = fitz.open(root / manifest['pdf']) if manifest.get('pdf') else None
+if cover_bytes:
+    (root / manifest['coverImage']).write_bytes(cover_bytes)
+else:
+    pdf[0].get_pixmap(matrix=fitz.Matrix(1.6, 1.6)).save(str(root / manifest['coverImage']), jpg_quality=82)
+print_pages = manifest.get('printPages') or len(pdf)
 
 book = dict(manifest['book'])
 book.update({
     'description': index.select_one('.hero p').get_text(' ', strip=True),
-    'printPages': len(pdf),
+    'printPages': print_pages,
     'toc': [{'slug': t['slug'], 'title': t['title'], 'number': t['number']} for t in toc],
     'topics': [], 'situations': [], 'pages': pages,
 })
 out = root / 'src/content/books' / f'{slug}.json'
 out.write_text(json.dumps(book, ensure_ascii=False, indent=2), encoding='utf-8')
-print(json.dumps({'book': slug, 'chapters': len(pages), 'printPages': len(pdf),
+print(json.dumps({'book': slug, 'chapters': len(pages), 'printPages': print_pages,
                   'words': sum(p['words'] for p in pages), 'cover': manifest['coverImage']}, ensure_ascii=False))
