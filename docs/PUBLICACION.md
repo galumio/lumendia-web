@@ -68,7 +68,7 @@ curl.exe -I https://www.lumendia.com.ar
 
 Los NS deben coincidir con los dos asignados, A con los destinos indicados y www con el dominio real de Pages. Esperar la verificación DNS y emisión del certificado en GitHub Pages; luego habilitar Enforce HTTPS. El dominio principal es el ápice `lumendia.com.ar`; GitHub realiza la redirección de www cuando ambos registros están correctamente configurados. No afirmar que está publicado hasta comprobar respuesta HTTPS, redirección, certificado, páginas de lectura y descarga.
 
-Agregar sitemap en Search Console una vez verificado el sitio. No activar AdSense ni Analytics sin IDs reales, políticas revisadas y consentimiento aplicable.
+Search Console: hecho el 14/10/2026 (dominio verificado por DNS en Cloudflare y sitemap enviado). No activar AdSense ni Analytics sin IDs reales, políticas revisadas y consentimiento aplicable.
 
 ## Primer commit, después de la revisión
 

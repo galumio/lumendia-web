@@ -17,7 +17,7 @@ Analítica y anuncios desactivados. No hay IDs ficticios. Los botones y enlaces 
 ## Integraciones
 
 - `commerce.kitUrl`: URL HTTPS real del producto externo. Sin URL, no se muestra botón de compra.
-- `searchConsoleVerification`: token real para meta de verificación; no incluye prefijos HTML.
+- `searchConsoleVerification`: token real para meta de verificación; no incluye prefijos HTML. No se usa: Search Console está verificado como propiedad de dominio por DNS (Cloudflare) desde el 14/10/2026, con el sitemap enviado. Dejar en `null`.
 - `analytics`: preparado para activación posterior, sujeto a privacidad y consentimiento.
 - `ads`: cliente, slot y texto de ads.txt reales. Vacío mientras no se habilite. No implica aprobación de AdSense.
 
