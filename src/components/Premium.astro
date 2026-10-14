@@ -1,0 +1,6 @@
+---
+import {config} from '../lib/catalog';
+interface Props {cover?:string;product:{title:string;description:string;items:string[];note:string;url:string|null}}
+const {cover='/images/cuidar-portada.jpg',product}=Astro.props;const purchaseUrl=product.url||config.commerce.kitUrl;
+---
+<section class="premium" id="kit"><div class="kit-image"><img src={cover} alt="Portada del ebook incluido en el Kit completo del cuidador" width="180" height="255" loading="lazy"/><span>EDICIÓN<br/>DESCARGABLE</span></div><div><span class="eyebrow">Para tener a mano · Galumio</span><h2>{product.title}</h2><p>{product.description}</p><ul>{product.items.map(item=><li>{item}</li>)}</ul><p class="small">{product.note}</p>{purchaseUrl?<a class="button" href={purchaseUrl} rel="noopener sponsored" data-event="commercial_click">Ver el kit en Galumio ↗</a>:<p class="availability">Venta externa en preparación</p>}<p class="small">La lectura web es gratuita. Galumio es una marca independiente.</p></div></section>

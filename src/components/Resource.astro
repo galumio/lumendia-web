@@ -1,0 +1,5 @@
+---
+import {available} from '../lib/catalog';
+const enabled=available.length>0;
+---
+<section class="resource-band"><div class="resource-icon" aria-hidden="true">↓</div><div><span class="eyebrow">Un recurso para tener cerca</span><h2>Hoja de emergencia del cuidador</h2><p>Una hoja práctica para imprimir y tener a mano información importante, contactos y datos útiles para una emergencia.</p><span class="small">PDF gratuito · Sin registro · Sin pedir tus datos</span></div>{enabled?<a class="button secondary" href="/recursos/hoja-de-emergencia-del-cuidador.pdf" download data-event="free_download">Descargar gratis ↓</a>:<p>Pendiente de revisión editorial.</p>}</section>

@@ -1,0 +1,65 @@
+{
+  "domain": "lumendia.com.ar",
+  "canonical": "https://lumendia.com.ar",
+  "www": "www.lumendia.com.ar",
+  "hosting": "GitHub Pages",
+  "dnsProvider": "Cloudflare Free",
+  "githubOwner": "galumio",
+  "githubRepository": "lumendia-web",
+  "githubPagesTarget": "galumio.github.io",
+  "cloudflareZoneId": null,
+  "cloudflareNameservers": [
+    "cartman.ns.cloudflare.com",
+    "hattie.ns.cloudflare.com"
+  ],
+  "dnsRecords": [
+    {
+      "type": "A",
+      "name": "@",
+      "content": "185.199.108.153",
+      "proxied": false,
+      "ttl": "Auto"
+    },
+    {
+      "type": "A",
+      "name": "@",
+      "content": "185.199.109.153",
+      "proxied": false,
+      "ttl": "Auto"
+    },
+    {
+      "type": "A",
+      "name": "@",
+      "content": "185.199.110.153",
+      "proxied": false,
+      "ttl": "Auto"
+    },
+    {
+      "type": "A",
+      "name": "@",
+      "content": "185.199.111.153",
+      "proxied": false,
+      "ttl": "Auto"
+    },
+    {
+      "type": "CNAME",
+      "name": "www",
+      "content": "galumio.github.io",
+      "proxied": false,
+      "ttl": "Auto"
+    }
+  ],
+  "deploymentStatus": "github-pages-deployed-dns-verified-https-pending",
+  "githubRepositoryUrl": "https://github.com/galumio/lumendia-web",
+  "sourceCommit": "012c00e2174c8f82f4645d0111cf56d875b1e438",
+  "authorization": {
+    "repositoryCreation": true,
+    "institutionalSourceUpload": true,
+    "pagesActivation": true,
+    "cloudflareZoneCreation": false,
+    "nicDelegation": false
+  },
+  "deploymentRunUrl": "https://github.com/galumio/lumendia-web/actions/runs/38421785066",
+  "httpsStatus": "certificate-not-yet-issued",
+  "dnsVerifiedAt": "2026-10-13T15:26:24.935Z"
+}

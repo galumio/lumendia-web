@@ -1,0 +1,67 @@
+name: Publicar biblioteca (artefacto local)
+# Se ejecuta solo desde scripts/publish-library.mjs. El sitio se compila localmente: el contenido
+# de los libros no está en el repositorio. El artefacto llega como adjunto de un release borrador.
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        description: ID del release borrador con el artefacto
+        required: true
+      asset_name:
+        description: Nombre del archivo .tar.gz
+        required: true
+      sha256:
+        description: SHA-256 esperado del artefacto
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: lumendia-pages
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # necesario para leer releases borrador
+    steps:
+      - name: Descargar y verificar el artefacto
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_ID: ${{ inputs.release_id }}
+          ASSET_NAME: ${{ inputs.asset_name }}
+          EXPECTED_SHA256: ${{ inputs.sha256 }}
+        run: |
+          set -euo pipefail
+          api="https://api.github.com/repos/${GITHUB_REPOSITORY}"
+          asset_id=$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "$api/releases/$RELEASE_ID/assets" | jq -r --arg n "$ASSET_NAME" '.[] | select(.name==$n) | .id')
+          test -n "$asset_id"
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/octet-stream" -o site.tar.gz "$api/releases/assets/$asset_id"
+          echo "$EXPECTED_SHA256  site.tar.gz" | sha256sum -c -
+          mkdir site-out
+          tar -xzf site.tar.gz -C site-out
+      - name: Comprobar contenido publicable
+        working-directory: site-out
+        run: |
+          set -euo pipefail
+          test "$(tr -d '\r\n' < CNAME)" = lumendia.com.ar
+          test -f index.html && test -f 404.html && test -f sitemap.xml
+          if grep -rlq noindex --include='*.html' .; then echo "Hay páginas con noindex"; exit 1; fi
+          # Solo se admite la hoja de emergencia gratuita; los PDF premium nunca se publican.
+          find . -iname '*.pdf' -print0 | while IFS= read -r -d '' f; do
+            if [ "$(sha256sum "$f" | cut -d' ' -f1)" != abc5f12181054f412b911a93d75407dbb1a80124fbf726b7c7e0a009b7e26ba5 ]; then echo "PDF no permitido: $f"; exit 1; fi
+          done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site-out
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

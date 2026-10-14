@@ -1,0 +1,12 @@
+import {mkdirSync,copyFileSync,readFileSync,writeFileSync,readdirSync,lstatSync} from 'node:fs';
+import {join,resolve,relative} from 'node:path';
+import {createHash} from 'node:crypto';
+import {verifyInstitutional,publicFiles} from './verify-institutional.mjs';
+verifyInstitutional('dist');
+const target=resolve('release/github-pages');mkdirSync(join(target,'site'),{recursive:true});mkdirSync(join(target,'scripts'),{recursive:true});mkdirSync(join(target,'.github/workflows'),{recursive:true});
+for(const file of publicFiles)copyFileSync(join('dist',file),join(target,'site',file));
+copyFileSync('scripts/verify-institutional.mjs',join(target,'scripts/verify.mjs'));copyFileSync('deploy/institutional-workflow.yml',join(target,'.github/workflows/deploy.yml'));copyFileSync('deploy/README-institutional.md',join(target,'README.md'));writeFileSync(join(target,'.gitignore'),'.DS_Store\nThumbs.db\n');
+const expected=[...publicFiles.map(f=>'site/'+f),'.github/workflows/deploy.yml','scripts/verify.mjs','README.md','.gitignore'].sort();
+const walk=d=>readdirSync(d).filter(n=>n!=='.git').flatMap(n=>{const p=join(d,n);if(lstatSync(p).isSymbolicLink())throw new Error('No se permiten symlinks');return lstatSync(p).isDirectory()?walk(p):[p]});
+const files=walk(target);const actual=files.map(p=>relative(target,p).replaceAll('\\','/')).sort();if(JSON.stringify(expected)!==JSON.stringify(actual))throw new Error('El repositorio contiene archivos fuera de la lista permitida. No publicar.');
+const report={status:'prepared-not-published',files:files.map(p=>({path:relative(target,p).replaceAll('\\','/'),sha256:createHash('sha256').update(readFileSync(p)).digest('hex')})),site:verifyInstitutional(join(target,'site'))};writeFileSync('.local/initial-deployment-manifest.json',JSON.stringify(report,null,2));console.log(`Repositorio limpio preparado en ${target}: ${files.length} archivos, sin ebook ni PDF.`);

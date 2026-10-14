@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lumendia.com.ar/sitemap.xml

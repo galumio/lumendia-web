@@ -1,0 +1,29 @@
+{
+  "siteUrl": "https://lumendia.com.ar",
+  "contactEmail": null,
+  "legal": {
+    "approved": false,
+    "responsibleName": null,
+    "jurisdiction": null
+  },
+  "editorial": {
+    "approved": false,
+    "reviewer": null,
+    "reviewedAt": null,
+    "evidence": null
+  },
+  "commerce": {
+    "kitUrl": "https://galumio.com.ar/productos/cuidar-alzheimer-demencia/"
+  },
+  "ads": {
+    "enabled": false,
+    "client": null,
+    "slot": null,
+    "adsTxt": null
+  },
+  "analytics": {
+    "enabled": false,
+    "measurementId": null
+  },
+  "searchConsoleVerification": null
+}

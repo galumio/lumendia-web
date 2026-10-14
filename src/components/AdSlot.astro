@@ -1,0 +1,6 @@
+---
+import {config} from '../lib/catalog';
+interface Props {sensitive?:boolean}
+const {sensitive=true}=Astro.props;
+---
+{config.ads.enabled&&!sensitive&&config.ads.client&&config.ads.slot&&<aside class="advertisement" aria-label="Publicidad" data-ad-client={config.ads.client} data-ad-slot={config.ads.slot}><span>Publicidad</span><div data-ad-placeholder></div></aside>}

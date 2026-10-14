@@ -1,2 +1,28 @@
-.DS_Store
-Thumbs.db
+.local/
+node_modules/
+dist/
+.preview/
+.astro/
+.env*
+!.env.example
+/*.pdf
+/*.zip
+**/Cuidar-a-mama-o-papa-con-Alzheimer.pdf
+**/Cuaderno-practico-del-cuidador.pdf
+test-results/
+playwright-report/
+/release/
+/dist-library/
+# Información local y credenciales
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+*.p12
+*.pfx
+*.zip
+*.pdf
+/resources/
+# Texto sanitario pendiente: conservar local hasta aprobar su publicación
+/src/content/books/*.json
