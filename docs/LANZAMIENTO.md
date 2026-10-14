@@ -11,14 +11,29 @@ El repositorio es público y contiene solo código. El texto de los libros (`src
 
 Credenciales: usa la sesión `galumio` del administrador de credenciales de Git. No se guardan tokens en el proyecto.
 
-## Antes de lanzar (bloqueos automáticos)
+## Qué libros se publican
 
-Completar en `site.config.json`:
+La aprobación es **por libro** (`node scripts/release-library.mjs` muestra cuáles entran). Un libro se publica si su JSON local tiene `"editorialStatus": "approved"` y además:
 
-- `editorial`: `approved: true`, `reviewer` (nombre y matrícula/profesión), `reviewedAt` (AAAA-MM-DD), `evidence` (referencia a la constancia, guardada fuera del repo).
-- `legal`: `approved: true`, `responsibleName`, `jurisdiction` (p. ej. "la Ciudad Autónoma de Buenos Aires"); `contactEmail`.
+- `"healthContent": false` (contenido no sanitario), o
+- contenido sanitario (`healthContent` true o ausente) con `"healthReview": {"reviewer": "nombre y profesión/matrícula", "reviewedAt": "AAAA-MM-DD", "evidence": "referencia a la constancia, guardada fuera del repo"}`.
 
-Y en el JSON local del libro: `"editorialStatus": "approved"`.
+Los libros que no cumplen se excluyen del build sin frenar a los demás. Estado al 2026-10-14: se publica "Cómo estudiar para un final"; "Cuidar a mamá o papá" queda excluido hasta cargar `healthReview`.
+
+Para habilitar Alzheimer: completar `healthReview` y `editorialStatus: "approved"` en `src/content/books/cuidar-a-mama-o-papa.json`, ejecutar las pruebas y volver a publicar.
+
+## Bloqueos globales
+
+- `site.config.json` > `legal` (`approved`, `responsibleName`, `tradeName`, `jurisdiction`) y `contactEmail` completos.
+- Cada recurso gratuito de un libro publicado existe en `.local/` y coincide con su SHA-256.
+- Publicidad y analítica desactivadas.
+
+## Nuevo libro
+
+1. Copiar los originales a `.local/originals/<slug>/`.
+2. Crear `scripts/books/<slug>.json` (metadatos, recursos gratuitos con su SHA-256, `healthContent`) tomando como modelo `como-estudiar-para-un-final.json`.
+3. `python -I scripts/import_book.py scripts/books/<slug>.json` genera `src/content/books/<slug>.json` y la portada.
+4. Agregar el hash de cada PDF gratuito a la lista de `deploy-library.yml` y los de los PDF premium a `scripts/validate.mjs` y `scripts/repository-audit.mjs`.
 
 ## Ensayo sin aprobaciones
 

@@ -1,6 +1,6 @@
 ---
-import {config} from '../lib/catalog';
-interface Props {cover?:string;product:{title:string;description:string;items:string[];note:string;url:string|null}}
-const {cover='/images/cuidar-portada.jpg',product}=Astro.props;const purchaseUrl=product.url||config.commerce.kitUrl;
+import type {Book} from '../lib/catalog';
+interface Props {cover:string;product:NonNullable<Book['premium']>}
+const {cover,product}=Astro.props;
 ---
-<section class="premium" id="kit"><div class="kit-image"><img src={cover} alt="Portada del ebook incluido en el Kit completo del cuidador" width="180" height="255" loading="lazy"/><span>EDICIÓN<br/>DESCARGABLE</span></div><div><span class="eyebrow">Para tener a mano · Galumio</span><h2>{product.title}</h2><p>{product.description}</p><ul>{product.items.map(item=><li>{item}</li>)}</ul><p class="small">{product.note}</p>{purchaseUrl?<a class="button" href={purchaseUrl} rel="noopener sponsored" data-event="commercial_click">Ver el kit en Galumio ↗</a>:<p class="availability">Venta externa en preparación</p>}<p class="small">La lectura web es gratuita. Galumio es una marca independiente.</p></div></section>
+<section class="premium" id="kit"><div class="kit-image"><img src={cover} alt={`Portada de la edición descargable: ${product.title}`} width="180" height="255" loading="lazy"/><span>EDICIÓN<br/>DESCARGABLE</span></div><div><span class="eyebrow">Para tener a mano · Galumio Studio</span><h2>{product.title}</h2><p>{product.description}</p><ul>{product.items.map(item=><li>{item}</li>)}</ul><p class="small">{product.note}</p>{product.url?<a class="button" href={product.url} rel="noopener" data-event="commercial_click">{product.cta??'Ver en Galumio Studio'} ↗</a>:<p class="availability">Venta externa en preparación</p>}<p class="small">La lectura web es gratuita. La edición descargable se compra en la tienda de Galumio Studio.</p></div></section>

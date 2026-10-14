@@ -6,3 +6,5 @@
 @media print{.header,footer,.reader-sidebar,.reader-tools,.preview-note,.chapter-nav{display:none}.reader-shell{display:block}.container{width:100%}.reader-content{font-size:12pt}body{background:white;color:black}.reader-content .ficha{break-inside:avoid}}
 .reader-content .nota{border-left:3px solid var(--gold);background:var(--soft);padding:20px 24px;margin:25px 0}.reader-content .nota p:last-child{margin-bottom:0}.reader-content .rel span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.reader-content .toc{padding-left:0;list-style:none}.reader-content .toc a{display:flex;gap:15px;border-bottom:1px solid var(--line);padding:12px 0;text-decoration:none;font:15px/1.6 var(--sans)}.reader-content .toc b{min-width:22px}button:disabled{opacity:.5;cursor:default}
 .category-number{opacity:1}
+
+.reader-content .resumen{padding:22px 24px;background:var(--soft);border-left:3px solid var(--gold);margin:36px 0;border-radius:4px}.reader-content .resumen h3{margin-top:0;font-family:var(--sans)}.resource-entry+.resource-entry{margin-top:28px}

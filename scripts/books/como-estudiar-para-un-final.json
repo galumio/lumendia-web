@@ -1,0 +1,30 @@
+{
+  "slug": "como-estudiar-para-un-final",
+  "zip": ".local/originals/como-estudiar-para-un-final/Paginas-web-como-estudiar-para-un-final.zip",
+  "zipFolder": "como-estudiar-para-un-final",
+  "pdf": ".local/originals/como-estudiar-para-un-final/Como-estudiar-para-un-final.pdf",
+  "coverImage": "public/images/como-estudiar-portada.jpg",
+  "expectedChapters": 10,
+  "book": {
+    "slug": "como-estudiar-para-un-final",
+    "title": "Cómo estudiar para un final",
+    "shortTitle": "Cómo estudiar para un final",
+    "subtitle": "Guía gratuita paso a paso",
+    "category": "Estudio y universidad",
+    "audience": "Estudiantes universitarios",
+    "cover": "/images/como-estudiar-portada.jpg",
+    "publisher": "Galumio Studio",
+    "healthContent": false,
+    "editorialStatus": "approved",
+    "notice": "Contenido educativo: ante cualquier diferencia, siguen valiendo las indicaciones de tu cátedra.",
+    "resources": [
+      {
+        "slug": "plan-de-7-dias-antes-del-final",
+        "title": "Plan de 7 días antes del final",
+        "description": "Una hoja para imprimir con qué hacer cada día de la última semana.",
+        "file": ".local/originals/como-estudiar-para-un-final/Plan-de-7-dias-antes-del-final.pdf",
+        "sha256": "53f94ce95a64e10c62f69a57d81dc9960d75f9df377b771e05c5b26d20ca2e19"
+      }
+    ]
+  }
+}

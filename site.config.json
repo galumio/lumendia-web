@@ -1,19 +1,11 @@
 {
   "siteUrl": "https://lumendia.com.ar",
-  "contactEmail": null,
+  "contactEmail": "soporte@galumio.com.ar",
   "legal": {
-    "approved": false,
-    "responsibleName": null,
-    "jurisdiction": null
-  },
-  "editorial": {
-    "approved": false,
-    "reviewer": null,
-    "reviewedAt": null,
-    "evidence": null
-  },
-  "commerce": {
-    "kitUrl": "https://galumio.com.ar/productos/cuidar-alzheimer-demencia/"
+    "approved": true,
+    "responsibleName": "Gaston Beltrami",
+    "tradeName": "Galumio Studio",
+    "jurisdiction": "los tribunales ordinarios del Departamento Judicial de Avellaneda-Lanús, Provincia de Buenos Aires"
   },
   "ads": {
     "enabled": false,
