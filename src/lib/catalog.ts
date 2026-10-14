@@ -8,7 +8,7 @@ export interface Book {slug:string;title:string;shortTitle?:string;subtitle:stri
  /** Contenido sanitario: solo se publica con healthReview completo. Si falta, se asume true. */
  healthContent?:boolean;healthReview?:{reviewer:string;reviewedAt:string;evidence:string}|null;
  notice?:string;sourcesPage?:string;readingOrder?:string[];printPages?:number;publisher?:string;resources?:Resource[];
- premium?:{title:string;description:string;items:string[];note:string;url:string|null;cta?:string};
+ premium?:{title:string;description:string;items:string[];note?:string;url:string|null;cta?:string};
  toc:{slug:string;title:string;number:string}[];topics:{slug:string;title:string;description:string}[];pages:Page[];situations:{id:string;title:string;topic:string;text:string}[]}
 export const books = (Object.values(modules) as Book[]).sort((a,b)=>a.title.localeCompare(b.title,'es'));
 export const healthReviewed = (b:Book) => Boolean(b.healthReview?.reviewer && b.healthReview.reviewedAt && b.healthReview.evidence);
