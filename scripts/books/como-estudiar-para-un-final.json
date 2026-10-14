@@ -25,6 +25,18 @@
         "file": ".local/originals/como-estudiar-para-un-final/Plan-de-7-dias-antes-del-final.pdf",
         "sha256": "53f94ce95a64e10c62f69a57d81dc9960d75f9df377b771e05c5b26d20ca2e19"
       }
-    ]
+    ],
+    "premium": {
+      "title": "Cómo estudiar para un final · Ebook completo",
+      "description": "La edición completa en PDF, lista para imprimir y usar mientras preparás tu final.",
+      "items": [
+        "55 páginas.",
+        "10 capítulos.",
+        "8 plantillas imprimibles: calculadora de tiempo, cronograma de 4 semanas, hoja de autoevaluación, checklist del día del final y más."
+      ],
+      "url": "https://galumio.com.ar/productos/como-estudiar-para-un-final/",
+      "cta": "Conseguir el ebook completo",
+      "highlight": true
+    }
   }
 }

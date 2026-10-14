@@ -26,7 +26,11 @@ for(const b of books){
   for(const s of b.situations){const page=b.pages.find(p=>p.slug===s.topic);assert(page?.html.includes(`id="${s.id}"`),'Situación sin ancla '+s.id);for(const label of ['Qué está pasando','Qué hacer','Qué decir','Qué evitar','Cuándo consultar'])assert(s.text.includes(label),`${s.id}: falta ${label}`)}
   assert((b.pages.find(p=>p.slug==='cuatro-escenas')?.html.match(/<h2/g)||[]).length===4,'Deben existir cuatro escenas');
  }
- if(b.slug==='como-estudiar-para-un-final')assert(b.healthContent===false&&b.pages.length===10,'Cómo estudiar: 10 capítulos, contenido no sanitario');
+ if(b.slug==='como-estudiar-para-un-final'){
+  assert(b.healthContent===false&&b.pages.length===10,'Cómo estudiar: 10 capítulos, contenido no sanitario');
+  assert(b.premium?.url==='https://galumio.com.ar/productos/como-estudiar-para-un-final/'&&b.premium.cta==='Conseguir el ebook completo'&&b.premium.highlight===true,'Cómo estudiar: botón premium hacia la ficha de Galumio');
+  assert(['55 páginas','10 capítulos','8 plantillas imprimibles'].every(t=>b.premium?.items.some(i=>i.includes(t))),'Cómo estudiar: la tarjeta debe mostrar 55 páginas, 10 capítulos y 8 plantillas');
+ }
  if(b.slug==='ia-para-docentes'){
   assert(b.healthContent===false&&b.pages.length===10,'IA para docentes: 10 capítulos, contenido no sanitario');
   // Del capítulo 8 solo se publica la muestra; los otros 44 prompts de la biblioteca son premium.
@@ -52,6 +56,8 @@ for(const dir of dirs.length?dirs:['public','dist','.preview']){
  if(dir==='dist'){assert(!existsSync('dist/libros'),'La presentación institucional no debe incluir libros');assert(!files.some(f=>f.endsWith('.pdf')),'La presentación institucional no debe incluir PDF');assert(!read('dist/sitemap.xml').includes('/libros/'),'Sitemap institucional con libros')}
  if(dir==='dist-library'){
   for(const file of htmlFiles)assert(!/noindex/.test(read(file)),'noindex en producción '+file);
+  // Las compras pasan siempre por la ficha de Galumio, nunca directo a la tienda externa.
+  for(const file of htmlFiles)assert(!/href="https?:\/\/(?:[a-z0-9-]+\.)?(?:payhip|etsy)\.com/i.test(read(file)),'Enlace directo a tienda externa '+file);
   assert(read('dist-library/CNAME').trim()==='lumendia.com.ar','CNAME incorrecto');assert(existsSync('dist-library/.nojekyll'),'Falta .nojekyll');assert(!read('dist-library/robots.txt').includes('Disallow: /'),'robots bloquea el sitio');
   const sitemap=[...read('dist-library/sitemap.xml').matchAll(/<loc>https:\/\/lumendia\.com\.ar(\/[^<]*)<\/loc>/g)].map(m=>m[1]);
   assert(sitemap.length+1===htmlFiles.length,`Sitemap (${sitemap.length}) y páginas (${htmlFiles.length}, con 404) no coinciden`);
