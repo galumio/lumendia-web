@@ -28,7 +28,7 @@ for(const b of books){
  }
  if(b.slug==='como-estudiar-para-un-final'){
   assert(b.healthContent===false&&b.pages.length===10,'Cómo estudiar: 10 capítulos, contenido no sanitario');
-  assert(b.premium?.url==='https://galumio.com.ar/productos/como-estudiar-para-un-final/'&&b.premium.cta==='Conseguir el ebook completo'&&b.premium.highlight===true,'Cómo estudiar: botón premium hacia la ficha de Galumio');
+  assert(b.premium?.url==='https://galumio.com.ar/productos/como-estudiar-para-un-final/'&&b.premium.cta==='Descargar PDF + 8 plantillas'&&b.premium.title==='Edición PDF con 8 plantillas imprimibles'&&!/ebook completo|edición completa/i.test(JSON.stringify(b.premium))&&b.premium.highlight===true,'Cómo estudiar: botón premium hacia la ficha de Galumio');
   assert(['55 páginas','10 capítulos','8 plantillas imprimibles'].every(t=>b.premium?.items.some(i=>i.includes(t))),'Cómo estudiar: la tarjeta debe mostrar 55 páginas, 10 capítulos y 8 plantillas');
  }
  if(b.slug==='ia-para-docentes'){
