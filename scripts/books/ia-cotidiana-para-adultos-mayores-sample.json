@@ -1,0 +1,162 @@
+{
+  "source": ".local/originals/ia-cotidiana-para-adultos-mayores/1_Etsy_Payhip_Ebook_IA_cotidiana (1).pdf",
+  "sourceSha256": "6a396633c4115dc0df9189f44fa682b504e9cf8710c0851074aa173f27570d89",
+  "coverSource": ".local/originals/ia-cotidiana-para-adultos-mayores/cover.jpg.jpg",
+  "coverSha256": "1ef0047a59da3566f16702841452469ce4324f13e73a36fe342dab503819f7dc",
+  "book": {
+    "slug": "ia-cotidiana-para-adultos-mayores",
+    "title": "IA cotidiana para adultos mayores",
+    "subtitle": "Muestra de lectura gratuita · Edición en español",
+    "category": "Tecnología cotidiana",
+    "audience": "adultos mayores",
+    "description": "Muestra gratuita: una introducción y una selección de ejemplos prácticos del libro original.",
+    "cover": "/images/ia-cotidiana-para-adultos-mayores-portada.jpg",
+    "publisher": "Galumio Studio",
+    "healthContent": false,
+    "editorialStatus": "approved",
+    "language": "es",
+    "sample": true,
+    "notice": "Fragmentos seleccionados de la introducción y los capítulos 2, 6 y 7. Las referencias a otras secciones corresponden al ebook completo.",
+    "premium": {
+      "title": "IA cotidiana para adultos mayores",
+      "description": "Conseguí el ebook completo en español por USD 4,99.",
+      "items": [
+        "Edición en español",
+        "USD 4,99"
+      ],
+      "note": "Esta web contiene solo una muestra. El PDF comercial no está disponible para descargar aquí.",
+      "url": "https://payhip.com/b/CHPS9",
+      "cta": "Comprar ebook completo · USD 4,99",
+      "highlight": true
+    }
+  },
+  "selections": [
+    {
+      "slug": "antes-de-empezar",
+      "title": "Antes de empezar",
+      "description": "Muestra gratuita: una introducción y una selección de ejemplos prácticos del libro original.",
+      "segments": [
+        {
+          "pdfPages": [
+            5,
+            6
+          ],
+          "start": "Si tiene este libro",
+          "end": "Este libro es para usted."
+        },
+        {
+          "pdfPages": [
+            5,
+            6
+          ],
+          "start": "Este libro es para usted.",
+          "end": "La idea es simple:"
+        },
+        {
+          "pdfPages": [
+            5,
+            6
+          ],
+          "start": "La idea es simple:",
+          "end": "Qué necesita"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Qué necesita",
+          "end": "•",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "•",
+          "end": "Cómo usar este libro",
+          "list": "ul"
+        },
+        {
+          "pdfPages": [
+            7,
+            8
+          ],
+          "start": "Importante:",
+          "end": null,
+          "tag": "aside"
+        }
+      ]
+    },
+    {
+      "slug": "ejemplos-practicos",
+      "title": "Ejemplos prácticos — Fragmentos seleccionados",
+      "description": "Muestra gratuita: una introducción y una selección de ejemplos prácticos del libro original.",
+      "segments": [
+        {
+          "pdfPages": [
+            18,
+            19
+          ],
+          "start": "Su primera conversación",
+          "end": "No hace falta",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            18,
+            19
+          ],
+          "start": "No hace falta",
+          "end": "1. "
+        },
+        {
+          "pdfPages": [
+            19
+          ],
+          "start": "1. ",
+          "end": "Listo:",
+          "list": "ol"
+        },
+        {
+          "pdfPages": [
+            19
+          ],
+          "start": "Listo:",
+          "end": "Si se traba"
+        },
+        {
+          "pdfPages": [
+            43
+          ],
+          "start": "Pruebe esto:",
+          "end": null
+        },
+        {
+          "pdfPages": [
+            44,
+            45
+          ],
+          "start": "Mensajes y cartas",
+          "end": "•",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            44,
+            45
+          ],
+          "start": "•",
+          "end": "La IA le da",
+          "list": "ul"
+        },
+        {
+          "pdfPages": [
+            45
+          ],
+          "start": "La IA le da",
+          "end": "Escribir su historia de vida"
+        }
+      ]
+    }
+  ]
+}

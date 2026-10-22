@@ -1,7 +1,9 @@
+export {};
+const english=document.documentElement.lang==='en';
 const get=(key:string)=>{try{return localStorage.getItem(key)}catch{return null}};
 const set=(key:string,value:string)=>{try{localStorage.setItem(key,value)}catch{}};
 const theme=document.querySelector<HTMLButtonElement>('#theme');
-function updateTheme(){theme?.setAttribute('aria-label',document.documentElement.dataset.theme==='dark'?'Activar modo claro':'Activar modo oscuro')}
+function updateTheme(){theme?.setAttribute('aria-label',document.documentElement.dataset.theme==='dark'?(english?'Enable light mode':'Activar modo claro'):(english?'Enable dark mode':'Activar modo oscuro'))}
 updateTheme();theme?.addEventListener('click',()=>{const mode=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=mode;set('lumendia-theme',mode);updateTheme()});
 const dialog=document.querySelector<HTMLDialogElement>('#privacy-dialog');
 document.querySelector('#privacy-settings')?.addEventListener('click',()=>dialog?.showModal());
@@ -15,5 +17,5 @@ for(const form of document.querySelectorAll<HTMLElement>('[data-search]')){
  input?.addEventListener('input',update);select?.addEventListener('change',update);form.querySelector('button')?.addEventListener('click',()=>{if(input)input.value='';if(select)select.value='';update()});update();
 }
 for(const resume of document.querySelectorAll<HTMLAnchorElement>('[data-resume]')){
- try{const data=JSON.parse(get('lumendia-progress-'+resume.dataset.resume)||'null');if(data&&typeof data.url==='string'&&data.url.startsWith('/libros/'+resume.dataset.resume+'/')&&!data.url.includes('//')){resume.href=data.url;resume.hidden=false;resume.textContent='Continuar: '+data.title}}catch{}
+ try{const data=JSON.parse(get('lumendia-progress-'+resume.dataset.resume)||'null');if(data&&typeof data.url==='string'&&data.url.startsWith('/libros/'+resume.dataset.resume+'/')&&!data.url.includes('//')){resume.href=data.url;resume.hidden=false;resume.textContent=(english?'Continue: ':'Continuar: ')+data.title}}catch{}
 }

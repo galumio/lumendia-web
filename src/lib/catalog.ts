@@ -4,7 +4,7 @@ export const preview = import.meta.env.DEV || process.env.LUMENDIA_PREVIEW === '
 const modules = import.meta.glob('../content/books/*.json', {eager:true,import:'default'});
 export interface Page {slug:string;title:string;description:string;html:string;words:number;textHash:string}
 export interface Resource {slug:string;title:string;description:string;file:string;sha256:string}
-export interface Book {slug:string;title:string;shortTitle?:string;subtitle:string;category:string;audience:string;description:string;cover:string;editorialStatus:string;
+export interface Book {language?:"es"|"en";sample?:boolean;slug:string;title:string;shortTitle?:string;subtitle:string;category:string;audience:string;description:string;cover:string;editorialStatus:string;
  /** Contenido sanitario: solo se publica con healthReview completo. Si falta, se asume true. */
  healthContent?:boolean;healthReview?:{reviewer:string;reviewedAt:string;evidence:string}|null;
  notice?:string;sourcesPage?:string;readingOrder?:string[];printPages?:number;publisher?:string;resources?:Resource[];
@@ -19,7 +19,7 @@ export const publishable = (b:Book) => b.editorialStatus==='approved' && (b.heal
 export const dryRun = process.env.LUMENDIA_DRY_RUN === '1';
 export const available = books.filter(b=> preview || dryRun || publishable(b));
 export const featured = available.find(publishable) ?? available[0];
-export const categories = ['Salud y cuidados','Estudio y universidad','Educación y docentes','Seguridad e higiene','Medicina laboral','Primeros auxilios','Infografías'];
+export const categories = ['Salud y cuidados','Estudio y universidad','Educación y docentes','Seguridad e higiene','Medicina laboral','Primeros auxilios','Infografías','Tecnología cotidiana'];
 export const bookUrl = (b:Book) => `/libros/${b.slug}/`;
 export const readingOrder = (b:Book) => b.readingOrder ?? b.toc.map(c=>c.slug);
 export const resources = available.flatMap(book=>(book.resources??[]).map(resource=>({book,resource})));
