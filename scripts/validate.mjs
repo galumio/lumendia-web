@@ -1,3 +1,4 @@
+import {commercialLinkAllowed,samplePurchases} from './commercial-links.mjs';
 // Validación estática de contenido y salidas compiladas.
 // Uso: node scripts/validate.mjs [carpetas...] [--dry-run]; por defecto public, dist y .preview.
 // --dry-run admite en dist-library libros todavía no aprobados (ensayo local, nunca publicable).
@@ -15,7 +16,14 @@ const hash=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
 const premium=['5ed6a7780d59997655fbacaf746093cfe3aa7923c5a548808d9f6db24c2a6162','f8d6bf11c4428aa254faeb3bd3026492a77ab1ba5289096b1e8e701177b2d71f','f5786c9052eb5aadc1b4bc362d12e70d5f9491da811f0cbc90d45199944263c5','87a1250fb70a77e9ddfab8c3af942dd0a97b1b4b710e46d48f4b0b0e24927247'];
 const freeResources=books.flatMap(b=>b.resources??[]);
 
+assert(new Set(books.map(b=>b.slug)).size===books.length,'Libros duplicados');
 for(const b of books){
+ if(samplePurchases[b.slug]){
+  assert(b.sample===true&&b.pages.length===2&&(b.resources??[]).length===0,b.slug+': solo dos secciones de muestra, sin descargas');
+  assert(b.premium?.url===samplePurchases[b.slug]&&b.premium.highlight===true,b.slug+': compra autorizada visible');
+  assert(b.language===(b.slug==='everyday-ai-for-seniors'?'en':'es'),b.slug+': idioma incorrecto');
+  assert(b.pages.reduce((sum,p)=>sum+p.words,0)<600,b.slug+': muestra demasiado extensa');
+ }
  const order=b.readingOrder??b.toc.map(c=>c.slug);
  assert(b.pages.every(p=>order.includes(p.slug))&&order.every(s=>b.pages.some(p=>p.slug===s)),`${b.slug}: el orden de lectura no coincide con las páginas`);
  for(const c of b.toc)assert(b.pages.some(p=>p.slug===c.slug),`${b.slug}: índice sin página ${c.slug}`);
@@ -56,8 +64,8 @@ for(const dir of dirs.length?dirs:['public','dist','.preview']){
  if(dir==='dist'){assert(!existsSync('dist/libros'),'La presentación institucional no debe incluir libros');assert(!files.some(f=>f.endsWith('.pdf')),'La presentación institucional no debe incluir PDF');assert(!read('dist/sitemap.xml').includes('/libros/'),'Sitemap institucional con libros')}
  if(dir==='dist-library'){
   for(const file of htmlFiles)assert(!/noindex/.test(read(file)),'noindex en producción '+file);
-  // Las compras pasan siempre por la ficha de Galumio, nunca directo a la tienda externa.
-  for(const file of htmlFiles)assert(!/href="https?:\/\/(?:[a-z0-9-]+\.)?(?:payhip|etsy)\.com/i.test(read(file)),'Enlace directo a tienda externa '+file);
+  // Keep external-store restrictions; permit only the exact authorized sample URL.
+  for(const file of htmlFiles)for(const match of read(file).matchAll(/href=["']([^"']*)["']/g))assert(commercialLinkAllowed(match[1],file),'Enlace comercial no autorizado '+file+' → '+match[1]);
   assert(read('dist-library/CNAME').trim()==='lumendia.com.ar','CNAME incorrecto');assert(existsSync('dist-library/.nojekyll'),'Falta .nojekyll');assert(!read('dist-library/robots.txt').includes('Disallow: /'),'robots bloquea el sitio');
   const sitemap=[...read('dist-library/sitemap.xml').matchAll(/<loc>https:\/\/lumendia\.com\.ar(\/[^<]*)<\/loc>/g)].map(m=>m[1]);
   assert(sitemap.length+1===htmlFiles.length,`Sitemap (${sitemap.length}) y páginas (${htmlFiles.length}, con 404) no coinciden`);

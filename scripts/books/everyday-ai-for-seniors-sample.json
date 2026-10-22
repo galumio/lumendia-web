@@ -1,0 +1,160 @@
+{
+  "source": ".local/originals/everyday-ai-for-seniors/1_Etsy_Payhip_Ebook_Everyday_AI (1).pdf",
+  "sourceSha256": "07986466bf721a3b7d3231fed1f86f85afb3f5af5e643244e82dc4ee3239993a",
+  "coverSource": ".local/originals/everyday-ai-for-seniors/cover.jpg.jpg",
+  "coverSha256": "0dcd10f9aebb8ade233cb0d52297e9bd6de41ddc640fb77f4f43bf58fcf4aec3",
+  "book": {
+    "slug": "everyday-ai-for-seniors",
+    "title": "Everyday AI for Seniors",
+    "subtitle": "Free reading sample · English edition",
+    "category": "Tecnología cotidiana",
+    "audience": "older adults",
+    "description": "Free sample: an introduction and selected practical examples from the original book.",
+    "cover": "/images/everyday-ai-for-seniors-portada.jpg",
+    "publisher": "Galumio Studio",
+    "healthContent": false,
+    "editorialStatus": "approved",
+    "language": "en",
+    "sample": true,
+    "notice": "Selected excerpts from the introduction and chapters 2, 6 and 7. References to other sections refer to the complete ebook.",
+    "premium": {
+      "title": "Everyday AI for Seniors",
+      "description": "Get the complete ebook in English for USD 4.99.",
+      "items": [
+        "English edition",
+        "USD 4.99"
+      ],
+      "note": "This website contains a sample only. The commercial PDF is not available for download here.",
+      "url": "https://payhip.com/b/Y9fCO",
+      "cta": "Buy the complete ebook · USD 4.99",
+      "highlight": true
+    }
+  },
+  "selections": [
+    {
+      "slug": "before-you-begin",
+      "title": "Before You Begin",
+      "description": "Free sample: an introduction and selected practical examples from the original book.",
+      "segments": [
+        {
+          "pdfPages": [
+            5,
+            6
+          ],
+          "start": "If you are holding",
+          "end": "This book is for you."
+        },
+        {
+          "pdfPages": [
+            5,
+            6
+          ],
+          "start": "This book is for you.",
+          "end": "The idea is simple:"
+        },
+        {
+          "pdfPages": [
+            5,
+            6
+          ],
+          "start": "The idea is simple:",
+          "end": "What You Need"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "What You Need",
+          "end": "•",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "•",
+          "end": "How to Use This Book",
+          "list": "ul"
+        },
+        {
+          "pdfPages": [
+            7,
+            8
+          ],
+          "start": "Important:",
+          "end": null,
+          "tag": "aside"
+        }
+      ]
+    },
+    {
+      "slug": "practical-examples",
+      "title": "Practical Examples — Selected Excerpts",
+      "description": "Free sample: an introduction and selected practical examples from the original book.",
+      "segments": [
+        {
+          "pdfPages": [
+            19
+          ],
+          "start": "Your First Conversation",
+          "end": "You don't need",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            19
+          ],
+          "start": "You don't need",
+          "end": "1. "
+        },
+        {
+          "pdfPages": [
+            19
+          ],
+          "start": "1. ",
+          "end": "That's it:",
+          "list": "ol"
+        },
+        {
+          "pdfPages": [
+            19
+          ],
+          "start": "That's it:",
+          "end": null
+        },
+        {
+          "pdfPages": [
+            44
+          ],
+          "start": "Try This:",
+          "end": null
+        },
+        {
+          "pdfPages": [
+            45,
+            46
+          ],
+          "start": "Messages and Letters",
+          "end": "•",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            45,
+            46
+          ],
+          "start": "•",
+          "end": "The AI gives you",
+          "list": "ul"
+        },
+        {
+          "pdfPages": [
+            46
+          ],
+          "start": "The AI gives you",
+          "end": "Writing Your Life Story"
+        }
+      ]
+    }
+  ]
+}

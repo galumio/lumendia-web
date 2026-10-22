@@ -1,6 +1,8 @@
 ---
+import {translator} from "../lib/i18n";
 import type {Book} from '../lib/catalog';
-interface Props {cover:string;product:NonNullable<Book['premium']>}
+interface Props {language?:"es"|"en";directSale?:boolean;cover:string;product:NonNullable<Book['premium']>}
 const {cover,product}=Astro.props;
+const language=Astro.props.language??"es";const t=translator(language);
 ---
-<section class="premium" id="kit"><div class="kit-image"><img src={cover} alt={`Portada de la edición descargable: ${product.title}`} width="180" height="255" loading="lazy"/><span>EDICIÓN<br/>DESCARGABLE</span></div><div><span class="eyebrow">Para tener a mano · Galumio Studio</span><h2>{product.title}</h2><p>{product.description}</p><ul>{product.items.map(item=><li>{item}</li>)}</ul>{product.note&&<p class="small">{product.note}</p>}{product.url?<a class="button" href={product.url} rel="noopener" data-event="commercial_click">{product.cta??'Ver en Galumio Studio'} ↗</a>:<p class="availability">Venta externa en preparación</p>}<p class="small">La lectura web es gratuita. La edición descargable se compra en la tienda de Galumio Studio.</p></div></section>
+<section class="premium" id="kit"><div class="kit-image"><img src={cover} alt={`${language==='en'?'Downloadable edition cover':'Portada de la edición descargable'}: ${product.title}`} width="180" height="255" loading="lazy"/><span>{t("EDICIÓN")}<br/>{t("DESCARGABLE")}</span></div><div><span class="eyebrow">{t("Para tener a mano · Galumio Studio")}</span><h2>{product.title}</h2><p>{product.description}</p><ul>{product.items.map(item=><li>{item}</li>)}</ul>{product.note&&<p class="small">{product.note}</p>}{product.url?<a class="button" href={product.url} rel="noopener" data-event="commercial_click">{product.cta??'Ver en Galumio Studio'} ↗</a>:<p class="availability">{t("Venta externa en preparación")}</p>}<p class="small">{Astro.props.directSale?(language==='en'?'The web sample is free. Buy the complete ebook on Payhip.':'La muestra web es gratuita. Comprá el ebook completo en Payhip.'):'La lectura web es gratuita. La edición descargable se compra en la tienda de Galumio Studio.'}</p></div></section>
