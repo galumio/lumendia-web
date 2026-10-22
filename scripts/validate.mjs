@@ -21,7 +21,8 @@ for(const b of books){
  if(samplePurchases[b.slug]){
   assert(b.sample===true&&b.pages.length===2&&(b.resources??[]).length===0,b.slug+': solo dos secciones de muestra, sin descargas');
   assert(b.premium?.url===samplePurchases[b.slug]&&b.premium.highlight===true,b.slug+': compra autorizada visible');
-  assert(b.language===(b.slug==='everyday-ai-for-seniors'?'en':'es'),b.slug+': idioma incorrecto');
+  assert(b.language===(['everyday-ai-for-seniors','ai-for-everyday-life'].includes(b.slug)?'en':'es'),b.slug+': idioma incorrecto');
+  assert(b.premium.items.includes(b.language==='en'?'USD 4.99':'USD 4,99'),b.slug+': precio incorrecto');
   assert(b.pages.reduce((sum,p)=>sum+p.words,0)<600,b.slug+': muestra demasiado extensa');
  }
  const order=b.readingOrder??b.toc.map(c=>c.slug);

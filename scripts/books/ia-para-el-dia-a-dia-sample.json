@@ -1,0 +1,215 @@
+{
+  "source": ".local/originals/ia-para-el-dia-a-dia/IA_dia_a_dia_PAYHIP_CORREGIDO.pdf",
+  "sourceSha256": "dc67e3275c4fbaac297fe78638626e39b6fd2214eded7286d3e0f56da554bf3e",
+  "coverSource": ".local/originals/ia-para-el-dia-a-dia/cover.jpg.jpg",
+  "coverSha256": "6a26d0232f6a3185a1e0180ca6b8dd88f6beb2e713e4da2b1c2e9ed7cf062ba2",
+  "pageNumberPosition": "first",
+  "joinLineHyphens": true,
+  "sampleRange": [
+    0.05,
+    0.07
+  ],
+  "book": {
+    "slug": "ia-para-el-dia-a-dia",
+    "title": "IA para el día a día",
+    "subtitle": "Muestra de lectura gratuita · Edición en español",
+    "category": "Tecnología cotidiana",
+    "audience": "personas que quieren usar IA en su vida cotidiana",
+    "description": "Muestra gratuita: una introducción, un ejemplo de cómo solicitar un menú semanal a la IA y un caso práctico de redacción de un correo, extraídos del libro original.",
+    "cover": "/images/ia-para-el-dia-a-dia-portada.jpg",
+    "publisher": "Galumio Studio",
+    "healthContent": false,
+    "editorialStatus": "approved",
+    "language": "es",
+    "sample": true,
+    "notice": "Fragmentos seleccionados de la introducción y los capítulos 3 y 5. La numeración de los pedidos corresponde al ebook completo.",
+    "premium": {
+      "title": "IA para el día a día",
+      "description": "Conseguí el ebook completo en español por USD 4,99.",
+      "items": [
+        "Edición en español",
+        "USD 4,99"
+      ],
+      "note": "Esta web contiene solo una muestra. El PDF comercial no está disponible para descargar aquí.",
+      "url": "https://payhip.com/b/FmX4P",
+      "cta": "Comprar ebook completo · USD 4,99",
+      "highlight": true
+    }
+  },
+  "selections": [
+    {
+      "slug": "antes-de-empezar",
+      "title": "Antes de empezar — IA para el día a día",
+      "description": "Muestra gratuita: una introducción, un ejemplo de cómo solicitar un menú semanal a la IA y un caso práctico de redacción de un correo, extraídos del libro original.",
+      "segments": [
+        {
+          "pdfPages": [
+            5
+          ],
+          "start": "Seguramente ya escuchaste",
+          "end": "Escribir un correo"
+        },
+        {
+          "pdfPages": [
+            5
+          ],
+          "start": "Escribir un correo",
+          "end": "Cómo está armado este libro"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Cómo leer los pedidos",
+          "end": "A lo largo del libro",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "A lo largo del libro",
+          "end": "0."
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "0.",
+          "end": "Lo que está entre [corchetes]"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Lo que está entre [corchetes]",
+          "end": "Consejo:"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Consejo:",
+          "end": "Tres reglas para todo el libro"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Tres reglas para todo el libro",
+          "end": "1.",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "1.",
+          "end": null,
+          "list": "ol"
+        }
+      ]
+    },
+    {
+      "slug": "ejemplos-practicos",
+      "title": "Ejemplos prácticos — IA para el día a día",
+      "description": "Muestra gratuita: una introducción, un ejemplo de cómo solicitar un menú semanal a la IA y un caso práctico de redacción de un correo, extraídos del libro original.",
+      "segments": [
+        {
+          "pdfPages": [
+            17
+          ],
+          "start": "Planificar la semana",
+          "end": "31.",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            17
+          ],
+          "start": "31.",
+          "end": null
+        },
+        {
+          "pdfPages": [
+            18
+          ],
+          "start": "32.",
+          "end": "33."
+        },
+        {
+          "pdfPages": [
+            18
+          ],
+          "start": "Prueba esto:",
+          "end": "Recetas a tu medida"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "Ejemplo completo: el correo que nadie quería escribir",
+          "end": "Diego tiene",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "Diego tiene",
+          "end": "Tú: «Tengo"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "Tú: «Tengo",
+          "end": "IA: Le propone"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "IA: Le propone",
+          "end": "Tú: «Me gusta"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "Tú: «Me gusta",
+          "end": "IA: Ajusta"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "IA: Ajusta",
+          "end": "Tú: «Revisa"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "Tú: «Revisa",
+          "end": "Este último paso"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "Este último paso",
+          "end": "Errores comunes"
+        }
+      ]
+    }
+  ]
+}

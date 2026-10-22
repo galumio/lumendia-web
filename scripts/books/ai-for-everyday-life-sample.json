@@ -1,0 +1,215 @@
+{
+  "source": ".local/originals/ai-for-everyday-life/1_Etsy_Payhip_Ebook_AI_Everyday_Life.pdf",
+  "sourceSha256": "624a077f8c666fbc7e3897db68951220f8ae5710708ed87fdccefcbee975fe7b",
+  "coverSource": ".local/originals/ai-for-everyday-life/cover.jpg.jpg",
+  "coverSha256": "1934a1ac6ec321c2426c6db0e43152304538eac0e0905eb6f2a2460efaa19f32",
+  "pageNumberPosition": "last",
+  "joinLineHyphens": true,
+  "sampleRange": [
+    0.05,
+    0.07
+  ],
+  "book": {
+    "slug": "ai-for-everyday-life",
+    "title": "AI for Everyday Life",
+    "subtitle": "Free reading sample · English edition",
+    "category": "Tecnología cotidiana",
+    "audience": "people who want to use AI in everyday life",
+    "description": "Free sample: an introduction, an example of how to ask AI for a weekly menu, and a worked example of writing an email, from the original book.",
+    "cover": "/images/ai-for-everyday-life-portada.jpg",
+    "publisher": "Galumio Studio",
+    "healthContent": false,
+    "editorialStatus": "approved",
+    "language": "en",
+    "sample": true,
+    "notice": "Selected excerpts from the introduction and chapters 3 and 5. Prompt numbers refer to the complete ebook.",
+    "premium": {
+      "title": "AI for Everyday Life",
+      "description": "Get the complete ebook in English for USD 4.99.",
+      "items": [
+        "English edition",
+        "USD 4.99"
+      ],
+      "note": "This website contains a sample only. The commercial PDF is not available for download here.",
+      "url": "https://payhip.com/b/DvYKc",
+      "cta": "Buy the complete ebook · USD 4.99",
+      "highlight": true
+    }
+  },
+  "selections": [
+    {
+      "slug": "before-you-begin",
+      "title": "Before You Begin — AI for Everyday Life",
+      "description": "Free sample: an introduction, an example of how to ask AI for a weekly menu, and a worked example of writing an email, from the original book.",
+      "segments": [
+        {
+          "pdfPages": [
+            5
+          ],
+          "start": "You've probably",
+          "end": "Writing an awkward"
+        },
+        {
+          "pdfPages": [
+            5
+          ],
+          "start": "Writing an awkward",
+          "end": "How This Book Works"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "How to Read the Prompts",
+          "end": "Throughout the book",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Throughout the book",
+          "end": "0."
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "0.",
+          "end": "Anything in [brackets]"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Anything in [brackets]",
+          "end": "Tip:"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Tip:",
+          "end": "Three Rules for the Whole Book"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "Three Rules for the Whole Book",
+          "end": "1.",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            6
+          ],
+          "start": "1.",
+          "end": null,
+          "list": "ol"
+        }
+      ]
+    },
+    {
+      "slug": "practical-examples",
+      "title": "Practical Examples — AI for Everyday Life",
+      "description": "Free sample: an introduction, an example of how to ask AI for a weekly menu, and a worked example of writing an email, from the original book.",
+      "segments": [
+        {
+          "pdfPages": [
+            16
+          ],
+          "start": "Plan the Week",
+          "end": "31.",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            16
+          ],
+          "start": "31.",
+          "end": "32."
+        },
+        {
+          "pdfPages": [
+            16
+          ],
+          "start": "32.",
+          "end": null
+        },
+        {
+          "pdfPages": [
+            17
+          ],
+          "start": "Try This:",
+          "end": "Recipes That Fit You"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "Worked Example: The Email Nobody Wanted to Write",
+          "end": "David has",
+          "tag": "h2"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "David has",
+          "end": "You: \"I need"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "You: \"I need",
+          "end": "AI: Suggests"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "AI: Suggests",
+          "end": "You: \"I like"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "You: \"I like",
+          "end": "AI: Adjusts"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "AI: Adjusts",
+          "end": "You: \"Check"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "You: \"Check",
+          "end": "That last step"
+        },
+        {
+          "pdfPages": [
+            28,
+            29
+          ],
+          "start": "That last step",
+          "end": "Common Mistakes"
+        }
+      ]
+    }
+  ]
+}

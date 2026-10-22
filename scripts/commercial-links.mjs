@@ -1,7 +1,9 @@
-// Exact destinations authorized for these two samples, never a host-wide exception.
+// Exact destinations authorized per sample, never a host-wide exception.
 export const samplePurchases = Object.freeze({
   'ia-cotidiana-para-adultos-mayores': 'https://payhip.com/b/CHPS9',
   'everyday-ai-for-seniors': 'https://payhip.com/b/Y9fCO',
+  'ia-para-el-dia-a-dia': 'https://payhip.com/b/FmX4P',
+  'ai-for-everyday-life': 'https://payhip.com/b/DvYKc',
 });
 
 export function commercialLinkAllowed(href, file) {

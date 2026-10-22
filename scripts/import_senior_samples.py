@@ -4,7 +4,7 @@ No PDF is copied to public/. Re-running verifies source hashes before writing.
 The manifests contain locations and hashes, never the manuscript text.
 """
 from pathlib import Path
-import hashlib, html, json, re, sys
+import argparse, hashlib, html, json, re, sys
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / '.local/python'))
@@ -17,7 +17,15 @@ def digest(data):
 def normalize(text):
     return ' '.join(text.split())
 
-for path in sorted((ROOT / 'scripts/books').glob('*-sample.json')):
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--check', action='store_true')
+parser.add_argument('--book', action='append', help='Only process this slug; repeat for multiple books')
+args = parser.parse_args()
+manifests = sorted((ROOT / 'scripts/books').glob('*-sample.json'))
+if args.book:
+    manifests = [p for p in manifests if p.name.removesuffix('-sample.json') in args.book]
+    assert len(manifests) == len(set(args.book)), 'Unknown sample slug'
+for path in manifests:
     manifest = json.loads(path.read_text(encoding='utf-8'))
     source = ROOT / manifest['source']
     assert digest(source.read_bytes()) == manifest['sourceSha256'], 'Original changed'
@@ -26,9 +34,13 @@ for path in sorted((ROOT / 'scripts/books').glob('*-sample.json')):
     pdf = pymupdf.open(source)
     texts = []
     for page in pdf:
-        lines = page.get_text().strip().splitlines()
-        if lines and lines[-1].strip().isdigit():
-            lines.pop()  # Printed page number, not manuscript text.
+        raw = page.get_text()
+        if manifest.get('joinLineHyphens'):
+            raw = re.sub(r'-[ \t]*\n[ \t]*', '-', raw)
+        lines = raw.strip().splitlines()
+        number_position = 0 if manifest.get('pageNumberPosition') == 'first' else -1
+        if lines and lines[number_position].strip().isdigit():
+            lines.pop(number_position)  # Printed page number, not manuscript text.
         texts.append(normalize(' '.join(lines)))
     pages = []
     evidence = []
@@ -57,8 +69,11 @@ for path in sorted((ROOT / 'scripts/books').glob('*-sample.json')):
     book = manifest['book']
     book.update(pages=pages, toc=[{'slug':p['slug'],'title':p['title'],'number':f'{i+1:02}'} for i,p in enumerate(pages)], topics=[], situations=[], resources=[])
     assert sum(p['words'] for p in pages) < len(' '.join(texts).split()) * .15, 'Sample exceeds 15%'
+    if 'sampleRange' in manifest:
+        ratio = sum(p['words'] for p in pages) / len(' '.join(texts).split())
+        assert manifest['sampleRange'][0] <= ratio <= manifest['sampleRange'][1], f'Sample outside requested range: {ratio:.2%}'
     output = ROOT / 'src/content/books' / (book['slug']+'.json')
-    if '--check' in sys.argv:
+    if args.check:
         assert json.loads(output.read_text(encoding='utf-8')) == book, 'Sample differs from the selected original excerpts'
         print(book['slug'], 'verified against original PDF')
         continue
