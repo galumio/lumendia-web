@@ -1,7 +1,8 @@
 ---
+import {scopeLabel} from '../lib/editorial';
 import {bookUrl,type Book} from '../lib/catalog';
 interface Props {book:Book}
 const {book}=Astro.props;
 ---
-<article class="book-card" data-search-item={`${book.title} ${book.description} ${book.category}`} data-category={book.category}><a class="book-cover" href={bookUrl(book)} tabindex="-1" aria-hidden="true"><img src={book.cover} alt="" width="480" height="680" loading="lazy"/></a><div class="book-card-copy"><span class="eyebrow">{book.category}</span><h2 lang={book.language}><a href={bookUrl(book)}>{book.title}</a></h2><p lang={book.language}>{book.description}</p><div class="book-meta"><span>{book.toc.filter(c=>Number(c.number)>0).length} {book.sample?'secciones de muestra':'capítulos'}</span><span>{book.sample?'Muestra gratuita':'Lectura gratuita'}</span>{book.language&&<span>{book.language==='en'?'Inglés':'Español'}</span>}</div><a class="arrow-link" href={bookUrl(book)}>Leer gratis <span aria-hidden="true">↗</span></a></div></article>
+<article class="book-card" data-search-item={`${book.title} ${book.description} ${book.category}`} data-category={book.category}><a class="book-cover" href={bookUrl(book)} tabindex="-1" aria-hidden="true"><img src={book.cover} alt="" width="480" height="680" loading="lazy"/></a><div class="book-card-copy"><span class="eyebrow">{book.category}</span><h2 lang={book.language}><a href={bookUrl(book)}>{book.title}</a></h2><p lang={book.language}>{book.description}</p><div class="book-meta"><span>{book.toc.filter(c=>Number(c.number)>0).length} {book.sample?'secciones de muestra':'capítulos'}</span><span>{scopeLabel(book,'es')}</span>{book.language&&<span>{book.language==='en'?'Inglés':'Español'}</span>}</div><a class="arrow-link" href={bookUrl(book)}>Leer gratis <span aria-hidden="true">↗</span></a></div></article>
 
