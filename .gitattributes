@@ -1,0 +1,2 @@
+# Conservar exactamente los originales editoriales aprobados, incluidos sus saltos de línea.
+src/content/editorial/*.md -text

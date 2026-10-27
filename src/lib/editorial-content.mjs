@@ -1,4 +1,4 @@
-// Contrato preparatorio. No importa archivos ni registra rutas públicas.
+// Contrato editorial puro. El adaptador editorial-loader.mjs gestiona archivos y selección.
 export const contentSections = Object.freeze({guide:'guias',tutorial:'tutoriales',tip:'tips',story:'relatos'});
 const slugPattern=/^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const text=v=>typeof v==='string'&&v.trim().length>0;
@@ -20,6 +20,7 @@ export function validateEditorialEntry(entry) {
  if(!Array.isArray(entry.sources)||entry.sources.some(s=>!text(s.title)||!https(s.url)))errors.push('Fuentes inválidas');
  if(!Array.isArray(entry.related)||entry.related.some(r=>!['book','guide','tutorial','tip','story','resource'].includes(r.type)||!slugPattern.test(r.slug??'')))errors.push('Relaciones inválidas');
  if(typeof entry.healthContent!=='boolean')errors.push('Declarar contenido sanitario');
+ if(entry.author?.type!==undefined&&!['Person','Organization'].includes(entry.author.type))errors.push('Tipo de autor no admitido');
  if(entry.status==='approved'){
   if(!text(entry.author?.name))errors.push('Autor real requerido');
   if(!['original','authorized'].includes(entry.rights?.kind)||!text(entry.rights?.evidence))errors.push('Derechos sin acreditar');
@@ -32,7 +33,7 @@ export function editorialUrl(entry){
  if(!Object.hasOwn(contentSections,entry.format)||!slugPattern.test(entry.slug??''))throw Error('Ruta editorial inválida');
  return `/${contentSections[entry.format]}/${entry.slug}/`;
 }
-// Llamar únicamente desde un futuro adaptador revisado, con fecha de corte explícita.
+// Selección de aprobados con fecha de corte explícita; no habilita borradores.
 export function selectEditorialEntries(entries,today){
  if(!date(today))throw Error('Fecha de corte inválida');
  const seen=new Set();

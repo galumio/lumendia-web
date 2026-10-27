@@ -1,6 +1,6 @@
 # Primera ampliación: estructura y plan para revisión
 
-Este documento es planificación, no contenido publicable. No asigna autorías ni fechas a futuras obras. No autoriza publicar manuscritos comerciales. La fase actual no crea rutas nuevas ni cambia el despliegue.
+Este documento es planificación, no contenido publicable. No asigna autorías ni fechas a futuras obras. No autoriza publicar manuscritos comerciales. La primera guía se prepara solo en vista previa local; el despliegue no cambia.
 
 ## Implementado
 
@@ -8,9 +8,9 @@ Este documento es planificación, no contenido publicable. No asigna autorías n
 - Destacado manual: Cómo estudiar para un final. Si faltara, solo se elige una lectura completa aprobada en español; no se promueve automáticamente una muestra inglesa.
 - Categorías limitadas a las publicaciones disponibles en cada salida. Portada y biblioteca enlazan las categorías con contenido y los recursos existentes. La portada muestra ambos recursos gratuitos.
 - Aclaración visible en ficha y lectores de IA para docentes: seis prompts disponibles; referencias a 17, 22 y 33 no incluidas. Se conserva literalmente el HTML original.
-- Contrato preparatorio `src/lib/editorial-content.mjs`: validación de metadatos, rutas, selección por aprobación y fecha, índices no vacíos y grupos temáticos. No tiene cargador ni generador de páginas conectado.
+- Contrato `src/lib/editorial-content.mjs`: validación de metadatos, rutas, selección por aprobación y fecha, índices no vacíos y grupos temáticos. El nuevo adaptador `editorial-loader.mjs` conecta originales aprobados y, exclusivamente en vista previa, borradores privados. Véase `docs/PRIMERA-GUIA-IA.md`.
 
-## Arquitectura pendiente de conectar
+## Arquitectura editorial
 
 | Destino futuro | Modelo y criterio |
 |---|---|
