@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import {config} from '../../lib/catalog';
+import {analyticsPrivacy} from '../../lib/privacy';
+export function getStaticPaths(){return ['privacy','cookies'].map(policy=>({params:{policy}}))}
+const title=Astro.params.policy==='privacy'?'Privacy policy':'Cookies and local storage';
+---
+<Base language="en" title={title} description="How Lumendia handles local reading preferences and optional Cloudflare analytics."><section class="section container"><div class="prose"><h1>{title}</h1>
+<h2>Controller and contact</h2><p>{config.legal.responsibleName}, operating as {config.legal.tradeName}. Contact: <a href={`mailto:${config.contactEmail}`}>{config.contactEmail}</a>.</p>
+<h2>Reading and hosting</h2><p>No account is required. Reading preferences (theme, font size and progress) stay in your browser until deleted. GitHub Pages, operated by GitHub, Inc. in the United States, hosts this website and may process IP addresses and access logs to provide and protect the service. No advertising or analytics cookies are installed.</p>
+{analyticsPrivacy.en.map(([heading,text])=><section><h2>{heading}</h2><p>{text}</p></section>)}
+<h2>Your choices and rights</h2><p>Use Privacy preferences to accept or reject analytics. Browser settings let you delete local preferences. Contact us to request access, correction or deletion of personal information you provide to us, such as an email, under Argentina's Law 25,326. Argentina's data protection authority is the AAIP.</p>
+<a href={Astro.params.policy==='privacy'?'/privacidad/':'/cookies/'} lang="es">Versión en español</a>
+</div></section></Base>

@@ -14,8 +14,11 @@
     "adsTxt": null
   },
   "analytics": {
-    "enabled": false,
-    "measurementId": null
+    "enabled": true,
+    "measurementId": null,
+    "provider": "cloudflare",
+    "token": "66da1e1b5fe34fc28bdfcad1629fdaa0",
+    "consentRequired": true
   },
   "searchConsoleVerification": null
 }

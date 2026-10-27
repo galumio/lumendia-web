@@ -1,3 +1,4 @@
+import {analyticsErrors} from '../src/lib/analytics-policy.mjs';
 import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
@@ -30,7 +31,7 @@ export function launchReport(){
   }
   if(b.premium?.url&&!/^https:\/\//.test(b.premium.url))errors.push(`${b.slug}: el enlace premium debe usar HTTPS.`);
  }
- if(config.ads.enabled||config.analytics.enabled)errors.push('Activación de rastreadores requiere revisión de privacidad y configuración documentada. Mantener desactivados en el primer despliegue.');
+ errors.push(...analyticsErrors(config));
  return {errors,included,excluded};
 }
 export const launchBlockers=()=>launchReport().errors;
