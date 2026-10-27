@@ -8,7 +8,7 @@ updateTheme();theme?.addEventListener('click',()=>{const mode=document.documentE
 const dialog=document.querySelector<HTMLDialogElement>('#privacy-dialog');
 document.querySelector('#privacy-settings')?.addEventListener('click',()=>dialog?.showModal());
 document.querySelector('#privacy-close')?.addEventListener('click',()=>dialog?.close());
-document.querySelector('#consent-reject')?.addEventListener('click',()=>{set('lumendia-consent','rejected');dialog?.close()});
+
 const norm=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 for(const form of document.querySelectorAll<HTMLElement>('[data-search]')){
  const input=form.querySelector<HTMLInputElement>('input');const select=form.querySelector<HTMLSelectElement>('select');
