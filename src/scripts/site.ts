@@ -6,7 +6,7 @@ const theme=document.querySelector<HTMLButtonElement>('#theme');
 function updateTheme(){theme?.setAttribute('aria-label',document.documentElement.dataset.theme==='dark'?(english?'Enable light mode':'Activar modo claro'):(english?'Enable dark mode':'Activar modo oscuro'))}
 updateTheme();theme?.addEventListener('click',()=>{const mode=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=mode;set('lumendia-theme',mode);updateTheme()});
 const dialog=document.querySelector<HTMLDialogElement>('#privacy-dialog');
-document.querySelector('#privacy-settings')?.addEventListener('click',()=>dialog?.showModal());
+for (const trigger of document.querySelectorAll('[data-privacy-open]')) trigger.addEventListener('click',()=>dialog?.showModal());
 document.querySelector('#privacy-close')?.addEventListener('click',()=>dialog?.close());
 
 const norm=(s:string)=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
