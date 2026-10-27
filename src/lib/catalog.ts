@@ -1,4 +1,5 @@
 import config from '../../site.config.json';
+import {featuredBookSlug,readingScope} from './editorial';
 export {config};
 export const preview = import.meta.env.DEV || process.env.LUMENDIA_PREVIEW === '1';
 const modules = import.meta.glob('../content/books/*.json', {eager:true,import:'default'});
@@ -18,8 +19,8 @@ export const publishable = (b:Book) => b.editorialStatus==='approved' && (b.heal
 // LUMENDIA_DRY_RUN: ensayo local de la salida de producción antes de las aprobaciones; publish-library.mjs nunca lo activa.
 export const dryRun = process.env.LUMENDIA_DRY_RUN === '1';
 export const available = books.filter(b=> preview || dryRun || publishable(b));
-export const featured = available.find(publishable) ?? available[0];
-export const categories = ['Salud y cuidados','Estudio y universidad','Educación y docentes','Seguridad e higiene','Medicina laboral','Primeros auxilios','Infografías','Tecnología cotidiana'];
+export const featured = available.find(b=>b.slug===featuredBookSlug&&publishable(b)) ?? available.find(b=>publishable(b)&&readingScope(b)==='complete'&&(b.language??'es')==='es');
+export const categories = ['Salud y cuidados','Estudio y universidad','Educación y docentes','Seguridad e higiene','Medicina laboral','Primeros auxilios','Infografías','Tecnología cotidiana'].filter(c=>available.some(b=>b.category===c));
 export const bookUrl = (b:Book) => `/libros/${b.slug}/`;
 export const readingOrder = (b:Book) => b.readingOrder ?? b.toc.map(c=>c.slug);
 export const resources = available.flatMap(book=>(book.resources??[]).map(resource=>({book,resource})));
