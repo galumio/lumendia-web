@@ -14,6 +14,20 @@ for(const en of [false,true])test(`Cloudflare opt-in and withdrawal ${en?'EN':'E
  await page.setViewportSize({width:390,height:844});
  const root='https://lumendia.com.ar/libros/'+(en?'ai-for-everyday-life':'ia-para-el-dia-a-dia')+'/';
  await page.goto(root);
+ await expect(page.locator('#privacy-dialog')).not.toBeVisible();
+ for (const width of [1440,390]) {
+  await page.setViewportSize({width,height:844});
+  const trigger=page.locator('.footer-grid #privacy-settings');
+  await expect(trigger).toBeVisible();
+  const box=await trigger.boundingBox();expect(box!.width).toBeGreaterThanOrEqual(44);expect(box!.height).toBeGreaterThanOrEqual(44);
+  expect(await trigger.evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(14);
+  await trigger.focus();await page.keyboard.press('Enter');
+  await expect(page.locator('#consent-state')).toHaveText(en?'No choice made':'Sin elección');
+  await page.locator('#privacy-close').click();await expect(trigger).toBeFocused();
+  await page.keyboard.press('Enter');await page.keyboard.press('Escape');
+  await expect(page.locator('#privacy-dialog')).not.toBeVisible();
+  expect(await page.evaluate(k=>localStorage.getItem(k),key)).toBeNull();expect(calls).toEqual([]);
+ }
  await expect(page.locator('script[data-cf-beacon]')).toHaveCount(0);expect(calls).toEqual([]);
  // Legacy consent must not authorize a different provider.
  await page.evaluate(()=>localStorage.setItem('lumendia-consent','accepted'));await page.reload();expect(calls).toEqual([]);
@@ -22,11 +36,17 @@ for(const en of [false,true])test(`Cloudflare opt-in and withdrawal ${en?'EN':'E
  expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
  await page.locator('#consent-reject').click();await page.reload();expect(calls).toEqual([]);
- await page.locator('#privacy-settings').click();await page.locator('#consent-accept').click();
+ await page.locator('#privacy-settings').click();
+ await expect(page.locator('#consent-state')).toHaveText(en?'Analytics rejected':'Medición rechazada');
+ await expect(page.locator('#consent-accept')).toHaveText(en?'Accept optional analytics':'Aceptar medición opcional');
+ await page.locator('#consent-accept').click();
  await expect.poll(()=>calls.length).toBe(1);
  await expect(page.locator('script[data-cf-beacon]')).toHaveCount(1);
  await expect(page.locator('script[data-cf-beacon]')).toHaveAttribute('data-cf-beacon',JSON.stringify({token:'66da1e1b5fe34fc28bdfcad1629fdaa0'}));
- await page.locator('#privacy-settings').click();await page.locator('#consent-accept').click();expect(calls.length).toBe(1);
+ await page.locator('#privacy-settings').click();
+ await expect(page.locator('#consent-state')).toHaveText(en?'Analytics accepted':'Medición aceptada');
+ await expect(page.locator('#consent-reject')).toHaveText(en?'Withdraw consent':'Retirar consentimiento');
+ await page.locator('#consent-accept').click();expect(calls.length).toBe(1);
  await page.getByRole('link',{name:en?'Start reading':'Empezar a leer'}).click();await expect.poll(()=>calls.length).toBe(2);
  await page.locator('#privacy-settings').click();
  await Promise.all([page.waitForEvent('load'),page.locator('#consent-reject').click()]);
@@ -35,6 +55,10 @@ for(const en of [false,true])test(`Cloudflare opt-in and withdrawal ${en?'EN':'E
  await page.goto(root);expect(calls.length).toBe(2);
  await page.locator('footer a[href="'+(en?'/en/privacy/':'/privacidad/')+'"]').click();
  await expect(page.locator('main')).toContainText('Cloudflare');await expect(page.locator('html')).toHaveAttribute('lang',en?'en':'es-AR');
+ await page.locator('main [data-privacy-open]').click();
+ await expect(page.locator('#consent-state')).toHaveText(en?'Analytics rejected':'Medición rechazada');
+ await expect(page.locator('#consent-reject')).toHaveText(en?'Reject analytics':'Rechazar medición');
+ await page.locator('#privacy-close').click();expect(calls.length).toBe(2);
 });
 test('No analytics on localhost, preview or when storage is unavailable',async({page,context})=>{
  await context.route('https://static.cloudflareinsights.com/**',()=>{throw Error('Unexpected beacon')});
