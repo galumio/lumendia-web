@@ -54,7 +54,7 @@ const english: Record<string,string> = {
   "Rechazar opcionales": "Reject optional services",
   "Aceptar opcionales": "Accept optional services",
   "Cerrar": "Close",
-  "Vista local de revisión · Contenido sanitario pendiente de aprobación editorial.": "Local review preview · Health content awaiting editorial approval.",
+  "Vista local de revisión · Contenido pendiente de aprobación editorial.": "Local review preview · Content awaiting editorial approval.",
   "*Estimación a 200 palabras por minuto sobre los textos web; el tiempo personal puede variar.": "*Estimated at 200 words per minute for the web text; your reading time may vary.",
   "Para tener a mano · Galumio Studio": "Keep it handy · Galumio Studio",
   "Venta externa en preparación": "External sales coming soon",

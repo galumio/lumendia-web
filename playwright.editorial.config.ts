@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests',testMatch:'editorial-preview.spec.ts',workers:1,use:{baseURL:'http://127.0.0.1:4323',headless:true,channel:process.platform==='win32'?'msedge':undefined},webServer:{command:'node scripts/serve.mjs .preview 4323',url:'http://127.0.0.1:4323',reuseExistingServer:true},reporter:[['list'],['json',{outputFile:'.local/editorial-browser-results.json'}]]});

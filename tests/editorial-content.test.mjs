@@ -18,3 +18,7 @@ test('Mantiene formato y tema separados, con rutas estables',()=>{
  assert.deepEqual(editorialIndexes([entry()]),['/guias/']);
  assert.equal(topicGroups([entry()])[0].topic,'IA');
 });
+test('Admite atribución institucional sin convertirla en una persona',()=>{
+ assert.deepEqual(validateEditorialEntry({...entry(),author:{name:'Entidad de prueba',type:'Organization'}}),[]);
+ assert.ok(validateEditorialEntry({...entry(),author:{name:'Prueba',type:'Script'}}).includes('Tipo de autor no admitido'));
+});
