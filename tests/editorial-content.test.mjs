@@ -22,3 +22,9 @@ test('Admite atribución institucional sin convertirla en una persona',()=>{
  assert.deepEqual(validateEditorialEntry({...entry(),author:{name:'Entidad de prueba',type:'Organization'}}),[]);
  assert.ok(validateEditorialEntry({...entry(),author:{name:'Prueba',type:'Script'}}).includes('Tipo de autor no admitido'));
 });
+test('Valida identidad de autor y sello editorial sin depender de una obra real',()=>{
+ const person={name:'Autor de prueba',type:'Person',slug:'autor-prueba'};
+ assert.deepEqual(validateEditorialEntry({...entry(),author:person,publisher:{name:'Sello de prueba',type:'Organization'}}),[]);
+ assert.ok(validateEditorialEntry({...entry(),author:{...person,slug:'../private'}}).length);
+ assert.ok(validateEditorialEntry({...entry(),publisher:{name:'Sello de prueba',type:'Person'}}).length);
+});
