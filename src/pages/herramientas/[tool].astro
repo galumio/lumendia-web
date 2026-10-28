@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import {promptTasks,promptStyles,promptFormats} from '../../lib/prompt-generator.mjs';
+export function getStaticPaths(){return [{params:{tool:'generador-de-prompts'}}];}
+---
+<Base title="Generador gratuito de pedidos para IA" description="Prepará un pedido claro con una plantilla local. Sin registro ni envío de tus textos." disableMeasurement={true} image="/favicon.svg" schema={{'@type':'WebApplication',name:'Generador gratuito de pedidos para IA',url:'https://lumendia.com.ar/herramientas/generador-de-prompts/',applicationCategory:'UtilitiesApplication',operatingSystem:'Navegador web',inLanguage:'es-AR',isAccessibleForFree:true}}>
+<section class="container section prompt-tool">
+<a href="/">← Inicio</a><p class="eyebrow">Herramienta gratuita · Sin registro</p>
+<h1>Prepará tu pedido para la IA</h1>
+<p class="section-intro">Contá qué necesitás y obtené un pedido listo para revisar y copiar. Es una <strong>plantilla de texto</strong>, no una respuesta generada por inteligencia artificial.</p>
+<details class="prompt-help"><summary>Cómo funciona</summary><ol><li>Elegí una tarea y completá los campos. Podés empezar con un ejemplo ficticio.</li><li>Pulsá «Preparar mi pedido». La herramienta combina tus datos con una plantilla local.</li><li>Revisá y editá el resultado. Copialo si querés usarlo en una herramienta de IA.</li></ol></details>
+<aside class="editorial-note" aria-label="Privacidad de la herramienta"><p>Todo se prepara en este navegador. No enviamos ni guardamos lo que escribís; en esta herramienta no se carga analítica. Copiar solo escribe en el portapapeles cuando lo pedís.</p><p>Usá ejemplos ficticios. No incluyas contraseñas, documentos, datos bancarios ni información privada de otras personas. Si después pegás el pedido en un servicio de IA, se aplicará la política de ese servicio.</p></aside>
+<p id="prompt-unavailable">Para preparar una plantilla necesitás JavaScript. También podés consultar <a href="/tutoriales/como-escribir-un-buen-pedido-a-la-ia/">cómo escribir un buen pedido a la IA</a>, sin activar JavaScript.</p>
+<form id="prompt-form" hidden autocomplete="off">
+<button class="button secondary" type="button" id="prompt-example">Ver un ejemplo</button><p>Completa los campos con una situación ficticia y reemplaza lo que hayas escrito.</p>
+<h2>1. Elegí qué querés hacer</h2>
+<label for="prompt-task">Tarea</label><select id="prompt-task" required aria-describedby="task-hint"><option value="">Elegí una tarea</option>{promptTasks.map(task=><option value={task.id}>{task.label}</option>)}</select><p id="task-hint">Elegí una tarea para ver un ejemplo.</p>
+<h2>2. Contá lo necesario</h2>
+<label for="prompt-goal">¿Qué querés lograr? (obligatorio)</label><textarea id="prompt-goal" rows="3" required maxlength="240" aria-describedby="goal-count"></textarea><p id="goal-count">0 de 240 caracteres</p>
+<label for="prompt-context">Detalles que ayudan (opcional)</label><p id="context-hint">Por ejemplo: a quién va dirigido, cuánto tiempo tenés o qué materiales podés usar. Para explicar un aviso, pegá aquí un fragmento sin datos personales.</p><textarea id="prompt-context" rows="4" maxlength="1000" aria-describedby="context-hint context-count"></textarea><p id="context-count">0 de 1000 caracteres</p>
+<h2>3. Elegí cómo recibir la respuesta</h2><div class="prompt-options"><label for="prompt-style">Estilo<select id="prompt-style">{Object.entries(promptStyles).map(([value,label])=><option value={value}>{label}</option>)}</select></label><label for="prompt-format">Formato<select id="prompt-format">{Object.entries(promptFormats).map(([value,label])=><option value={value}>{label}</option>)}</select></label></div>
+<p id="prompt-error" role="alert" tabindex="-1"></p><div class="actions"><button class="button" type="submit">Preparar mi pedido</button><button class="button secondary" type="button" id="prompt-clear">Borrar todo</button></div>
+</form>
+<section id="prompt-result" hidden aria-labelledby="result-title"><h2 id="result-title">4. Revisá y copiá tu pedido</h2><p id="prompt-check"></p><label for="prompt-output">Tu plantilla (podés editarla)</label><textarea id="prompt-output" rows="12" maxlength="4000" autocomplete="off" spellcheck="false"></textarea><div class="actions"><button class="button" type="button" id="prompt-copy" disabled>Copiar pedido</button></div><p>No se envía nada al generar o copiar. Abrir una herramienta de IA y pegar el pedido es una decisión tuya.</p></section>
+<p id="prompt-status" role="status" aria-live="polite"></p>
+<nav aria-label="Ayuda para usar el pedido"><h2>Para dar el siguiente paso</h2><ul><li><a href="/tutoriales/como-escribir-un-buen-pedido-a-la-ia/">Cómo escribir un buen pedido</a></li><li><a href="/tutoriales/como-comprobar-una-respuesta-de-la-ia/">Cómo comprobar la respuesta</a></li></ul></nav>
+</section><script src="../../scripts/prompt-generator.ts"></script>
+</Base>
+<style>.prompt-tool{max-width:850px}.prompt-tool h1{font-size:clamp(2.2rem,5vw,3.5rem)}.prompt-tool h2{font-size:1.7rem;margin-top:32px}.prompt-tool label{display:block;font-weight:700}.prompt-tool textarea{display:block;box-sizing:border-box;width:100%;min-height:100px;padding:14px;border:1px solid var(--muted);border-radius:5px;background:var(--paper);color:var(--ink);font:18px/1.6 var(--sans);resize:vertical;margin-top:8px}.prompt-tool textarea:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.prompt-tool select{border-color:var(--muted)}.prompt-tool .editorial-note{font-size:16px}.prompt-options{display:grid;grid-template-columns:1fr 1fr;gap:20px}.prompt-tool nav a{display:inline-block;min-height:44px;padding-block:10px}#prompt-error{font-weight:bold}#prompt-result{border-top:2px solid var(--line)}@media(max-width:600px){.prompt-options{grid-template-columns:1fr}}</style>

@@ -1,5 +1,7 @@
 export type Language = "es" | "en";
 const english: Record<string,string> = {
+"Guías":"Guides (Spanish)","Tutoriales":"Tutorials (Spanish)","Generador de pedidos":"Prompt builder (Spanish)",
+"Tips de IA":"AI tips (Spanish)",
 "Las preferencias de lectura se guardan en este navegador. La publicidad está desactivada. Cloudflare Web Analytics solo se carga en producción si aceptás la medición opcional.":"Reading preferences stay in this browser. Advertising is disabled. Cloudflare Web Analytics only loads in production if you accept optional analytics.",
 "Cloudflare mide visitas, páginas vistas, países, referentes y rendimiento sin cookies de analítica. Podés rechazar o retirar tu consentimiento aquí. Al retirarlo se recarga la página y se impiden nuevas cargas; las mediciones ya enviadas no pueden retirarse y un envío en curso podría completarse.":"Cloudflare measures visits, page views, countries, referrers and performance without analytics cookies. You can reject or withdraw consent here. Withdrawal reloads the page and prevents further loading; measurements already sent cannot be withdrawn and an in-flight request may complete.",
 "Aceptar medición opcional":"Accept optional analytics",

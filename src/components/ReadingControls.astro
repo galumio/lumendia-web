@@ -1,0 +1,6 @@
+---
+const {language='es'}=Astro.props;
+const en=language==='en';
+---
+<div class="ux-reading-controls" data-ux-reading hidden role="group" aria-label={en?'Reading display':'Opciones de lectura'}><button type="button" data-ux-smaller>{en?'Smaller text':'Letra más pequeña'}</button><button type="button" data-ux-larger>{en?'Larger text':'Letra más grande'}</button><button type="button" data-ux-contrast aria-pressed="false">{en?'High contrast':'Alto contraste'}</button><a href="#reading-index">{en?'Go to contents':'Ir al índice'}</a><span data-ux-size role="status"></span></div>
+<script src="../scripts/ux-reader.ts"></script>
