@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import {availableAuthors,authorUrl} from '../../lib/editorial-authors';
+import {editorialEntries} from '../../lib/editorial-catalog';
+import {config,minutes} from '../../lib/catalog';
+export function getStaticPaths(){return availableAuthors.map(author=>({params:{slug:author.slug},props:{author}}));}
+const {author}=Astro.props;
+const stories=editorialEntries.filter(e=>e.author?.slug===author.slug);
+const schema={'@type':'ProfilePage',mainEntity:{'@type':'Person','@id':new URL(authorUrl(author.slug),config.siteUrl).href,name:author.name,description:author.description}};
+---
+<Base title={author.name} description={author.description} schema={schema}><section class="container section"><a href="/relatos/">← Relatos gratuitos</a><h1>{author.name}</h1><p>{author.description}</p><p>Sello editorial: Galumio Studio.</p><h2>Relatos completos gratuitos</h2>{stories.map(e=><div class="editorial-note"><h3><a href={e.url}>{e.title}</a></h3><p>{e.description}</p><p>Lectura completa gratuita · {minutes(e.words)} minutos aproximadamente</p>{e.publicationPending&&<p>Contenido aprobado · Publicación pendiente</p>}</div>)}</section></Base>
