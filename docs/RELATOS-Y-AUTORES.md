@@ -1,8 +1,8 @@
-# Relatos y autores: preparación local
+# Relatos y autores: retirada de la primera obra
 
-La obra aprobada `src/content/editorial/el-ultimo-pasajero.md` conserva exactamente 3.151 palabras y SHA-256 `2425b4e91157f7c0f61e2b7cdea14907e3678bd41d93776580f7ca2d3e179927`.
+«El último pasajero» fue retirado por decisión editorial del autor. Su Markdown y registro ya no pertenecen al contenido versionable activo. El manuscrito exacto de 3.151 palabras y los respaldos se conservan en el área privada del responsable. No se sustituye la obra por otro texto.
 
-Publicación autorizada para el 2026-10-28, fecha real de preparación del lanzamiento en Argentina. `publishedAt: "2026-10-28"`; `reviewedAt: null`. Confirmar la fecha contra el despliegue y corregirla antes de continuar si cambia el día. El cargador incluye relato, índice y perfil en biblioteca desde esa fecha; en `.preview` conserva noindex y medición deshabilitada. No se modificó el despliegue.
+El cargador existente excluye las entradas ausentes; el índice `/relatos/`, el perfil `/autores/gael-beltra/` y sus enlaces desaparecen porque no tienen obras públicas. GitHub Pages devuelve 404 para esas rutas después de reemplazar el artefacto. No se modifican workflows, consentimiento ni publicaciones anteriores.
 
 El contrato admite `author.slug` opcional para personas y `publisher` opcional de tipo Organization. Los registros anteriores siguen siendo válidos. `editorial-authors.ts` valida la identidad y genera perfiles únicamente cuando tienen entradas seleccionadas. Gael Beltra se identifica como seudónimo literario, sin biografía ni bibliografía comercial inventadas.
 
@@ -10,18 +10,6 @@ El lector usa ShortStory y el perfil ProfilePage/Person, con identificador de au
 
 El relato no tiene capítulos: el control de índice conduce a la navegación del relato, que ofrece el índice de la colección y el inicio del texto. No se insertaron encabezados en el original. Se conserva el control de tamaño de letra y contraste. No hay bloque vacío de fuentes ni pedidos para copiar.
 
-Vista local:
+La arquitectura sigue disponible para futuras obras aprobadas. No volver a incorporar este manuscrito ni asignarle una nueva fecha sin autorización editorial expresa. Nunca publicar `.local`, `.preview` ni los respaldos.
 
-    npm run build:preview
-    node scripts/serve.mjs .preview 4335
-
-Rutas: `/relatos/`, `/relatos/el-ultimo-pasajero/`, `/autores/gael-beltra/`.
-
-Pruebas específicas:
-
-    node --test tests/approved-story.test.mjs
-    npx playwright test --config=playwright.stories.config.ts
-
-El worktree necesita los JSON de libros y los recursos autorizados locales para recompilar la biblioteca completa; siguen excluidos de Git. En esta preparación se copiaron los insumos del checkout original, sin alterarlo ni copiar sus tips pendientes. Nunca publicar `.preview` ni `.local`.
-
-Publicar únicamente con CI aprobado y revisión del artefacto completo mediante el flujo habitual. Los originales y respaldos privados nunca se incluyen. Los doce tips quedan fuera de este lanzamiento.
+Validación de retirada: `node --test tests/withdrawn-story.test.mjs` y `playwright test` (incluye `story-withdrawal.spec.ts`). Las compilaciones y el artefacto local se publican mediante el procedimiento habitual.

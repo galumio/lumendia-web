@@ -27,6 +27,6 @@ test('Guía publicada: catálogo, SEO, fuentes, móvil, teclado y cinco copias e
  for(const related of entry.related){const url=related.type==='book'?`/libros/${related.slug}/`:`/recursos/${related.slug}.pdf`;expect((await request.get(url)).status()).toBe(200);}
  await page.goto('/guias/');await expect(page.getByRole('link',{name:entry.title,exact:true})).toBeVisible();
  expect(await (await request.get('/sitemap.xml')).text()).toContain('https://lumendia.com.ar'+path);
- expect((await request.get('/relatos/')).status()).toBe(200);
+ expect((await request.get('/relatos/')).status()).toBe(404);
  for(const url of [`/.local/editorial/${entry.slug}.md`,`/src/content/editorial/${entry.slug}.json`,`/src/content/editorial/${entry.slug}.md`,'/.local/editorial/backups/','/tips/','/temas/'])expect((await request.get(url)).status()).toBe(404);
 });
