@@ -1,0 +1,60 @@
+{
+  "slug": "como-escribir-un-buen-pedido-a-la-ia",
+  "title": "Cómo escribir un buen pedido a la IA",
+  "description": "Transformá una idea vaga en un pedido claro: contexto, límites, revisión y corrección de una propuesta para un intercambio de libros.",
+  "format": "tutorial",
+  "language": "es",
+  "topics": [
+    "Inteligencia artificial",
+    "Tecnología cotidiana"
+  ],
+  "audiences": [
+    "Personas adultas principiantes"
+  ],
+  "scope": "complete",
+  "author": {
+    "name": "Lumendia · Galumio Studio",
+    "type": "Organization"
+  },
+  "publishedAt": "2026-10-28",
+  "reviewedAt": null,
+  "sources": [
+    {
+      "title": "Google: aprender con IA generativa y escribir peticiones específicas",
+      "url": "https://support.google.com/gemini/answer/15216790?hl=es-ES"
+    },
+    {
+      "title": "Google: información sobre las respuestas de Gemini",
+      "url": "https://support.google.com/gemini/answer/16279220?hl=es"
+    },
+    {
+      "title": "Google: Centro de Privacidad de las Aplicaciones de Gemini",
+      "url": "https://support.google.com/gemini/answer/13594961?hl=es"
+    }
+  ],
+  "related": [
+    {
+      "type": "guide",
+      "slug": "empezar-con-la-ia-cinco-tareas-sencillas"
+    },
+    {
+      "type": "tutorial",
+      "slug": "como-comprobar-una-respuesta-de-la-ia"
+    },
+    {
+      "type": "tutorial",
+      "slug": "tu-primera-conversacion-con-una-ia"
+    },
+    {
+      "type": "book",
+      "slug": "ia-para-el-dia-a-dia"
+    }
+  ],
+  "bodyPath": "como-escribir-un-buen-pedido-a-la-ia.md",
+  "status": "approved",
+  "rights": {
+    "kind": "original",
+    "evidence": "Publicación íntegra y atribución Lumendia · Galumio Studio autorizadas por el responsable el 2026-10-28. Versión corregida de 770 palabras; SHA-256 6392b44224fba47489236ea9c774a07c434d37fe0a11016190c3dd64b7dabfba."
+  },
+  "healthContent": false
+}

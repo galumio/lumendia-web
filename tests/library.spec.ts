@@ -20,7 +20,7 @@ test('Alcance editorial, destacado manual y estructura sin páginas vacías',asy
   const original=book.pages.find((p:{slug:string})=>p.slug==='plan-de-7-dias').html;
   expect(await page.locator('.reader-content').evaluate((e,html)=>{const d=document.createElement('div');d.innerHTML=html;return e.innerHTML===d.innerHTML},original)).toBe(true);
  }
- for(const path of ['/tutoriales/','/tips/','/relatos/','/temas/'])expect((await request.get(path)).status()).toBe(404);
+ for(const path of ['/tips/','/relatos/','/temas/'])expect((await request.get(path)).status()).toBe(404);
 });
 
 test('Inicio, móvil y accesibilidad',async({page})=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));for(const width of [1440,768,390]){await page.setViewportSize({width,height:900});await page.goto('/');await expect(page.locator('h1')).toContainText('te lleva');for(const title of ['Cómo estudiar para un final','IA para docentes'])await expect(page.locator('.book-card',{hasText:title})).toHaveCount(1);await noOverflow(page);await page.screenshot({path:`.local/home-${width}.png`,fullPage:true});await axe(page)}await expect(page.locator('footer')).toContainText('Galumio Studio');expect(errors).toEqual([])});
