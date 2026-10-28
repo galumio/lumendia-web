@@ -30,7 +30,7 @@ test('Guía aprobada: lectura, navegación, móvil, teclado y privacidad',async(
  await expect(page.locator('a[href="/recursos/hoja-de-referencia-rapida-ia-para-docentes.pdf"]')).toBeVisible();
  await page.goto('/guias/');await expect(page.locator('h1')).toHaveText('Guías gratuitas');
  expect((await request.get('/tutoriales/')).status()).toBe(200);
- for(const url of ['/tips/','/relatos/','/temas/','/.local/editorial/'+slug+'.md'])expect((await request.get(url)).status()).toBe(404);
+ for(const url of ['/tips/','/temas/','/.local/editorial/'+slug+'.md'])expect((await request.get(url)).status()).toBe(404);
 });
 test('La salida pública incluye solo la guía aprobada, sin originales ni respaldos',()=>{
  expect(existsSync(`dist-library/guias/${slug}/index.html`)).toBe(true);

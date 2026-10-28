@@ -1,4 +1,6 @@
 ---
+import {authorUrl} from '../../lib/editorial-authors';
+import {minutes} from '../../lib/catalog';
 import Base from '../../layouts/Base.astro';
 import {editorialEntries,sectionTitles} from '../../lib/editorial-catalog';
 import {editorialIndexes} from '../../lib/editorial-content.mjs';
@@ -6,5 +8,7 @@ import {scopeLabels} from '../../lib/editorial';
 export function getStaticPaths(){return editorialIndexes(editorialEntries).map(url=>({params:{section:url.split('/')[1]}}));}
 const section=Astro.params.section!;
 const entries=editorialEntries.filter(e=>e.url.split('/')[1]===section);
+const title=section==='relatos'?'Relatos gratuitos':`${sectionTitles[section]} gratuitas`;
+const description=section==='relatos'?'Relatos originales de ficción para leer completos y gratis en Lumendia.':`Lecturas originales de Lumendia: ${sectionTitles[section].toLowerCase()} para aprender y practicar a tu ritmo.`;
 ---
-<Base title={`${sectionTitles[section]} gratuitas`} description={`Lecturas originales de Lumendia: ${sectionTitles[section].toLowerCase()} para aprender y practicar a tu ritmo.`} image="/favicon.svg"><section class="container section"><a href="/biblioteca/">← Biblioteca</a><h1>{sectionTitles[section]} gratuitas</h1>{entries.map(e=><div class="editorial-note"><p>{e.privateDraft?'Borrador privado para revisión local':scopeLabels.es[e.scope]}</p><h2><a href={e.url}>{e.title}</a></h2><p>{e.description}</p></div>)}</section></Base>
+<Base title={title} description={description} image="/favicon.svg"><section class="container section"><a href="/biblioteca/">← Biblioteca</a><h1>{title}</h1>{entries.map(e=><div class="editorial-note"><p>{e.privateDraft?'Borrador privado para revisión local':scopeLabels.es[e.scope]}</p><h2><a href={e.url}>{e.title}</a></h2>{e.format==='story'&&<p>{e.author?.slug?<a href={authorUrl(e.author.slug)}>{e.author.name}</a>:e.author?.name} · {e.topics.join(' · ')} · {minutes(e.words)} minutos aproximadamente</p>}<p>{e.description}</p></div>)}</section></Base>

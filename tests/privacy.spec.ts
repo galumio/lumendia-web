@@ -8,7 +8,7 @@ for(const en of [false,true])test(`Cloudflare opt-in and withdrawal ${en?'EN':'E
  await context.route('**/*',async route=>{
   const u=new URL(route.request().url());
   if(u.href===beacon){calls.push(u.href);await route.fulfill({contentType:'application/javascript',body:'window.__beaconLoads=(window.__beaconLoads||0)+1;'});return;}
-  if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:'http://127.0.0.1:4321'+u.pathname+u.search});await route.fulfill({response:r});return;}
+  if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:(process.env.LUMENDIA_PRIVACY_TEST_ORIGIN||'http://127.0.0.1:4321')+u.pathname+u.search});await route.fulfill({response:r});return;}
   throw Error('Unexpected external request: '+u.href);
  });
  await page.setViewportSize({width:390,height:844});
@@ -74,7 +74,7 @@ test('No analytics on localhost, preview or when storage is unavailable',async({
 });
 test('Storage denied fails closed and cross-tab withdrawal reloads',async({browser})=>{
  const context=await browser.newContext();let calls=0;
- await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.href===beacon){calls++;await route.fulfill({contentType:'application/javascript',body:''});return;}if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:'http://127.0.0.1:4321'+u.pathname});await route.fulfill({response:r});return;}throw Error(u.href)});
+ await context.route('**/*',async route=>{const u=new URL(route.request().url());if(u.href===beacon){calls++;await route.fulfill({contentType:'application/javascript',body:''});return;}if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:(process.env.LUMENDIA_PRIVACY_TEST_ORIGIN||'http://127.0.0.1:4321')+u.pathname});await route.fulfill({response:r});return;}throw Error(u.href)});
  const page=await context.newPage();await page.goto('https://lumendia.com.ar/');
  await page.evaluate(()=>{Storage.prototype.setItem=()=>{throw new Error('denied')}});
  await page.locator('#privacy-settings').click();await page.locator('#consent-accept').click();await expect(page.locator('#consent-status')).not.toBeEmpty();expect(calls).toBe(0);

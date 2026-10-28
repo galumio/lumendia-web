@@ -21,6 +21,8 @@ export function validateEditorialEntry(entry) {
  if(!Array.isArray(entry.related)||entry.related.some(r=>!['book','guide','tutorial','tip','story','resource'].includes(r.type)||!slugPattern.test(r.slug??'')))errors.push('Relaciones inválidas');
  if(typeof entry.healthContent!=='boolean')errors.push('Declarar contenido sanitario');
  if(entry.author?.type!==undefined&&!['Person','Organization'].includes(entry.author.type))errors.push('Tipo de autor no admitido');
+ if(entry.author?.slug!==undefined&&(!slugPattern.test(entry.author.slug)||entry.author.type!=='Person'))errors.push('Identificador de autor inválido');
+ if(entry.publisher!==undefined&&(!text(entry.publisher?.name)||entry.publisher.type!=='Organization'))errors.push('Sello editorial inválido');
  if(entry.status==='approved'){
   if(!text(entry.author?.name))errors.push('Autor real requerido');
   if(!['original','authorized'].includes(entry.rights?.kind)||!text(entry.rights?.evidence))errors.push('Derechos sin acreditar');

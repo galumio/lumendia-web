@@ -2,7 +2,8 @@ import {loadEditorial} from './editorial-loader.mjs';
 import {available,preview,bookUrl,resources} from './catalog';
 export interface EditorialEntry {
  slug:string;title:string;description:string;format:string;language:'es'|'en';scope:'complete'|'additional-paid'|'sample';
- topics:string[];audiences:string[];author:{name:string;type?:'Person'|'Organization'}|null;publishedAt:string|null;reviewedAt:string|null;
+ topics:string[];audiences:string[];author:{name:string;type?:'Person'|'Organization';slug?:string}|null;publishedAt:string|null;reviewedAt:string|null;
+ publisher?:{name:string;type:'Organization'};
  sources:{title:string;url:string}[];relatedLinks:{title:string;url:string}[];url:string;privateDraft:boolean;publicationPending?:boolean;
  html:string;words:number;toc:{id:string;title:string}[];
 }
