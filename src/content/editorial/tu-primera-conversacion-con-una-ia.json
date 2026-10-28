@@ -1,0 +1,60 @@
+{
+  "slug": "tu-primera-conversacion-con-una-ia",
+  "title": "Tu primera conversación con una IA",
+  "description": "Practicá un primer intercambio por texto: enviar un pedido, revisar una presentación y pedir una modificación sin compartir datos personales.",
+  "format": "tutorial",
+  "language": "es",
+  "topics": [
+    "Inteligencia artificial",
+    "Tecnología cotidiana"
+  ],
+  "audiences": [
+    "Personas adultas principiantes"
+  ],
+  "scope": "complete",
+  "author": {
+    "name": "Lumendia · Galumio Studio",
+    "type": "Organization"
+  },
+  "publishedAt": "2026-10-28",
+  "reviewedAt": null,
+  "sources": [
+    {
+      "title": "Google: requisitos de acceso a Gemini",
+      "url": "https://support.google.com/gemini/answer/13278668?hl=es"
+    },
+    {
+      "title": "Google: Centro de Privacidad de las Aplicaciones de Gemini",
+      "url": "https://support.google.com/gemini/answer/13594961?hl=es"
+    },
+    {
+      "title": "Gemini: sitio oficial",
+      "url": "https://gemini.google.com/"
+    }
+  ],
+  "related": [
+    {
+      "type": "guide",
+      "slug": "empezar-con-la-ia-cinco-tareas-sencillas"
+    },
+    {
+      "type": "tutorial",
+      "slug": "como-escribir-un-buen-pedido-a-la-ia"
+    },
+    {
+      "type": "tutorial",
+      "slug": "como-comprobar-una-respuesta-de-la-ia"
+    },
+    {
+      "type": "book",
+      "slug": "ia-cotidiana-para-adultos-mayores"
+    }
+  ],
+  "bodyPath": "tu-primera-conversacion-con-una-ia.md",
+  "status": "approved",
+  "rights": {
+    "kind": "original",
+    "evidence": "Publicación íntegra y atribución Lumendia · Galumio Studio autorizadas por el responsable el 2026-10-28. Versión corregida de 855 palabras; SHA-256 7988036360477243d7313668cf506b8f7dc379b45e3ca80717a85d09667fb811."
+  },
+  "healthContent": false
+}

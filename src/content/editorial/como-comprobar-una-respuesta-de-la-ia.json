@@ -1,0 +1,56 @@
+{
+  "slug": "como-comprobar-una-respuesta-de-la-ia",
+  "title": "Cómo comprobar una respuesta de la IA",
+  "description": "Aprendé a separar afirmaciones, contrastarlas con un aviso y consultar fuentes antes de compartir una respuesta de la IA.",
+  "format": "tutorial",
+  "language": "es",
+  "topics": [
+    "Inteligencia artificial",
+    "Tecnología cotidiana"
+  ],
+  "audiences": [
+    "Personas adultas principiantes"
+  ],
+  "scope": "complete",
+  "author": {
+    "name": "Lumendia · Galumio Studio",
+    "type": "Organization"
+  },
+  "publishedAt": "2026-10-28",
+  "reviewedAt": null,
+  "sources": [
+    {
+      "title": "Google: información sobre las respuestas de Gemini",
+      "url": "https://support.google.com/gemini/answer/16279220?hl=es"
+    },
+    {
+      "title": "Google: Centro de Privacidad de las Aplicaciones de Gemini",
+      "url": "https://support.google.com/gemini/answer/13594961?hl=es"
+    }
+  ],
+  "related": [
+    {
+      "type": "guide",
+      "slug": "empezar-con-la-ia-cinco-tareas-sencillas"
+    },
+    {
+      "type": "tutorial",
+      "slug": "como-escribir-un-buen-pedido-a-la-ia"
+    },
+    {
+      "type": "tutorial",
+      "slug": "tu-primera-conversacion-con-una-ia"
+    },
+    {
+      "type": "book",
+      "slug": "ia-para-el-dia-a-dia"
+    }
+  ],
+  "bodyPath": "como-comprobar-una-respuesta-de-la-ia.md",
+  "status": "approved",
+  "rights": {
+    "kind": "original",
+    "evidence": "Publicación íntegra y atribución Lumendia · Galumio Studio autorizadas por el responsable el 2026-10-28. Versión corregida de 836 palabras; SHA-256 bce059e16501cda2982d3bcea4556b781f883508e9aad8291bd6d1827f5c9ed7."
+  },
+  "healthContent": false
+}
