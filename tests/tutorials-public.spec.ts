@@ -30,7 +30,7 @@ test(entry.title+': catálogo, SEO, fuentes, móvil, teclado y copias exactas',a
  for(const related of entry.related){const url=related.type==='book'?`/libros/${related.slug}/`:`/${related.type==='guide'?'guias':'tutoriales'}/${related.slug}/`;expect((await request.get(url)).status()).toBe(200);}
  await page.goto('/tutoriales/');await expect(page.getByRole('link',{name:entry.title,exact:true})).toBeVisible();
  expect(await (await request.get('/sitemap.xml')).text()).toContain('https://lumendia.com.ar'+path);
- expect((await request.get('/relatos/')).status()).toBe(404);
+ expect((await request.get('/relatos/')).status()).toBe(200);
  for(const url of [`/.local/editorial/${entry.slug}.md`,`/src/content/editorial/${entry.slug}.json`,`/src/content/editorial/${entry.slug}.md`,'/.local/editorial/backups/','/tutoriales/como-utilizar-la-voz-para-hablar-con-la-ia/','/tips/','/temas/'])expect((await request.get(url)).status()).toBe(404);
 });
 
