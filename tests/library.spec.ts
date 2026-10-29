@@ -20,7 +20,7 @@ test('Alcance editorial, destacado manual y estructura sin páginas vacías',asy
   const original=book.pages.find((p:{slug:string})=>p.slug==='plan-de-7-dias').html;
   expect(await page.locator('.reader-content').evaluate((e,html)=>{const d=document.createElement('div');d.innerHTML=html;return e.innerHTML===d.innerHTML},original)).toBe(true);
  }
- expect((await request.get('/relatos/')).status()).toBe(404);
+ expect((await request.get('/relatos/')).status()).toBe(200);
  for(const path of ['/tips/','/temas/'])expect((await request.get(path)).status()).toBe(404);
 });
 

@@ -1,0 +1,35 @@
+{
+  "topics": [
+    "Suspenso psicológico",
+    "Misterio familiar"
+  ],
+  "related": [],
+  "status": "approved",
+  "healthContent": false,
+  "slug": "la-habitacion-que-no-figuraba",
+  "title": "La habitación que no figuraba",
+  "language": "es",
+  "format": "story",
+  "rights": {
+    "kind": "original",
+    "evidence": "Documento definitivo aprobado por el responsable. SHA-256 del Word: 7dda0f6d6d63ef2cd379884e031162bd554bbaa1e292a86bd5543e2911181ee1. Publicación íntegra autorizada por el responsable el 2026-10-29, tras aprobar las vistas de escritorio y móvil."
+  },
+  "sources": [],
+  "reviewedAt": null,
+  "description": "Un relato completo de suspenso psicológico y misterio familiar, de Gael Beltra.",
+  "author": {
+    "type": "Person",
+    "name": "Gael Beltra",
+    "slug": "gael-beltra"
+  },
+  "audiences": [
+    "Personas adultas"
+  ],
+  "scope": "complete",
+  "publishedAt": "2026-10-29",
+  "publisher": {
+    "name": "Galumio Studio",
+    "type": "Organization"
+  },
+  "bodyPath": "la-habitacion-que-no-figuraba.md"
+}
