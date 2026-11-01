@@ -1,0 +1,14 @@
+EXCEPCIÓN ACOTADA DE VERIFICACIÓN EXTERNA — LANZAMIENTO V2.1
+
+El responsable autorizó expresamente el 1 de noviembre de 2026 aceptar la verificación humana previa y la aprobación editorial de estos dos artículos oficiales:
+
+https://consumidor.gov/su-dinero/como-hacer-un-presupuesto
+https://consumidor.ftc.gov/articulos/los-estafadores-crean-falsas-emergencias-para-robarle-su-dinero
+
+Resultado automatizado de esta ejecución: HTTP 403 en ambas URL, sin sustitución ni redirección a páginas de inicio. Se registra como limitación de acceso del comprobador automatizado. La evidencia humana previa fue declarada por el responsable y NO se presenta como HTTP 200 obtenido hoy.
+
+Alcance: exclusivamente estas dos URL exactas y su respuesta automatizada 403 durante este lanzamiento. No cubre otros destinos, redirecciones, cambios de contenido ni otros errores. No se alteran las referencias ni sus rótulos en español.
+
+Los demás enlaces siguen sujetos a verificación. Permanecen obligatorias las pruebas de integridad de los doce textos, quince prompts, cuatro grupos, compilación, navegador, accesibilidad, privacidad, seguridad, exclusión de archivos privados y comprobación final de las trece páginas en producción. Ninguna de esas pruebas se desactiva ni se convierte en opcional.
+
+La excepción se documenta en el PR y en el informe local de lanzamiento. No habilita por sí sola un merge o despliegue: se exige CI aprobado para el commit exacto y ausencia de nuevos bloqueos.

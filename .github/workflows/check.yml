@@ -17,6 +17,7 @@ jobs:
       - run: npm run check
       - run: node --test tests/*.test.mjs
       - run: npm run build
+      - run: node scripts/verify-tips-output.mjs dist
       - run: npm test
       - run: npm run audit:repository
       - run: npm audit --audit-level=high

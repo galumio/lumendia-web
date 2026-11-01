@@ -1,0 +1,52 @@
+{
+  "slug": "aprender-algo-nuevo-paso-a-paso",
+  "title": "APRENDÉ UNA HABILIDAD CON EJERCICIOS Y DEVOLUCIONES PASO A PASO",
+  "description": "Dividí un tema en pequeñas prácticas y comprobá lo aprendido antes de avanzar.",
+  "format": "tip",
+  "language": "es",
+  "topics": [
+    "Aprendizaje",
+    "Inteligencia artificial"
+  ],
+  "audiences": [
+    "Personas adultas principiantes"
+  ],
+  "scope": "complete",
+  "author": {
+    "name": "Lumendia · Galumio Studio",
+    "type": "Organization"
+  },
+  "publishedAt": "2026-11-01",
+  "reviewedAt": null,
+  "sources": [
+    {
+      "title": "OpenAI: cómo formular y revisar pedidos (en inglés)",
+      "url": "https://learn.chatgpt.com/docs/prompting"
+    },
+    {
+      "title": "Google: limitaciones de las respuestas de IA",
+      "url": "https://support.google.com/gemini/answer/16279220?hl=es"
+    }
+  ],
+  "related": [
+    {
+      "type": "tutorial",
+      "slug": "tu-primera-conversacion-con-una-ia"
+    },
+    {
+      "type": "guide",
+      "slug": "empezar-con-la-ia-cinco-tareas-sencillas"
+    },
+    {
+      "type": "book",
+      "slug": "como-estudiar-para-un-final"
+    }
+  ],
+  "bodyPath": "aprender-algo-nuevo-paso-a-paso.md",
+  "status": "approved",
+  "rights": {
+    "kind": "original",
+    "evidence": "Colección definitiva aprobada editorialmente: V2; consejos 3, 7 y 12 de V2.1. Publicación pendiente de autorización expresa."
+  },
+  "healthContent": false
+}

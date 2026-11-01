@@ -1,2 +1,16 @@
 # Conservar exactamente los originales editoriales aprobados, incluidos sus saltos de línea.
 src/content/editorial/*.md -text
+
+# Approved editorial hashes are calculated over UTF-8 / LF.
+src/content/editorial/preparar-menu-semanal-con-chatgpt.md text eol=lf
+src/content/editorial/organizar-las-compras.md text eol=lf
+src/content/editorial/organizar-tareas-de-la-semana.md text eol=lf
+src/content/editorial/organizar-presupuesto-familiar.md text eol=lf
+src/content/editorial/escribir-un-correo-claro.md text eol=lf
+src/content/editorial/preparar-preguntas-para-una-reunion.md text eol=lf
+src/content/editorial/entender-un-documento-complicado.md text eol=lf
+src/content/editorial/comparar-productos-antes-de-comprar.md text eol=lf
+src/content/editorial/reconocer-senales-de-estafas-digitales.md text eol=lf
+src/content/editorial/practicar-ingles-con-ia.md text eol=lf
+src/content/editorial/crear-actividades-educativas.md text eol=lf
+src/content/editorial/aprender-algo-nuevo-paso-a-paso.md text eol=lf

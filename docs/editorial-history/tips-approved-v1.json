@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "preparar-menu-semanal-con-chatgpt",
+    "sha256": "813ab6174711487608c7fa3736308542c2490055e48172d453566a1e0c93b540",
+    "group": "Vida cotidiana"
+  },
+  {
+    "slug": "escribir-un-correo-claro",
+    "sha256": "9bdfec88dfed663bde54d1c8d5744b06fe9dd642f6b5456b991622daa5e69e58",
+    "group": "Comunicación"
+  },
+  {
+    "slug": "organizar-las-compras",
+    "sha256": "e0ffe0c06ed3f9c75e6b99d83a4908d0e502a4a7714d4ebd2b477eb94e7d8108",
+    "group": "Vida cotidiana"
+  },
+  {
+    "slug": "entender-un-documento-complicado",
+    "sha256": "a66da2e45aec4baf523192491a35cf94f731cfca0e088be7dc49323017e8d89b",
+    "group": "Información y decisiones"
+  },
+  {
+    "slug": "practicar-ingles-con-ia",
+    "sha256": "1373a3c880abd0021b73b262f5b068d8557925c68be2a5f341af234f036f6f5d",
+    "group": "Aprendizaje"
+  },
+  {
+    "slug": "preparar-preguntas-para-una-reunion",
+    "sha256": "f03e2ebf577544c6cbd32c795d6b77dfefe9b17ee820c0e682687ecaf438c932",
+    "group": "Comunicación"
+  },
+  {
+    "slug": "organizar-tareas-de-la-semana",
+    "sha256": "9041a78a92220ab7e79e56316715762a24910d99eac1b7123d07a8855ba2d768",
+    "group": "Vida cotidiana"
+  },
+  {
+    "slug": "comparar-productos-antes-de-comprar",
+    "sha256": "7937ebc5c31231eb1cd62f8ab9951b684e5485181fd5d4fa4e2d3b0c048a8c1f",
+    "group": "Información y decisiones"
+  },
+  {
+    "slug": "crear-actividades-educativas",
+    "sha256": "4079eb97dd5df1f21212fea5393882f89de94b466bbdd72c9cbe6f56963b641f",
+    "group": "Aprendizaje"
+  },
+  {
+    "slug": "reconocer-senales-de-estafas-digitales",
+    "sha256": "779ada8ad42e6d20ad8724b31190602937d37075be5dc2888e6fe62403d727e8",
+    "group": "Información y decisiones"
+  },
+  {
+    "slug": "organizar-presupuesto-familiar",
+    "sha256": "5891978045242aec3ee35473c3b5f6c8438b9394ab696d1526124ac3aafd43a7",
+    "group": "Vida cotidiana"
+  },
+  {
+    "slug": "aprender-algo-nuevo-paso-a-paso",
+    "sha256": "1bbb0eeebbe873d4e28b9bfca1e7e98de782a95b34c2ad6fc6397dc10acb73b1",
+    "group": "Aprendizaje"
+  }
+]

@@ -1,0 +1,40 @@
+LUMENDIA — COMPROBACIÓN FINAL DE PREPARACIÓN V2.1
+Revisión local: 31 de octubre de 2026. No es una fecha de publicación.
+
+BASE Y TRABAJO EXISTENTE
+Se ejecutó únicamente git fetch origin main para actualizar la referencia remota. origin/main y HEAD del checkout aislado siguen en 46b26017059b06f10e107a75a00e293a1379d67e: comparación 0 commits exclusivos a cada lado. No se necesita actualizar, rebasear ni integrar cambios remotos en esta revisión.
+Los 209 archivos controlados y git status del checkout original coinciden con la preparación anterior. En el checkout aislado, las 56 rutas candidatas coincidían con la lista anterior: no aparecieron rutas de trabajo inesperadas. Los textos aprobados pasaron sus controles exactos de integridad. No existe una instantánea histórica de todos los archivos de código para atribuir cualquier edición intermedia; por ello, antes de la corrección técnica se respaldó el estado actual de todos los candidatos, sin sobrescribirlos con una versión anterior.
+Respaldo privado: .local/preflight-final-backup/, con huellas del estado previo. No debe incluirse en Git ni en artefactos públicos. No se descartó ni trasladó trabajo existente.
+
+VERSIÓN Y CONSERVACIÓN
+El procedimiento vigente es docs/PROCEDIMIENTO-PUBLICACION-TIPS-V2.1.txt, no el procedimiento de la colección original ligado al 1 de noviembre. La colección definitiva combina nueve consejos V2 y los consejos 3, 7 y 12 de V2.1. Se mantienen los doce identificadores, cuatro grupos, quince bloques copiables, relaciones y textos aprobados.
+Los doce publishedAt y reviewedAt siguen null. date-tips.mjs se ejecutó exclusivamente con --check. Los artefactos públicos comprobados siguen sin los tips pendientes.
+Se comprobó de nuevo release-library: los seis libros autorizados y sus recursos están disponibles y con sus controles de hash; el libro sanitario sigue excluido. No se modificaron libros, relatos, tutoriales, generador, recursos públicos ni los cuerpos o metadatos de los doce tips durante esta revisión. La conservación de contenidos y las pruebas de navegador de la preparación anterior siguen registradas en INTEGRACION-TIPS-V2.1-INFORME.txt.
+
+CI: BLOQUEO NUEVO DETECTADO Y CORREGIDO LOCALMENTE
+La prueba de artefactos se encontraba entre tests/*.test.mjs y exigía dist y dist-library. check.yml ejecuta esas pruebas antes de compilar; además, CI no dispone de los libros privados para generar la biblioteca. Por tanto, el PR habría fallado aunque la copia local con artefactos pasara.
+Corrección limitada a infraestructura:
+- Se trasladó esa comprobación a scripts/verify-tips-output.mjs; exige directorios explícitos y falla si no existen.
+- check.yml la ejecuta sobre dist después del build institucional.
+- El procedimiento exige ejecutarla sobre dist y dist-library después de las compilaciones locales.
+- Se conservó el contenido y alcance de las comprobaciones; no se omiten por ausencia de artefactos ni se debilita el control de originales privados.
+Resultados: 26 pruebas unitarias aprobadas; verificador independiente de dist y dist-library aprobado. Una copia de fuentes sin dist, dist-library ni libros privados pasó las 26 pruebas antes de compilar, luego el build institucional, la verificación de dist y npm test (63 comprobaciones). Se usaron Node y dependencias locales del mismo lockfile; esto reproduce el orden crítico, pero no afirma que se haya ejecutado GitHub Actions o un runner Linux.
+La cifra anterior de 27 pruebas se descompone ahora en 26 unitarias y la comprobación de artefactos independiente. El informe anterior es histórico; este documento registra la corrección posterior.
+
+ENLACES: COMPROBACIÓN EN NAVEGADOR NORMAL PENDIENTE
+Consumer.gov: https://consumer.gov/your-money/making-budget
+FTC: https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money
+El usuario confirmó su disponibilidad mediante consulta web. Se intentó la verificación adicional solicitada en Microsoft Edge abierto. El acceso de automatización a pestañas no estaba disponible y la selección de la ventana nativa devolvió «Computer Use app approval timed out». No se logró navegar a esas páginas mediante el navegador normal en esta revisión. No se presenta la consulta web previa como sustituto de esa comprobación ni se afirma haber observado un HTTP 200 en Edge.
+Este es el único control solicitado que queda pendiente. No se alteraron las URL. Antes de autorizar la ejecución final, abrir ambas direcciones en un navegador normal y confirmar título y contenido visibles, sin página de error, bloqueo o redirección ajena. No hace falta modificar los textos para resolverlo.
+
+SECUENCIA POSTERIOR, TODAVÍA NO EJECUTADA
+1. Resolver la comprobación de navegador pendiente; reconfirmar origin/main y conservar cualquier nuevo trabajo.
+2. Solo el día real y tras autorización expresa: date-tips.mjs --check; después --authorized-publication-today AAAA-MM-DD con la fecha actual de Argentina. El script rechaza fechas distintas y conserva respaldo privado.
+3. Compilar institucional, preview y biblioteca; ejecutar el verificador de artefactos, unitarias, enlaces, seguridad y suites de navegador. TIPS_PUBLIC_OUTPUT=1 selecciona la biblioteca para las pruebas, no publica ni habilita fechas.
+4. Solo con autorización para las operaciones Git: revisar la lista de candidatos, commit, push y PR; exigir Comprobaciones / validate en verde para el SHA exacto y los demás checks requeridos que muestre el PR. Las validaciones locales de biblioteca no se sustituyen por el CI institucional. No se consultaron ni se presuponen reglas de protección remotas.
+5. Tras revisión y merge autorizados: fetch, checkout aislado detached sobre origin/main, comprobar SHA y fecha real, generar e inspeccionar el paquete nuevo y sus exclusiones. Si el proceso cruza medianoche, detenerse y revisar las fechas; no desplegar metadatos desactualizados ni activar un calendario.
+6. Solo con autorización de despliegue: publish-library.mjs --confirm-launch, esperar verify/deploy y comprobar el sitio y sus recursos. deploy.yml institucional no corresponde a este lanzamiento. Los workflows de despliegue inspeccionados requieren workflow_dispatch; el workflow de PR/push solo comprueba.
+Los comandos detallados y la restauración si se cancela están en PROCEDIMIENTO-PUBLICACION-TIPS-V2.1.txt.
+
+CIERRE
+Preparación técnica local revisada; defecto de orden de CI corregido y validado. Pendiente la comprobación normal de navegador descrita. No se asignaron fechas, modificaron textos aprobados, hicieron commit, push, PR, merge, despliegue o programación. Sin acceso a Galumio Social Manager ni cambios en sus campañas. Trabajo detenido al finalizar esta preparación.

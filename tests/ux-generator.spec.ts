@@ -43,15 +43,15 @@ test('Inicio y biblioteca: accesos existentes, lectores accesibles y etiquetas',
  await page.goto('/biblioteca/');await expect(page.getByText('Este buscador filtra los libros', {exact:false})).toBeVisible();await expect(page.locator('.book-meta').filter({hasText:'Muestra del ebook comercial'}).first()).toBeVisible();
  await page.goto('/guias/empezar-con-la-ia-cinco-tareas-sencillas/');await page.getByRole('button',{name:'Letra más grande',exact:true}).click();await expect(page.locator('[data-ux-size]')).toHaveText('22 px');await page.getByRole('button',{name:'Alto contraste',exact:true}).click();await expect(page.locator('[data-ux-contrast]')).toHaveAttribute('aria-pressed','true');expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);await page.getByRole('link',{name:'Ir al índice'}).click();await expect(page).toHaveURL(/#reading-index$/);
 });
-test('Sin JavaScript no hay envío de formulario; herramienta pública y tips pendientes excluidos',async({browser})=>{
- const c=await browser.newContext({javaScriptEnabled:false});try{const p=await c.newPage();await p.goto('http://127.0.0.1:4373'+path);await expect(p.locator('#prompt-form')).not.toBeVisible();await expect(p.getByText('Para preparar una plantilla necesitás JavaScript.',{exact:false})).toBeVisible();}finally{await c.close()}
- expect(existsSync('dist-library'+path+'index.html')).toBe(true);expect(readFileSync('dist-library/index.html','utf8')).toContain('¿Qué te gustaría');expect(readFileSync('dist-library/sitemap.xml','utf8')).toContain(path);expect(existsSync('dist-library/tips')).toBe(false);expect(readFileSync('dist-library/sitemap.xml','utf8')).not.toContain('/tips/');
+test('Sin JavaScript no hay envío de formulario; herramienta pública',async({browser})=>{
+ const c=await browser.newContext({javaScriptEnabled:false});try{const p=await c.newPage();await p.goto('http://127.0.0.1:4385'+path);await expect(p.locator('#prompt-form')).not.toBeVisible();await expect(p.getByText('Para preparar una plantilla necesitás JavaScript.',{exact:false})).toBeVisible();}finally{await c.close()}
+ expect(existsSync('dist-library'+path+'index.html')).toBe(true);expect(readFileSync('dist-library/index.html','utf8')).toContain('¿Qué te gustaría');expect(readFileSync('dist-library/sitemap.xml','utf8')).toContain(path);
 });
 test('Dominio de producción simulado: consentimiento previo no carga beacon en la herramienta',async({page,context})=>{
  const unexpected:string[]=[];
  await context.route('**/*',async route=>{
   const u=new URL(route.request().url());
-  if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:'http://127.0.0.1:4373'+u.pathname});await route.fulfill({response:r});return;}
+  if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:'http://127.0.0.1:4385'+u.pathname});await route.fulfill({response:r});return;}
   unexpected.push(u.href);await route.abort();
  });
  await page.addInitScript(()=>localStorage.setItem('lumendia-cloudflare-consent-v1','accepted'));
@@ -76,9 +76,9 @@ test('Ayuda, ejemplo ficticio y resultado con movimiento reducido',async({page})
  await page.locator('#prompt-clear').click();await expect(page.locator('#prompt-context')).toHaveValue('');
 });
 
-test('Artefacto publicable: generador rastreable, cinco accesos y ningún tip o borrador',async({page,request})=>{
- await page.goto('/');await expect(page.locator('.start-card')).toHaveCount(5);await expect(page.locator('a[href^="/tips/"]')).toHaveCount(0);
+test('Artefacto publicable: generador rastreable, cinco accesos y ningún borrador',async({page,request})=>{
+ await page.goto('/');await expect(page.locator('.start-card')).toHaveCount(5);
  await page.goto(path);await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://lumendia.com.ar'+path);await expect(page.locator('meta[name="robots"]')).toHaveCount(0);await expect(page.locator('.preview-note')).toHaveCount(0);
  const schema=JSON.parse(await page.locator('script[type="application/ld+json"]').innerText());expect(schema['@type']).toBe('WebApplication');expect(schema.isAccessibleForFree).toBe(true);
- for(const url of ['/tips/','/tips/preparar-menu-semanal-con-chatgpt/','/.local/editorial/','/src/content/editorial/','/tutoriales/como-utilizar-la-voz-para-hablar-con-la-ia/'])expect((await request.get(url)).status()).toBe(404);
+ for(const url of ['/.local/editorial/','/src/content/editorial/','/tutoriales/como-utilizar-la-voz-para-hablar-con-la-ia/'])expect((await request.get(url)).status()).toBe(404);
 });

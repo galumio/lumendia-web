@@ -28,5 +28,5 @@ test('Guía publicada: catálogo, SEO, fuentes, móvil, teclado y cinco copias e
  await page.goto('/guias/');await expect(page.getByRole('link',{name:entry.title,exact:true})).toBeVisible();
  expect(await (await request.get('/sitemap.xml')).text()).toContain('https://lumendia.com.ar'+path);
  expect((await request.get('/relatos/')).status()).toBe(200);
- for(const url of [`/.local/editorial/${entry.slug}.md`,`/src/content/editorial/${entry.slug}.json`,`/src/content/editorial/${entry.slug}.md`,'/.local/editorial/backups/','/tips/','/temas/'])expect((await request.get(url)).status()).toBe(404);
+ for(const url of [`/.local/editorial/${entry.slug}.md`,`/src/content/editorial/${entry.slug}.json`,`/src/content/editorial/${entry.slug}.md`,'/.local/editorial/backups/','/temas/'])expect((await request.get(url)).status()).toBe(404);
 });

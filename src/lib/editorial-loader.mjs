@@ -12,7 +12,7 @@ export function renderEditorialMarkdown(markdown){
  const toc=[];let section=0;let copyNext=false;
  const html=markdown.trim().split(/\r?\n\s*\r?\n/).map(block=>{
   const heading=block.match(/^(#{2,3}) ([^\r\n]+)$/);
-  if(heading){const id=`seccion-${++section}`;copyNext=heading[1]==='###'&&heading[2]==='Pedido para copiar';if(heading[1].length===2)toc.push({id,title:heading[2]});return `<h${heading[1].length} id="${id}">${escape(heading[2])}</h${heading[1].length}>`;}
+  if(heading){const id=`seccion-${++section}`;copyNext=/^Pedido(?: para copiar| completo| alternativo)/.test(heading[2]);if(heading[1].length===2)toc.push({id,title:heading[2]});return `<h${heading[1].length} id="${id}">${escape(heading[2])}</h${heading[1].length}>`;}
   const lines=block.split(/\r?\n/);
   const copy=copyNext;copyNext=false;
   if(lines.every(l=>l.startsWith('- ')))return '<ul>'+lines.map(l=>`<li>${escape(l.slice(2))}</li>`).join('')+'</ul>';

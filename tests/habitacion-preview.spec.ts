@@ -37,5 +37,5 @@ test('Relato íntegro, navegación, lectura, teclado, móvil, privacidad y captu
  }
  expect(external).toEqual([]);
  expect((await request.get('/relatos/el-ultimo-pasajero/')).status()).toBe(404);
- expect((await request.get('/tips/')).status()).toBe(404);
+ expect((await request.get('/tips/')).status()).toBe(200);
 });

@@ -1,0 +1,52 @@
+{
+  "slug": "organizar-presupuesto-familiar",
+  "title": "ORDENÁ TUS GASTOS Y DESCUBRÍ QUÉ FALTA EN TU PRESUPUESTO",
+  "description": "Separá ingresos y gastos con cifras ficticias, verificá las sumas y distinguí un saldo parcial del dinero disponible.",
+  "format": "tip",
+  "language": "es",
+  "topics": [
+    "Vida cotidiana",
+    "Inteligencia artificial"
+  ],
+  "audiences": [
+    "Personas adultas principiantes"
+  ],
+  "scope": "complete",
+  "author": {
+    "name": "Lumendia · Galumio Studio",
+    "type": "Organization"
+  },
+  "publishedAt": "2026-11-01",
+  "reviewedAt": null,
+  "sources": [
+    {
+      "title": "consumer.gov: cómo preparar un presupuesto (en español)",
+      "url": "https://consumidor.gov/su-dinero/como-hacer-un-presupuesto"
+    },
+    {
+      "title": "Google: limitaciones de las respuestas de IA",
+      "url": "https://support.google.com/gemini/answer/16279220?hl=es"
+    }
+  ],
+  "related": [
+    {
+      "type": "tutorial",
+      "slug": "como-comprobar-una-respuesta-de-la-ia"
+    },
+    {
+      "type": "guide",
+      "slug": "empezar-con-la-ia-cinco-tareas-sencillas"
+    },
+    {
+      "type": "book",
+      "slug": "ia-para-el-dia-a-dia"
+    }
+  ],
+  "bodyPath": "organizar-presupuesto-familiar.md",
+  "status": "approved",
+  "rights": {
+    "kind": "original",
+    "evidence": "Colección definitiva aprobada editorialmente: V2; consejos 3, 7 y 12 de V2.1. Publicación pendiente de autorización expresa."
+  },
+  "healthContent": false
+}
