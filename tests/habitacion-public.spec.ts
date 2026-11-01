@@ -6,7 +6,7 @@ test('Relato publicado: texto exacto, SEO, sitemap, autor, lectura móvil y priv
  const paragraphs=readFileSync('src/content/editorial/la-habitacion-que-no-figuraba.md','utf8').trim().split(/\n\s*\n/);
  const sitemap=await (await request.get('/sitemap.xml')).text();
  for(const path of paths)expect(sitemap).toContain('https://lumendia.com.ar'+path);
- expect(sitemap).not.toContain('/tips/');expect(sitemap).not.toContain('/relatos/el-ultimo-pasajero/');
+ expect(sitemap).not.toContain('/relatos/el-ultimo-pasajero/');
  mkdirSync('.local/screenshots/publication',{recursive:true});
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:1000});
@@ -35,5 +35,5 @@ test('Relato publicado: texto exacto, SEO, sitemap, autor, lectura móvil y priv
    await page.screenshot({path:`.local/screenshots/publication/${index}-${width}.png`,fullPage:index!==0});
   }
  }
- for(const path of ['/tips/','/relatos/el-ultimo-pasajero/','/.local/editorial/La_habitacion_que_no_figuraba_Gael_Beltra_FINAL_Lumendia.docx'])expect((await request.get(path)).status()).toBe(404);
+ for(const path of ['/relatos/el-ultimo-pasajero/','/.local/editorial/La_habitacion_que_no_figuraba_Gael_Beltra_FINAL_Lumendia.docx'])expect((await request.get(path)).status()).toBe(404);
 });

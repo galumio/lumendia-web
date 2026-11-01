@@ -1,5 +1,8 @@
 ---
+import TipsCollection from './TipsCollection.astro';
 import {editorialEntries} from '../lib/editorial-catalog';
 import {scopeLabels} from '../lib/editorial';
 ---
-{editorialEntries.length>0&&<section class="section container" aria-labelledby="editorial-collection"><h2 id="editorial-collection">Lecturas originales gratuitas</h2>{editorialEntries.map(entry=><div class="editorial-note"><p>{entry.privateDraft?'Borrador privado · Solo para revisión local':scopeLabels.es[entry.scope]} · {entry.language==='es'?'Español':'English'}</p><h3><a href={entry.url}>{entry.title}</a></h3><p>{entry.description}</p><a href={`/${entry.url.split('/')[1]}/`}>Ver la colección</a></div>)}</section>}
+{editorialEntries.length>0&&<section class="section container" aria-labelledby="editorial-collection"><h2 id="editorial-collection">Lecturas originales gratuitas</h2>{editorialEntries.filter(entry=>entry.format!=='tip').map(entry=><div class="editorial-note"><p>{entry.privateDraft?'Borrador privado · Solo para revisión local':scopeLabels.es[entry.scope]} · {entry.language==='es'?'Español':'English'}</p><h3><a href={entry.url}>{entry.title}</a></h3><p>{entry.description}</p><a href={`/${entry.url.split('/')[1]}/`}>Ver la colección</a></div>)}</section>}
+
+<TipsCollection/>

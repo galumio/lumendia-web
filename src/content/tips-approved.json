@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "preparar-menu-semanal-con-chatgpt",
+    "sha256": "b083f45ef6c2b41d97583d31e3bf13e5b0ff4d0b3c9f56514858df8414b71648",
+    "group": "Vida cotidiana",
+    "number": 1,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "b0cbbdd55975e11709e3fc76dac5ecd291bd085ad2aa81aa1022f467bf6e2c60"
+  },
+  {
+    "slug": "organizar-las-compras",
+    "sha256": "c9cc0d84cf26776dda1a5da6a738bdbf5134547be2b41ae3242a63a293326dd1",
+    "group": "Vida cotidiana",
+    "number": 2,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "cfb1a12cf4e33c90f50b2a53f3776e3537d9f55dd0bfad02e836da64bbd2c098"
+  },
+  {
+    "slug": "organizar-tareas-de-la-semana",
+    "sha256": "ea00d76afbd6bb7e387a17f1c891a98e8aa327616b3385fdb7f9bfa0ca0f3f01",
+    "group": "Vida cotidiana",
+    "number": 3,
+    "version": "V2.1",
+    "promptCount": 1,
+    "approvedTextSha256": "45cb098d1ec7d2ed9ae9572d52d7791abe6a61a35c28842a502de3e83aaed285"
+  },
+  {
+    "slug": "organizar-presupuesto-familiar",
+    "sha256": "23946c8d1edbfcaf38d5dcfc18dc78e322d3b56bdae4e954cd73fe08a63986f8",
+    "group": "Vida cotidiana",
+    "number": 4,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "360b76a0a7a55bc81a1d6bce4addc3741a9fdf6d4c3dcaf42ba11c95a95da10a"
+  },
+  {
+    "slug": "escribir-un-correo-claro",
+    "sha256": "161df16cea450236d530d6b183f8932e721ca31e4112edbde4dfbf3b68ab698f",
+    "group": "Comunicación",
+    "number": 5,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "85c85e67257a013f5a80e2e2dac221a04c4f3a48cc91d61fe0dc07d0b69aa013"
+  },
+  {
+    "slug": "preparar-preguntas-para-una-reunion",
+    "sha256": "001c03f1669a22148cbb96f67b00cabfc6ede48f955db4230fbe193dd9490faa",
+    "group": "Comunicación",
+    "number": 6,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "1dda49ba9a56e4b3a27add8242069fd14547809faca085b9d15eb910925c0138"
+  },
+  {
+    "slug": "entender-un-documento-complicado",
+    "sha256": "26823de3b8f4353074c6978bd75e5bb625dbc4b67d4ee24ae5b78d19217a7a2b",
+    "group": "Información y decisiones",
+    "number": 7,
+    "version": "V2.1",
+    "promptCount": 3,
+    "approvedTextSha256": "2bcec4e468688f683ead4218e70b1321a9173a9781b70f1e015ceae700f31719"
+  },
+  {
+    "slug": "comparar-productos-antes-de-comprar",
+    "sha256": "13a8e9279fb216cb8ee4878b1d60212ec739477a49b8ea624da6edd51e4e031c",
+    "group": "Información y decisiones",
+    "number": 8,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "0faab1cb8e197b14b15e742fcb6f071aded7efa78fed146058141876ed6cce29"
+  },
+  {
+    "slug": "reconocer-senales-de-estafas-digitales",
+    "sha256": "21e38f0aad64ee0ccb7191c30de8ffeeab45b0ff860bd7bac80af1aba0acbf23",
+    "group": "Información y decisiones",
+    "number": 9,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "907be534e91c96f522494b2a1eb00304dd2d7a8efc1d4f1b84f02b59c8521b28"
+  },
+  {
+    "slug": "practicar-ingles-con-ia",
+    "sha256": "1b241b75be77f6b702640c77feee694d4476937897f2b62044c5974727e298e2",
+    "group": "Aprendizaje",
+    "number": 10,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "c54b4b6242f92e53109fa9c85a505cd77a9363f13029e48432fde079151f2da7"
+  },
+  {
+    "slug": "crear-actividades-educativas",
+    "sha256": "ab2a504ad86ea7d7f358d9344ab271a11afe379683801714bf2df0068bb8d6d8",
+    "group": "Aprendizaje",
+    "number": 11,
+    "version": "V2",
+    "promptCount": 1,
+    "approvedTextSha256": "15121704768e545810886bb83e6164c0049cfa7f775921d9971e1b7216cf49b3"
+  },
+  {
+    "slug": "aprender-algo-nuevo-paso-a-paso",
+    "sha256": "f6d0a6af3501f8c9311fa4d5876808a4d1b19e3a233e2c678f8038ab94da806f",
+    "group": "Aprendizaje",
+    "number": 12,
+    "version": "V2.1",
+    "promptCount": 2,
+    "approvedTextSha256": "9f6ab2a1483ab74bff61ca71fea4f42e38da686b3ccd6f12959335b8e6994df2"
+  }
+]

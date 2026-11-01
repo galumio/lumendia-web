@@ -1,0 +1,52 @@
+{
+  "slug": "organizar-tareas-de-la-semana",
+  "title": "PASÁ TUS PENDIENTES DESORDENADOS A UN PLAN POSIBLE",
+  "description": "Distribuí tareas en bloques reales y dejá visibles las que no entran, sin prometer una semana perfecta.",
+  "format": "tip",
+  "language": "es",
+  "topics": [
+    "Vida cotidiana",
+    "Inteligencia artificial"
+  ],
+  "audiences": [
+    "Personas adultas principiantes"
+  ],
+  "scope": "complete",
+  "author": {
+    "name": "Lumendia · Galumio Studio",
+    "type": "Organization"
+  },
+  "publishedAt": "2026-11-01",
+  "reviewedAt": null,
+  "sources": [
+    {
+      "title": "OpenAI: cómo formular y revisar pedidos (en inglés)",
+      "url": "https://learn.chatgpt.com/docs/prompting"
+    },
+    {
+      "title": "Google: limitaciones de las respuestas de IA",
+      "url": "https://support.google.com/gemini/answer/16279220?hl=es"
+    }
+  ],
+  "related": [
+    {
+      "type": "tutorial",
+      "slug": "como-escribir-un-buen-pedido-a-la-ia"
+    },
+    {
+      "type": "guide",
+      "slug": "empezar-con-la-ia-cinco-tareas-sencillas"
+    },
+    {
+      "type": "book",
+      "slug": "ia-para-el-dia-a-dia"
+    }
+  ],
+  "bodyPath": "organizar-tareas-de-la-semana.md",
+  "status": "approved",
+  "rights": {
+    "kind": "original",
+    "evidence": "Colección definitiva aprobada editorialmente: V2; consejos 3, 7 y 12 de V2.1. Publicación pendiente de autorización expresa."
+  },
+  "healthContent": false
+}

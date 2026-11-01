@@ -1,4 +1,5 @@
 import {spawnSync} from 'node:child_process';
+import './verify-tips.mjs';
 const mode=process.argv[2]||'production';
 if(!['preview','production','library','dry-run'].includes(mode))throw new Error('Modo desconocido');
 const institutional=mode==='production';

@@ -30,7 +30,7 @@ test('Guía aprobada: lectura, navegación, móvil, teclado y privacidad',async(
  await expect(page.locator('a[href="/recursos/hoja-de-referencia-rapida-ia-para-docentes.pdf"]')).toBeVisible();
  await page.goto('/guias/');await expect(page.locator('h1')).toHaveText('Guías gratuitas');
  expect((await request.get('/tutoriales/')).status()).toBe(200);
- for(const url of ['/tips/','/temas/','/.local/editorial/'+slug+'.md'])expect((await request.get(url)).status()).toBe(404);
+ for(const url of ['/temas/','/.local/editorial/'+slug+'.md'])expect((await request.get(url)).status()).toBe(404);
 });
 test('La salida pública incluye solo la guía aprobada, sin originales ni respaldos',()=>{
  expect(existsSync(`dist-library/guias/${slug}/index.html`)).toBe(true);
@@ -65,7 +65,7 @@ test('Los cinco botones copian el pedido exacto; teclado y error de permisos',as
 });
 test('Lectura completa sin JavaScript ni registro',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false});
- try{const page=await context.newPage();await page.goto(`http://127.0.0.1:4323/guias/${slug}/`);
+ try{const page=await context.newPage();await page.goto(`http://127.0.0.1:4383/guias/${slug}/`);
   await expect(page.locator('article h2').filter({hasText:/^Tarea [1-5]:/})).toHaveCount(5);
   await expect(page.locator('article')).toContainText('Tu práctica final');
   await expect(page.locator('main form, main input[type="email"]')).toHaveCount(0);

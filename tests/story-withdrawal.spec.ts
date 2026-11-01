@@ -1,11 +1,11 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 test('Retirada: 404 sin sustitución, enlaces vigentes, móvil y privacidad',async({page,request})=>{
- for(const path of ['/relatos/el-ultimo-pasajero/','/tips/','/.local/withdrawn/el-ultimo-pasajero/el-ultimo-pasajero.md']){
+ for(const path of ['/relatos/el-ultimo-pasajero/','/.local/withdrawn/el-ultimo-pasajero/el-ultimo-pasajero.md']){
   const r=await request.get(path);expect(r.status()).toBe(404);expect(await r.text()).not.toContain('La mujer del bolso rojo bajó');
  }
  const sitemap=await (await request.get('/sitemap.xml')).text();
- for(const fragment of ['/relatos/el-ultimo-pasajero/','/tips/'])expect(sitemap).not.toContain(fragment);
+ for(const fragment of ['/relatos/el-ultimo-pasajero/'])expect(sitemap).not.toContain(fragment);
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:900});
   for(const path of ['/','/biblioteca/','/guias/','/tutoriales/']){

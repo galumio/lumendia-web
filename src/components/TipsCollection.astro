@@ -1,0 +1,8 @@
+---
+import {editorialEntries} from '../lib/editorial-catalog';
+import {featuredTip,tipGroups} from '../lib/tips.mjs';
+const groups=tipGroups(editorialEntries);
+const featured=featuredTip(editorialEntries);
+---
+{groups.length>0&&<section class="section container" aria-labelledby="tips-collection"><h2 id="tips-collection">Tips de IA para la vida cotidiana</h2><p>Lecturas breves, completas y gratuitas: una situación, un pedido para copiar y una comprobación práctica.</p>{featured&&<div class="editorial-note"><p>Tip destacado · Selección editorial</p><h3><a href={featured.url}>{featured.title}</a></h3><p>{featured.description}</p></div>}<nav aria-label="Temas de tips"><ul>{groups.map(group=><li><a href={`/tips/#${group.id}`}>{group.title} ({group.entries.length})</a></li>)}</ul></nav><a class="button" href="/tips/">Explorar todos los tips</a></section>}
+<style>nav a{display:inline-block;padding:10px 0;min-height:44px}</style>

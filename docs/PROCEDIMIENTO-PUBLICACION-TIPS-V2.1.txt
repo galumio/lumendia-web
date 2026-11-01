@@ -1,0 +1,91 @@
+LUMENDIA — PROCEDIMIENTO POSTERIOR PARA PUBLICAR LOS DOCE TIPS
+
+ESTADO: INSTRUCCIONES, NO EJECUTADAS. Requiere autorización expresa para publicar y para las operaciones remotas de versionado. No hay fecha reservada, tarea programada ni autorización implícita por la aprobación editorial.
+No usar el procedimiento antiguo ligado al 1 de noviembre ni sus scripts de fecha o paquetes. No desplegar .preview, .local, el checkout completo o un paquete anterior.
+
+1. RETOMAR EL CHECKOUT AISLADO
+En PowerShell:
+Set-Location -LiteralPath 'C:\Desarrollo\Lumendia\.local\tips-v2-1-integration'
+git status --short
+git branch --show-current
+git fetch origin main
+git log --oneline --left-right HEAD...origin/main
+node scripts/verify-tips.mjs
+node scripts/date-tips.mjs --check
+
+La rama preparada es prep/tips-editorial-v2-1, basada en 46b26017059b06f10e107a75a00e293a1379d67e. Si main avanzó, integrar sus cambios en esta rama después de preservar el trabajo y revisar conflictos, sin reset --hard ni clean. Repetir comprobaciones tras cualquier cambio. No cambiar de rama ni descartar archivos en el checkout original. Las fechas deben seguir null hasta el paso 2.
+Dependencias: en este equipo node_modules enlaza al original, con el mismo lockfile. En una copia independiente usar npm ci. Los libros ignorados y los dos recursos gratuitos autorizados son necesarios para compilar; comprobarlos con node scripts/release-library.mjs. Nunca añadirlos a Git.
+
+2. ASIGNAR FECHA REAL, SOLO CON AUTORIZACIÓN Y EL DÍA DEL LANZAMIENTO
+Confirmar la autorización expresa antes de este paso. Consultar la fecha de Argentina sin asignarla:
+node scripts/date-tips.mjs --check
+Reemplazar AAAA-MM-DD en el siguiente comando por la fecha real que indique esa comprobación:
+node scripts/date-tips.mjs --authorized-publication-today AAAA-MM-DD
+
+El script exige que coincida con hoy en America/Argentina/Buenos_Aires y que todos los publishedAt estén null. Guarda un respaldo privado y cambia únicamente publishedAt en los doce registros. No cambia reviewedAt, textos ni manifiestos; no publica ni programa. No ejecutar con una fecha prevista, futura o retroactiva. Si ya hay una fecha, detenerse y revisar en lugar de forzarla. Si el lanzamiento se cancela o cruza medianoche, restaurar explícitamente los doce JSON desde la carpeta de respaldo indicada, confirmar null y repetir con la fecha real cuando corresponda. Nunca desplegar otra modificación mientras quede una activación de tips cancelada.
+
+3. VALIDAR LA SALIDA FINAL
+Ejecutar cada comando por separado. Si alguno falla, detener la publicación y corregir la causa sin modificar el texto editorial aprobado.
+node scripts/verify-tips.mjs
+npm run check
+npm run build
+npm run build:preview
+npm run build:library
+node scripts/validate.mjs dist-library .preview
+node scripts/verify-tips-output.mjs dist dist-library
+node --test tests/*.test.mjs
+npm run audit:repository
+npm audit --audit-level=moderate --cache .local/npm-cache
+npx playwright test --config=playwright.config.ts
+npx playwright test --config=playwright.editorial.config.ts
+npx playwright test --config=playwright.ux.config.ts
+npx playwright test --config=playwright.institutional.config.ts
+npx playwright test --config=playwright.tips.config.ts
+
+Para verificar específicamente los tips de la salida publicable, no una simulación ni la preview:
+$env:TIPS_PUBLIC_OUTPUT='1'
+npx playwright test --config=playwright.tips.config.ts
+Remove-Item Env:TIPS_PUBLIC_OUTPUT
+
+Esta variable solo selecciona dist-library y el puerto local 4384 para pruebas. No habilita contenido en el compilador. Si hay un fallo, quitar también la variable antes de continuar el diagnóstico. Los servidores de cada configuración se cierran al terminar y rechazan reutilizar un servidor ajeno.
+Comprobar doce páginas + índice, cuatro grupos, quince copias completas, las trece URL en sitemap y la fecha real común. La suite pública comprueba automáticamente presencia o ausencia según metadatos. Revisar enlaces externos en navegador, especialmente los dos dominios con respuesta diferente al comprobador HTTP. No sustituir una URL por otra sin revisar que siga respaldando el mismo contenido.
+
+4. REVISIÓN DE FUENTES Y VERSIONADO, SOLO SI ESTÁ AUTORIZADO
+git diff --check
+git diff --stat
+git status --short
+
+Revisar .local/candidate-paths.txt de este checkout como lista de la preparación (regenerarla/revisarla si hubo cambios). Esa lista no es una autorización automática. Los candidatos comprenden solo configuración de saltos de línea de los doce tips, configuraciones y pruebas, scripts de integridad/fecha, integración de componentes, los doce pares .md/.json, manifiesto actual y su historial, y los dos documentos técnicos. No agregar archivos privados o generados ni usar git add .
+Después de revisar la lista, agregar individualmente cada ruta autorizada usando:
+git --literal-pathspecs add -- 'ruta/revisada'
+git diff --cached --name-only
+git diff --cached --check
+git diff --cached
+
+Confirmar especialmente que no aparezcan .local, .preview, dist, dist-library, node_modules, libros JSON ignorados, PDF, originales, respaldos, credenciales ni artefactos. Crear el commit de la integración y su fecha real, hacer push de la rama y abrir PR únicamente bajo autorización. Esperar CI y revisión antes de merge. Si no están autorizadas esas operaciones, detenerse aquí y entregar la preparación.
+
+5. DESPLEGAR POR EL FLUJO HABITUAL, SOLO BAJO AUTORIZACIÓN
+Una vez integrado el commit aprobado en main, conservar limpio el checkout aislado y ejecutar:
+git fetch origin main
+git switch --detach origin/main
+git status --short
+
+Se usa detached HEAD porque main sigue abierto en el checkout original. No mover ni actualizar ese checkout con cambios ajenos. Confirmar que el commit integrado incluye exactamente la versión revisada y repetir las validaciones si hubo diferencias.
+Confirmar que la fecha real sigue siendo la asignada; ante cambio de día, detenerse y corregir mediante revisión explícita. Generar un paquete nuevo de biblioteca y revisarlo:
+node scripts/package-library.mjs
+
+Inspeccionar el manifiesto y el contenido del archivo .local/release/lumendia-site-*.tar.gz recién generado con tar -tzf, usando su ruta exacta. Confirmar trece rutas de tips, ausencia de privados y respaldos, libros existentes y hashes de los dos recursos gratuitos. No elegir el archivo por una coincidencia ambigua o por una fecha antigua.
+Solo entonces ejecutar, con autorización vigente:
+node scripts/publish-library.mjs --confirm-launch
+
+El flujo vuelve a compilar/validar/empaquetar, sube un artefacto a un release BORRADOR y ejecuta deploy-library.yml sobre main. No usar deploy.yml institucional ni rollback-institutional para este lanzamiento. Registrar el hash del artefacto realmente generado por el comando de publicación; puede diferir del paquete de revisión. Esperar el resultado de Actions y verificar el sitio, sin asumir que un fallo deja intacta la versión anterior.
+
+6. COMPROBAR PRODUCCIÓN Y CERRAR
+Verificar https://lumendia.com.ar/tips/ y las doce URL a partir del manifiesto. Revisar HTTP 200, título/texto, quince botones, grupos, menú móvil, teclado, ancho de 320 px, fecha real, canonical, ausencia de noindex y trece entradas únicas del sitemap.
+Revisar inicio, biblioteca, libros, guía, tres tutoriales, relato vigente, autor, herramienta y los dos PDF gratuitos. Las retiradas y exclusiones anteriores deben seguir en 404; originales, respaldos y .local nunca deben estar accesibles.
+Comprobar consentimiento ES/EN sin medición previa, rechazo y retiro; la herramienta debe seguir sin beacon. Abrir las cinco fuentes externas. Registrar commit, PR, ejecución de Pages, fecha/hora real de Argentina, hash del artefacto desplegado y resultados. No anunciar éxito si faltan esas comprobaciones.
+
+EN ESTA PREPARACIÓN NO SE EJECUTARON LOS PASOS DE ACTIVACIÓN, VERSIONADO REMOTO O DESPLIEGUE. La aprobación editorial ya está registrada; la autorización operativa para publicar sigue pendiente.
+
+ACLARACIÓN DE CI DE LA V2.1
+El workflow check.yml (Comprobaciones / validate) corre con Node 24: npm ci, npm run check, pruebas unitarias sin artefactos, build institucional, verificación de ese artefacto, npm test y auditorías. No contiene los libros privados ni sustituye las compilaciones y pruebas locales de biblioteca. La comprobación de artefactos de tips se ejecuta después de compilar, nunca como prerrequisito de compilación. Antes de integrar el PR, exigir ese job en verde para el SHA exacto y conservar los resultados locales de biblioteca del mismo SHA. Comprobar además todos los checks requeridos que muestre el PR; no asumir reglas de protección que no se hayan consultado. Los workflows de despliegue son manuales (workflow_dispatch); un PR o un push de esta rama no ejecuta por sí solo Pages.

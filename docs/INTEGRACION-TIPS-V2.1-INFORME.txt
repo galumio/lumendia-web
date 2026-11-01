@@ -1,0 +1,51 @@
+LUMENDIA — INTEGRACIÓN TÉCNICA DE LOS DOCE TIPS APROBADOS
+Preparación local: 31 de octubre de 2026. No es una fecha de publicación.
+
+ESTADO
+Integración preparada, sin publicar y sin asignar fechas. Rama local prep/tips-editorial-v2-1.
+Checkout: C:\Desarrollo\Lumendia\.local\tips-v2-1-integration
+Base: origin/main actualizado mediante fetch, commit 46b26017059b06f10e107a75a00e293a1379d67e.
+El checkout original permanece en su rama y con sus cambios anteriores. No se hicieron commit, push, PR, merge, despliegue ni programación. No se accedió a Galumio Social Manager.
+
+CONTENIDO E INTEGRIDAD
+- Consejos 1, 2, 4, 5, 6, 8, 9, 10 y 11 tomados de la propuesta V2; 3, 7 y 12 de V2.1.
+- Se mantienen literalmente títulos, párrafos, ejemplos, prompts y avisos de privacidad. La conversión añade únicamente encabezados Markdown y marcas de cita para los botones de copia.
+- Se conserva la introducción aprobada «Cómo leer esta colección» en el índice.
+- Cuatro grupos: Vida cotidiana (4), Comunicación (2), Información y decisiones (3), Aprendizaje (3), en orden editorial. Se conservan los doce slugs, autores, fuentes y relaciones con libros, guías y tutoriales.
+- Hay doce consejos y quince bloques copiables: el consejo 7 tiene tres pedidos y el 12 tiene dos. No se recortaron pedidos para reducirlos a doce botones.
+- Nuevo manifiesto: src/content/tips-approved.json, con SHA-256 del Markdown y del texto aprobado reconstruido, número, grupo, versión y cantidad de prompts.
+- Manifiesto anterior conservado byte a byte en docs/editorial-history/tips-approved-v1.json. Los originales y respaldos privados permanecen fuera de los archivos publicables.
+- scripts/verify-tips.mjs se ejecuta antes de compilar. Rechaza alteraciones del texto, diferencias de hashes o cantidad de prompts y fechas parciales en el lote.
+- Los doce publishedAt y reviewedAt permanecen null. La salida pública no contiene /tips/, las doce páginas, accesos de menú ni entradas de sitemap. La vista local sí los contiene y lleva noindex,nofollow.
+
+INTEGRACIÓN VISUAL
+Se utilizó el diseño de main actualizado: cabecera y menú móvil, tipografía, controles de lectura, migas, índice interno, pie y enlaces relacionados. Se añadió el índice por grupos y el destacado manual, más accesos condicionales en portada, biblioteca, cabecera y pie. Los relatos, autores y la herramienta actual se conservan; no se sustituyeron páginas enteras por versiones antiguas del checkout original.
+
+RESULTADOS
+- Astro check: cero errores, advertencias o sugerencias en el cierre; las variables sin uso detectadas durante el desarrollo se corrigieron.
+- Compilación institucional: 8 archivos, 63 comprobaciones.
+- Biblioteca publicable actual: 57 páginas, sin tips pendientes.
+- Preview: 108 páginas, incluidas las trece rutas de la colección. Es exclusivamente local y nunca debe desplegarse.
+- Validación conjunta de biblioteca y preview: 11.283 comprobaciones, cero errores, incluidos enlaces internos y recursos.
+- Pruebas unitarias: 27 aprobadas, incluida equivalencia exacta con los textos aprobados, hashes, grupos, prompts y exclusión pública.
+- Navegador: 14 casos de tips, 30 casos únicos de biblioteca pública (29 de regresión y un nuevo control de estado de publicación), 9 de UX/herramienta, 4 de guía en preview y 3 institucionales. Todos esos casos pasaron en sus ejecuciones finales. Los casos públicos afectados por la centralización del control de tips se repitieron: 8 aprobados.
+- Cinco casos del libro sanitario se omiten en la salida pública porque ese libro continúa excluido; no se cambió su estado editorial ni sanitario.
+- Copia exacta de los quince bloques; teclado; foco y tamaño de botones; ausencia de desbordamientos en 320/390/1440 px; lectura sin JavaScript; axe WCAG A/AA en las vistas cubiertas. Revisión visual del índice en escritorio/móvil y de una página móvil. Se ajustó el espaciado de la cabecera solo cuando los tips están visibles para mantener el botón de tema en su fila.
+- Privacidad ES/EN: rechazo, aceptación y retiro de consentimiento, almacenamiento denegado y exclusión del beacon en localhost/preview y herramienta. Sin solicitudes externas al abrir/copiar los tips en las pruebas locales.
+- Seguridad: npm audit --audit-level=moderate sin vulnerabilidades; auditoría de candidatos sin PDF privados, ZIP, claves privadas o tokens de los patrones comprobados. Las pruebas del generador cubren entrada hostil y portapapeles denegado.
+- Los fallos iniciales de codificación/saltos de línea y puertos de pruebas se corrigieron. Los cuerpos finales usan UTF-8/LF y reglas específicas para esos doce archivos; no se alteró la normalización de los originales anteriores.
+
+ENLACES EXTERNOS Y LÍMITES
+Se comprobaron cinco URL únicas de fuentes. Tres respondieron HTTP 200 desde el comprobador local. Las dos siguientes devolvieron 404 a ese cliente, pero el servicio de consulta web recuperó las mismas páginas y sus contenidos desde los índices oficiales:
+https://consumer.gov/your-money/making-budget
+https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money
+No se cambiaron enlaces ni textos para ocultar esa discrepancia. No puede afirmarse que los cinco respondan 200 desde cualquier cliente; volver a comprobarlos en un navegador normal antes de publicar. No hay bloqueos locales de compilación o pruebas pendientes. La autorización expresa de publicación sigue pendiente.
+Las pruebas automatizadas no constituyen una auditoría manual exhaustiva de accesibilidad ni una evaluación de respuestas reales de todos los servicios de IA. Los ejemplos son los editoriales aprobados. Se recalcularon las sumas y diferencias de compras, calendario, presupuesto, facturas, comparación y planillas.
+
+CONSERVACIÓN Y EVIDENCIA
+Se verificaron sin cambios 209 archivos controlados del checkout original y su git status. Dieciocho archivos de libros y contenido editorial preexistente coinciden con sus referencias; las relaciones, fuentes, grupos e identidad de los tips también. Se conservan los dos PDF gratuitos por sus controles de hash y las exclusiones anteriores. El planificador semanal nuevo no se incorporó al sitio.
+Evidencia privada en .local/ de este checkout: preservation.json, original-checkout.json, approved-source.json, external-links.json, build-preview.log, build-library.log, validation.log, unit-tests.log, astro-check.log, tips-browser.log, public-browser.log, public-final.log, ux-browser-final.log, editorial-browser.log, institutional-browser.log y repository-audit.log.
+La dependencia node_modules es una unión local al directorio existente; no se cambiaron package.json ni package-lock.json. No debe incluirse en una entrega de fuentes. Los datos de libros y los dos recursos autorizados se copiaron para compilar localmente y siguen ignorados por Git.
+
+PUBLICACIÓN POSTERIOR
+Consultar PROCEDIMIENTO-PUBLICACION-TIPS-V2.1.txt. Ese documento reemplaza como referencia operativa el procedimiento anterior ligado al 1 de noviembre, sin modificarlo ni activar ningún calendario. El script date-tips se ejecutó solo con --check. No existe un paquete de lanzamiento de estos tips: la salida publicable actual los excluye. El paquete definitivo se generará y verificará únicamente después de la autorización y la asignación de la fecha real.

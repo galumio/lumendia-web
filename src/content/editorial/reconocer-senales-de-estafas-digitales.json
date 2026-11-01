@@ -1,0 +1,48 @@
+{
+  "slug": "reconocer-senales-de-estafas-digitales",
+  "title": "REVISÁ UN MENSAJE SOSPECHOSO SIN EXPONER TUS DATOS",
+  "description": "Analizá señales de presión en un mensaje ficticio y elegí una comprobación independiente, sin abrir enlaces sospechosos.",
+  "format": "tip",
+  "language": "es",
+  "topics": [
+    "Información y decisiones",
+    "Inteligencia artificial"
+  ],
+  "audiences": [
+    "Personas adultas principiantes"
+  ],
+  "scope": "complete",
+  "author": {
+    "name": "Lumendia · Galumio Studio",
+    "type": "Organization"
+  },
+  "publishedAt": "2026-11-01",
+  "reviewedAt": null,
+  "sources": [
+    {
+      "title": "FTC: estafas con falsas emergencias familiares (en español)",
+      "url": "https://consumidor.ftc.gov/articulos/los-estafadores-crean-falsas-emergencias-para-robarle-su-dinero"
+    }
+  ],
+  "related": [
+    {
+      "type": "tutorial",
+      "slug": "como-comprobar-una-respuesta-de-la-ia"
+    },
+    {
+      "type": "guide",
+      "slug": "empezar-con-la-ia-cinco-tareas-sencillas"
+    },
+    {
+      "type": "book",
+      "slug": "ia-cotidiana-para-adultos-mayores"
+    }
+  ],
+  "bodyPath": "reconocer-senales-de-estafas-digitales.md",
+  "status": "approved",
+  "rights": {
+    "kind": "original",
+    "evidence": "Colección definitiva aprobada editorialmente: V2; consejos 3, 7 y 12 de V2.1. Publicación pendiente de autorización expresa."
+  },
+  "healthContent": false
+}
