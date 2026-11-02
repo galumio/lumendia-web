@@ -91,10 +91,10 @@
     },
     "book:cuidar-a-mama-o-papa": {
       "policyVersion": "1",
-      "editionHash": "aa0b213e34a4f5a3360615021f7d4cc8390eb61006e0d1d920d65ab8c739c9a4",
-      "category": "B",
-      "status": "pending",
-      "edition": "existing-aa0b213e34a4",
+      "editionHash": "62ebe3395fabe4d1b78fc3e6e4b5dd01633df62868421e29fac894786a4f6fa1",
+      "category": "A",
+      "status": "approved",
+      "edition": "alzheimer-focalizado-cierre-20261102",
       "routes": [
         "/libros/cuidar-a-mama-o-papa/",
         "/libros/cuidar-a-mama-o-papa/actividades-para-personas-con-alzheimer/",
@@ -133,7 +133,9 @@
         "/libros/cuidar-a-mama-o-papa/seguridad-salidas-y-autonomia/",
         "/libros/cuidar-a-mama-o-papa/situaciones/",
         "/libros/cuidar-a-mama-o-papa/tipos-de-demencia/",
-        "/libros/cuidar-a-mama-o-papa/visitas-salidas-y-viajes/"
+        "/libros/cuidar-a-mama-o-papa/visitas-salidas-y-viajes/",
+        "/libros/cuidar-a-mama-o-papa/creditos-y-alcance/",
+        "/libros/cuidar-a-mama-o-papa/cuaderno-practico-del-cuidador/"
       ],
       "bodies": [
         {
@@ -142,7 +144,7 @@
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/alimentacion-y-dificultad-para-tragar/",
-          "sha256": "704fe4f97a7940dabf84a92b2cb18ab8397cdc75ab2ff5abf743538369779a2e"
+          "sha256": "68a6a798628e1c2a9b04c6c70b568943f6c1cb1127c478d15dd8df4163d954bf"
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/antes-de-cerrar-y-fuentes/",
@@ -166,7 +168,7 @@
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/comida-bebida-y-sueno/",
-          "sha256": "e5bb5df88a590a91c9c576b02ca1c4a01de0378de96fc4d1566d977b4e865da0"
+          "sha256": "0cfb163658a1e71b08d74ea670a62e33889d1257fbfd02e178f7e9161f1fdd12"
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/como-explicar-el-alzheimer-a-los-nietos/",
@@ -178,7 +180,7 @@
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/conductas-dificiles-en-la-demencia/",
-          "sha256": "dc24b366e3f9a79dea6af01f47c01381e36c2c564790e8dcff3a227ec5190670"
+          "sha256": "1a87011b086c6a68053139cb6658c9eff3c99fa7a14590514d74c84ce1b9445b"
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/confusion-y-percepciones/",
@@ -186,7 +188,7 @@
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/consultas-guardia-y-hospital/",
-          "sha256": "9ac2acb6fc8a50a8a5009cbb911a748046701aabd23c6f99b21aaec0c42aedda"
+          "sha256": "6164741aed22abe8fabfa674f5635b3d649e970616bb8ba91c9feeb6731f755a"
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/cuando-no-te-reconoce/",
@@ -202,7 +204,7 @@
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/cuidar-al-que-cuida/",
-          "sha256": "1184b1253d395e8562291f6ce0a6d510f655db5c80590032f77d2384ea9628c9"
+          "sha256": "b60f7287619ad4f7cdfc07dcf212078100546f43709790e64ccc22199bc909c0"
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/decidir-por-etapas/",
@@ -238,7 +240,7 @@
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/memoria-y-comunicacion/",
-          "sha256": "83844f1636847b2082a6622db8dc62866448c85b60554eec61f0d26aa25d5dc9"
+          "sha256": "f0089062bcbfaf2993b6b9447b3ac1d85eceb9d686dec938656f7c0649c27337"
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/pareja-intimidad-y-afecto/",
@@ -262,7 +264,7 @@
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/salud-consultas-y-cambios-bruscos/",
-          "sha256": "b204c1d7d3d39b1954488001bf0b179913d8a52897974c2ddb207e623cf98c10"
+          "sha256": "456a57d729cdf22aa28507de24705b01e8e4ae1e30214fe6b4fb3373fdb64ad6"
         },
         {
           "path": "/libros/cuidar-a-mama-o-papa/se-pierde-sale-de-casa-o-quiere-conducir/",
@@ -283,29 +285,199 @@
         {
           "path": "/libros/cuidar-a-mama-o-papa/visitas-salidas-y-viajes/",
           "sha256": "2189eeeacddaae32e46a1d49cc527e5d5238ae9d307bb2a553c3a59c953ec4be"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/creditos-y-alcance/",
+          "sha256": "7e77dd0ca09c8a63f6beb1d7ec40d174cb9f1e721b379ee0c63fe4cc5c9e0df6"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/cuaderno-practico-del-cuidador/",
+          "sha256": "2ffe8e267ba63c05d7daf5da26f14fdb43178de630145b59636e24200207d9d7"
         }
       ],
-      "rationale": "Manejo de demencia y decisiones sanitarias: exige revisión profesional.",
+      "rationale": "La edición Cuidar_a_mama_o_papa_ES_FOCALIZADO_CIERRE ofrece educación y acompañamiento familiar. Los pasajes sanitarios examinados describen señales observables, precauciones básicas y motivos para solicitar asistencia, reservando diagnóstico, tratamientos y decisiones individualizadas a profesionales. No enseñan procedimientos clínicos ni autorizan modificaciones de medicación. Por estas funciones concretas —no por el título ni por sus advertencias generales— se propone la categoría A.",
       "examinedSections": [
-        "Contenido completo, situaciones y recursos sanitarios"
+        "Revisión focalizada anterior: capítulos 9, 19 y 23; situaciones 8, 19, 20, 23, 48 y 50; hoja de emergencia independiente.",
+        "Revisión ampliada de clasificación: 25 capítulos, cuatro escenas, ocho agrupaciones de las 50 situaciones, índice, créditos, introducción, cierre/fuentes y doce herramientas; 39 cuerpos web. No es revisión clínica integral.",
+        "Cierre de P1/P2: dos pasajes de capítulos 7 y 18; comparación exacta con la edición focalizada y comprobación de coherencia con N1–N5. Sin revisión clínica general ni aprobación."
       ],
       "sources": [
         {
-          "title": "FDA: seguridad de los huevos",
-          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety"
+          "id": "S1",
+          "title": "NHS — Dysphagia (swallowing problems), apartados de síntomas y consulta urgente:",
+          "url": "https://www.nhs.uk/symptoms/swallowing-problems-dysphagia/",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
         },
         {
-          "title": "Health Canada: seguridad alimentaria",
-          "url": "https://www.canada.ca/en/health-canada/services/general-food-safety-tips/food-safety-you.html"
+          "id": "S2",
+          "title": "NHS inform (Escocia) — Adult choking first aid, signos de atragantamiento grave:",
+          "url": "https://www.nhsinform.scot/tests-and-treatments/first-aid/adult-choking-first-aid/",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
         },
         {
-          "title": "OMS: IA, errores y privacidad de datos de salud",
-          "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health"
+          "id": "S3",
+          "title": "NHS — Sudden confusion (delirium), atención inmediata ante confusión súbita:",
+          "url": "https://www.nhs.uk/symptoms/confusion/",
+          "verification": "Consultada nuevamente para el cierre P1/P2 del 2026-11-02; contraste documental, no aval profesional."
+        },
+        {
+          "id": "S4",
+          "title": "CDC — Signos y síntomas de accidente cerebrovascular, actuación urgente:",
+          "url": "https://www.cdc.gov/stroke/es/signs-symptoms/signos-y-sintomas-de-accidente-cerebrovascular.html",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+        },
+        {
+          "id": "S5",
+          "title": "Northern Ireland Ambulance Service — When to Call (pérdida de conciencia, dificultad respiratoria y atragantamiento) y What Happens When You Call (instrucciones mientras llega ayuda):",
+          "url": "https://nias.hscni.net/calling-999/when-to-call/",
+          "verification": "Consultada nuevamente para el cierre P1/P2 del 2026-11-02; contraste documental, no aval profesional."
+        },
+        {
+          "id": "S6",
+          "title": "NHS — Transient ischaemic attack (TIA): symptoms, urgencia aun cuando ceden los síntomas:",
+          "url": "https://www.nhs.uk/conditions/transient-ischaemic-attack-tia/symptoms/",
+          "verification": "Consultada nuevamente para el cierre P1/P2 del 2026-11-02; contraste documental, no aval profesional."
+        },
+        {
+          "id": "S7",
+          "title": "HHS Office on Women's Health — Caregiver stress:",
+          "url": "https://womenshealth.gov/a-z-topics/caregiver-stress",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+        },
+        {
+          "id": "S8",
+          "title": "NICE — Managing medicines in care homes, SC1, 1.2.3:",
+          "url": "https://www.nice.org.uk/guidance/sc1/chapter/Recommendations",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+        },
+        {
+          "id": "S9",
+          "title": "NHS — Problems swallowing pills, advertencias sobre modificación de medicamentos:",
+          "url": "https://www.nhs.uk/conditions/problems-swallowing-pills/",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+        },
+        {
+          "id": "S10",
+          "title": "NIH/NIMH — 5 Action Steps to Help Someone Having Thoughts of Suicide, revisión 2024:",
+          "url": "https://www.nimh.nih.gov/health/publications/5-action-steps-to-help-someone-having-thoughts-of-suicide",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+        },
+        {
+          "id": "S11",
+          "title": "NICE — Dementia: assessment, management and support for people living with dementia and their carers, NG97:",
+          "url": "https://www.nice.org.uk/guidance/ng97/chapter/Recommendations",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+        },
+        {
+          "id": "S12",
+          "title": "OMS — Dementia",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/dementia",
+          "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
         }
       ],
-      "editorialReview": null,
+      "editorialReview": {
+        "status": "approved",
+        "responsible": "Titular de Galumio Studio; aprobación confirmada por el usuario",
+        "reviewedAt": "2026-11-02",
+        "scope": "Revisión focalizada anterior: capítulos 9, 19 y 23; situaciones 8, 19, 20, 23, 48 y 50; hoja de emergencia independiente. Revisión ampliada de clasificación: 25 capítulos, cuatro escenas, ocho agrupaciones de las 50 situaciones, índice, créditos, introducción, cierre/fuentes y doce herramientas; 39 cuerpos web. No es revisión clínica integral. Cierre de P1/P2: dos pasajes de capítulos 7 y 18; comparación exacta con la edición focalizada y comprobación de coherencia con N1–N5. Sin revisión clínica general ni aprobación.",
+        "evidence": "docs/APROBACION-EDITORIAL-ALZHEIMER-20261102.txt — confirmación expresa en esta conversación y registro preparado",
+        "sources": [
+          {
+            "id": "S1",
+            "title": "NHS — Dysphagia (swallowing problems), apartados de síntomas y consulta urgente:",
+            "url": "https://www.nhs.uk/symptoms/swallowing-problems-dysphagia/",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S2",
+            "title": "NHS inform (Escocia) — Adult choking first aid, signos de atragantamiento grave:",
+            "url": "https://www.nhsinform.scot/tests-and-treatments/first-aid/adult-choking-first-aid/",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S3",
+            "title": "NHS — Sudden confusion (delirium), atención inmediata ante confusión súbita:",
+            "url": "https://www.nhs.uk/symptoms/confusion/",
+            "verification": "Consultada nuevamente para el cierre P1/P2 del 2026-11-02; contraste documental, no aval profesional."
+          },
+          {
+            "id": "S4",
+            "title": "CDC — Signos y síntomas de accidente cerebrovascular, actuación urgente:",
+            "url": "https://www.cdc.gov/stroke/es/signs-symptoms/signos-y-sintomas-de-accidente-cerebrovascular.html",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S5",
+            "title": "Northern Ireland Ambulance Service — When to Call (pérdida de conciencia, dificultad respiratoria y atragantamiento) y What Happens When You Call (instrucciones mientras llega ayuda):",
+            "url": "https://nias.hscni.net/calling-999/when-to-call/",
+            "verification": "Consultada nuevamente para el cierre P1/P2 del 2026-11-02; contraste documental, no aval profesional."
+          },
+          {
+            "id": "S6",
+            "title": "NHS — Transient ischaemic attack (TIA): symptoms, urgencia aun cuando ceden los síntomas:",
+            "url": "https://www.nhs.uk/conditions/transient-ischaemic-attack-tia/symptoms/",
+            "verification": "Consultada nuevamente para el cierre P1/P2 del 2026-11-02; contraste documental, no aval profesional."
+          },
+          {
+            "id": "S7",
+            "title": "HHS Office on Women's Health — Caregiver stress:",
+            "url": "https://womenshealth.gov/a-z-topics/caregiver-stress",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S8",
+            "title": "NICE — Managing medicines in care homes, SC1, 1.2.3:",
+            "url": "https://www.nice.org.uk/guidance/sc1/chapter/Recommendations",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S9",
+            "title": "NHS — Problems swallowing pills, advertencias sobre modificación de medicamentos:",
+            "url": "https://www.nhs.uk/conditions/problems-swallowing-pills/",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S10",
+            "title": "NIH/NIMH — 5 Action Steps to Help Someone Having Thoughts of Suicide, revisión 2024:",
+            "url": "https://www.nimh.nih.gov/health/publications/5-action-steps-to-help-someone-having-thoughts-of-suicide",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S11",
+            "title": "NICE — Dementia: assessment, management and support for people living with dementia and their carers, NG97:",
+            "url": "https://www.nice.org.uk/guidance/ng97/chapter/Recommendations",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          },
+          {
+            "id": "S12",
+            "title": "OMS — Dementia",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/dementia",
+            "verification": "Referencia preservada del registro anterior; no se atribuye nueva consulta en el cierre P1/P2."
+          }
+        ],
+        "category": "A",
+        "policyVersion": "1",
+        "editionHash": "62ebe3395fabe4d1b78fc3e6e4b5dd01633df62868421e29fac894786a4f6fa1",
+        "classificationHash": "b889b766ec4a325f2093654065de3ccbb1c109cd046a3b2ae15fc879b034457d"
+      },
       "professionalReview": null,
-      "book": "cuidar-a-mama-o-papa"
+      "book": "cuidar-a-mama-o-papa",
+      "distribution": "online-only",
+      "masterEdition": "Cuidar_a_mama_o_papa_ES_FOCALIZADO_CIERRE",
+      "masters": [
+        {
+          "file": "Cuidar_a_mama_o_papa_ES_FOCALIZADO_CIERRE.docx",
+          "sha256": "a40782ee338910bffcbfe343aad2226bd81c50b8fc94c7f2805ceb7fe0aff38e"
+        },
+        {
+          "file": "Cuidar_a_mama_o_papa_ES_FOCALIZADO_CIERRE.pdf",
+          "sha256": "fdfaeeea32784e7965ab0fdd3c89238389bb21993a47b2b3c90aa9a9229a0acb"
+        },
+        {
+          "file": "Cuidar_a_mama_o_papa_ES_FOCALIZADO_CIERRE.epub",
+          "sha256": "3214ea022ecf9b31aeb8e32073d05dc5c1110ecea8d321416035911bf2398d5c"
+        }
+      ]
     },
     "book:everyday-ai-for-seniors": {
       "policyVersion": "1",

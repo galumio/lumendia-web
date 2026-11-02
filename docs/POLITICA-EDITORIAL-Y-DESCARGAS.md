@@ -62,3 +62,7 @@ El enlace histórico Payhip https://payhip.com/b/FmX4P no pudo verificarse en la
 ## Cierre editorial confirmado — 2026-11-02
 
 El estado pendiente descrito en la preparación anterior queda como historial. El usuario confirmó la aprobación del titular de Galumio Studio para la edición SANITARIO y sus 16 cuerpos web. La constancia persistente es `docs/APROBACION-EDITORIAL-IA-DIA-20261102.txt`; el registro operativo contiene la aprobación A, fecha, responsable por su función y hashes exactos. No se atribuye revisión profesional externa. La edición completa es ahora elegible para build público, exclusivamente online; el lanzamiento continúa sujeto a autorización.
+
+## Aprobación Alzheimer — edición FOCALIZADO_CIERRE
+
+Las referencias anteriores a B pendiente describen el estado histórico. El titular de Galumio Studio confirmó, mediante el usuario, la aprobación editorial A de la edición CIERRE el 2026-11-02, con P1/P2 corregidos. La constancia es `docs/APROBACION-EDITORIAL-ALZHEIMER-20261102.txt`. Los 39 cuerpos se conservan por hash; solo cambia el estado editorial del catálogo. No se atribuye revisión profesional. La regla B continúa vigente para asesoramiento especializado. Esta aprobación prepara lectura online sin descargas y no autoriza el despliegue actual.
