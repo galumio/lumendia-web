@@ -12,16 +12,6 @@
       "evidence": "Recurso preexistente permitido por deploy-library.yml en f03673a6cb8f52b001f7fc38437faf432892f50e"
     },
     {
-      "path": "/recursos/hoja-de-emergencia-del-cuidador.pdf",
-      "book": "cuidar-a-mama-o-papa",
-      "edition": "existing-aa0b213e34a4",
-      "format": "pdf",
-      "size": 209084,
-      "sha256": "abc5f12181054f412b911a93d75407dbb1a80124fbf726b7c7e0a009b7e26ba5",
-      "status": "approved",
-      "evidence": "Recurso preexistente permitido por deploy-library.yml en f03673a6cb8f52b001f7fc38437faf432892f50e"
-    },
-    {
       "path": "/recursos/hoja-de-referencia-rapida-ia-para-docentes.pdf",
       "book": "ia-para-docentes",
       "edition": "existing-0335b81fb018",

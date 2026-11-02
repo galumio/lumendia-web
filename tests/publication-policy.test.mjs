@@ -20,9 +20,9 @@ test('healthContent false no aprueba un libro ni cambia un registro histórico',
  const b={slug:'fixture',healthContent:false,editorialStatus:'approved',pages:[]};const records={'book:fixture':{policyVersion:'1',category:'legacy',status:'preserved',provenance:'Fixture histórica',editionHash:editionHash(b)}};
  assert.equal(bookEligibility(b,records).eligible,true);assert.equal(bookEligibility({...b,healthContent:true},records).eligible,false);assert.equal(bookEligibility({...b,pages:[{html:'alterado'}]},records).eligible,false);
 });
-test('IA aprobada por su responsable; Alzheimer sigue pendiente; edición SANITARIO',()=>{
+test('IA y Alzheimer aprobados en categoría A; sin revisión profesional atribuida',()=>{
  const r=registry.records['book:ia-para-el-dia-a-dia'];assert.equal(r.category,'A');assert.equal(r.editorialReview.reviewedAt,'2026-11-02');assert.equal(r.professionalReview,null);assert.equal(evaluateRecord(r).eligible,true);assert.ok(readFileSync('docs/APROBACION-EDITORIAL-IA-DIA-20261102.txt','utf8').includes(r.editionHash));assert.ok(r.masters.every(m=>m.file.includes('_SANITARIO.')));
- assert.equal(registry.records['book:cuidar-a-mama-o-papa'].category,'B');assert.equal(evaluateRecord(registry.records['book:cuidar-a-mama-o-papa']).eligible,false);
+ const al=registry.records['book:cuidar-a-mama-o-papa'];assert.equal(al.category,'A');assert.equal(evaluateRecord(al).eligible,true);assert.equal(al.professionalReview,null);assert.equal(al.masterEdition,'Cuidar_a_mama_o_papa_ES_FOCALIZADO_CIERRE');assert.ok(readFileSync('docs/APROBACION-EDITORIAL-ALZHEIMER-20261102.txt','utf8').includes(al.editionHash));
 });
 test('Manifiesto de descargas: rutas, formatos, duplicados, hashes y ediciones',()=>{
  const m=JSON.parse(readFileSync('src/content/approved-resources.json','utf8'));assert.deepEqual(validateResourceManifest(m,registry),[]);

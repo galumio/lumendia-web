@@ -17,7 +17,7 @@ La elegibilidad vigente está centralizada en `src/lib/publication-policy.mjs` y
 
 Los registros confiables son `src/content/editorial-policy.json` y `src/content/approved-resources.json`. Las revisiones se vinculan a la edición y clasificación por hashes. La constancia de IA está en docs/APROBACION-EDITORIAL-IA-DIA-20261102.txt; los maestros y manuscritos privados permanecen fuera del repositorio. Una revisión incompleta o un cambio de contenido invalida la elegibilidad.
 
-Alzheimer sigue excluido. La edición SANITARIO completa de IA tiene clasificación A aprobada el 2026-11-02; el build público incluye los diez capítulos y complementos, sin PDF/EPUB gratuitos.
+La edición FOCALIZADO_CIERRE de Alzheimer tiene aprobación A documentada el 2026-11-02 y es elegible para lectura completa online, sin descargas PDF/EPUB; véase docs/APROBACION-EDITORIAL-ALZHEIMER-20261102.txt. La edición SANITARIO completa de IA tiene clasificación A aprobada el 2026-11-02; el build público incluye los diez capítulos y complementos, sin PDF/EPUB gratuitos.
 
 ## Bloqueos globales
 
