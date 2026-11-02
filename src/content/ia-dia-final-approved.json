@@ -1,0 +1,100 @@
+{
+  "masters": [
+    {
+      "file": "IA_dia_a_dia_ES_SANITARIO.docx",
+      "sha256": "91765fbd5f88e7f204fe1708143f0b0fa0ee4e61a83f28c9564a22a44ff7d1a0"
+    },
+    {
+      "file": "IA_dia_a_dia_ES_SANITARIO.pdf",
+      "sha256": "e0b3e9ae95ddb443a22d296bfaa7bedc195b8cd8536d2c709be5b9cd176d9906"
+    },
+    {
+      "file": "IA_dia_a_dia_ES_SANITARIO.epub",
+      "sha256": "ff6553614dba6a826c9eabbbd7e83bb59020765b3432af7643a26f2838ab4da7"
+    }
+  ],
+  "sections": [
+    {
+      "slug": "creditos",
+      "source": "EPUB/text/ch001.xhtml",
+      "textHash": "d8a4753b7d3382b5d1dcdd45c638a9559b2f8e770a774caef665e0aff0a878b8"
+    },
+    {
+      "slug": "antes-de-empezar",
+      "source": "EPUB/text/ch002.xhtml",
+      "textHash": "d28d02b2309edc415922fc3afc21db5455b9d4803ccedeae8c2f911ccb33f267"
+    },
+    {
+      "slug": "arrancar-en-10-minutos",
+      "source": "EPUB/text/ch003.xhtml",
+      "textHash": "0dab846ad396c5fdb28da0c9fa3b47bc30d2b515bda0e47cc9f01acf52d7bd46"
+    },
+    {
+      "slug": "dinero-y-cuentas",
+      "source": "EPUB/text/ch004.xhtml",
+      "textHash": "cddea3fc06eb3e31a452c7c175e0adb4a5e72ec8f513b6897131b511bbd91ac7"
+    },
+    {
+      "slug": "comida-sin-complicaciones",
+      "source": "EPUB/text/ch005.xhtml",
+      "textHash": "406bf41e2d7684775338fd0b1cd57fab8dd4251cc8e86749bb703750e5243fc6"
+    },
+    {
+      "slug": "casa-tramites-y-reclamos",
+      "source": "EPUB/text/ch006.xhtml",
+      "textHash": "8f90179ea65d9bcb51e5d48c94b61e73980bec388b82354ae5ff9f1ee7967a11"
+    },
+    {
+      "slug": "trabajo-y-estudio",
+      "source": "EPUB/text/ch007.xhtml",
+      "textHash": "4c417413d53f34dba6939fdcb9290b89bec8355e63e978b0a550bca94b8be9eb"
+    },
+    {
+      "slug": "familia-y-ninos",
+      "source": "EPUB/text/ch008.xhtml",
+      "textHash": "d0fbdfb654aa5c938eb490cc88a672d37de38c9e7644f572ae9631c8b6ef80cc"
+    },
+    {
+      "slug": "viajes-y-escapadas",
+      "source": "EPUB/text/ch009.xhtml",
+      "textHash": "a434cd7ed203a0c82cc73ef25a95917a1c32a6c83752a31677e7aeb0056ead0f"
+    },
+    {
+      "slug": "salud-y-bienestar",
+      "source": "EPUB/text/ch010.xhtml",
+      "textHash": "accf48506395a9dfee50e1206f1c3fee92d8d1be18523f294c37abbcca7b4373"
+    },
+    {
+      "slug": "aprender-y-crear",
+      "source": "EPUB/text/ch011.xhtml",
+      "textHash": "52ebefcb2b660c0a2804d5f1bff7f050baaaf0dbc396df13106a5ea5a32775eb"
+    },
+    {
+      "slug": "seguridad-y-privacidad",
+      "source": "EPUB/text/ch012.xhtml",
+      "textHash": "de465e4f53dbf42fb19630e560c9b19a89a32c9b913c81d615d3d8deb20f9cdb"
+    },
+    {
+      "slug": "indice-de-pedidos",
+      "source": "EPUB/text/ch013.xhtml",
+      "textHash": "8deebfec380d700343c68d349f9d40d7ee2f3a9c363406ec4774047c4a35e7c4"
+    },
+    {
+      "slug": "plantillas",
+      "source": "EPUB/text/ch014.xhtml",
+      "textHash": "9fa1a68c7a7bfebd27a51107ac9f11c27bfe406a024c3754ece0a2bd263c0203"
+    },
+    {
+      "slug": "glosario",
+      "source": "EPUB/text/ch015.xhtml",
+      "textHash": "4c524914136c38c4f8e2f15695b216510de0d0df2b09fcc688b8c8943c3dbf89"
+    },
+    {
+      "slug": "antes-de-cerrar",
+      "source": "EPUB/text/ch016.xhtml",
+      "textHash": "b904dace2b78b8f5c8c52a28d6617729408b9377bf20db6216b4bfc5c65f5c18"
+    }
+  ],
+  "coverHash": "3a7bb3c86a1bff699c5e9470423adf7cc5d506aef418e9da013da13c48a4ade1",
+  "select": "No inscrito: declaración expresa del titular en esta tarea"
+}

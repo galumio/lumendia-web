@@ -3,7 +3,6 @@ import AxeBuilder from '@axe-core/playwright';
 import {readFileSync} from 'node:fs';
 
 const editions=[
- {slug:'ia-para-el-dia-a-dia',language:'es-AR',buy:'https://payhip.com/b/FmX4P',start:'Empezar a leer',intro:'antes-de-empezar',examples:'ejemplos-practicos',larger:'Aumentar tamaño de letra',dark:'Activar modo oscuro'},
  {slug:'ai-for-everyday-life',language:'en',buy:'https://payhip.com/b/DvYKc',start:'Start reading',intro:'before-you-begin',examples:'practical-examples',larger:'Increase text size',dark:'Enable dark mode'},
  {slug:'ia-cotidiana-para-adultos-mayores',language:'es-AR',buy:'https://payhip.com/b/CHPS9',start:'Empezar a leer',intro:'antes-de-empezar',examples:'ejemplos-practicos',larger:'Aumentar tamaño de letra',dark:'Activar modo oscuro'},
  {slug:'everyday-ai-for-seniors',language:'en',buy:'https://payhip.com/b/Y9fCO',start:'Start reading',intro:'before-you-begin',examples:'practical-examples',larger:'Increase text size',dark:'Enable dark mode'},

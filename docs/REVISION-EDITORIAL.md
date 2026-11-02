@@ -1,5 +1,7 @@
 # Revisión editorial pendiente
 
+Este expediente histórico corresponde al libro sobre Alzheimer/demencia. Su revisión profesional sigue pendiente. Para la política general A/B/ambiguo y recursos, consultar [POLITICA-EDITORIAL-Y-DESCARGAS.md](POLITICA-EDITORIAL-Y-DESCARGAS.md). No se reclasifica esta obra como educación general.
+
 Estado: **no aprobado para publicación sanitaria**. No se atribuye una revisión médica acreditada.
 
 ## Integridad de los archivos

@@ -1,0 +1,6 @@
+---
+import {available} from '../../../lib/catalog';
+export function getStaticPaths(){return available.some(b=>b.slug==='ia-para-el-dia-a-dia'&&!b.sample)?[{params:{compat:'ejemplos-practicos'}}]:[];}
+import Base from '../../../layouts/Base.astro';
+---
+<Base title="Ejemplos prácticos — IA para el día a día" description="Los ejemplos de la muestra anterior ahora forman parte de la lectura completa."><section class="container section"><h1>Los ejemplos, en el libro completo</h1><p>La muestra anterior fue reemplazada por la edición completa gratuita.</p><ul><li><a href="../comida-sin-complicaciones/">Menú semanal y lista de compras: capítulo 3</a></li><li><a href="../trabajo-y-estudio/">El correo que nadie quería escribir: capítulo 5</a></li></ul><a href="../">Ver el índice completo</a></section></Base>

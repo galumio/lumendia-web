@@ -1,3 +1,4 @@
+import {editorialEligibility,registry} from './publication-policy.mjs';
 // Adaptador de compilación: nunca se importa desde scripts del navegador.
 import {existsSync,readdirSync,readFileSync,lstatSync,realpathSync} from 'node:fs';
 import {resolve,join} from 'node:path';
@@ -35,11 +36,15 @@ function records(directory,privateDraft){
   return {...entry,privateDraft,directory};
  });
 }
-/** @param {{root:string,preview?:boolean,today:string,relatedTargets?:Array<{type:string,slug:string,title:string,url:string}>}} options */
-export function loadEditorial({root,preview=false,today,relatedTargets=[]}){
+/** @param {{root:string,preview?:boolean,today:string,relatedTargets?:Array<{type:string,slug:string,title:string,url:string}>,policyRecords?:Record<string,any>}} options */
+export function loadEditorial({root,preview=false,today,relatedTargets=[],policyRecords=registry.records}){
  const publicRecords=records(join(root,'src/content/editorial'),false);
  // No se lee ni enumera .local en producción, incluso en dry-run.
  const selected=selectEditorialEntries(publicRecords,today);
+ for(const {directory,privateDraft,...entry} of selected){
+  const result=editorialEligibility(entry,plainFile(join(directory,entry.bodyPath)),policyRecords);
+  if(!result.eligible&&!preview)throw Error('Política editorial: '+entry.slug+': '+result.errors.join('; '));
+ }
  const drafts=preview?records(join(root,'.local/editorial'),true):[];
  const selectedUrls=new Set(selected.map(editorialUrl));
  const approved=preview?publicRecords.map(e=>({...e,publicationPending:!selectedUrls.has(editorialUrl(e))})):selected;

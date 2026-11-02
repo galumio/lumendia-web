@@ -1,0 +1,104 @@
+APROBACIÓN EDITORIAL — IA PARA EL DÍA A DÍA (ES)
+Identificador: IA-ES-SANITARIO-A-20261102
+Responsable: titular de Galumio Studio, aprobación confirmada por el usuario.
+Fecha de aprobación comunicada: 2026-11-02 (Argentina).
+Procedencia: mensaje del usuario en esta conversación titulado APROBACIÓN EDITORIAL CONFIRMADA — IA PARA EL DÍA A DÍA (ES).
+Transcripción: "El responsable de Galumio Studio confirmó expresamente la aprobación editorial de esta edición el 2 de noviembre de 2026."
+La confirmación identifica clasificación A, edición corregida y sus 16 cuerpos web mediante los hashes del registro preparado.
+Constancia de la comunicación del usuario, sin firma atribuida, matrícula ni revisión sanitaria externa. No es autorización de despliegue.
+Registro previo privado conservado: .local/REGISTRO-EDITORIAL-IA-PARA-APROBACION.json y .txt.
+Clasificación: A — educación general con contenido sanitario incidental.
+Alcance: Créditos y límites generales; Capítulo 3: ítems 33, 37, 41, 42; ejemplo del huevo; alergias; Capítulo 8: ítems 112–123, ejemplo de Roberto y avisos; Capítulos 6, 7 y 10: emergencias, fuentes oficiales y privacidad
+Justificación: Educación tecnológica con salud incidental; no diagnostica ni decide tratamiento. Ítems 112–118 organizan preguntas y plantillas; 119–123 bienestar general sin adaptación clínica.
+Distribución: solo lectura completa gratuita online; sin registro, pago ni PDF/EPUB públicos. Payhip no incorporado.
+Política: 1
+Edición: IA_dia_a_dia_ES_SANITARIO
+Hash canónico de edición: 8d05e7e0034e51b4d579b3ccdee6f27ea5d03417c09b2ab5651bc448eabc8053
+Hash de clasificación: d87806a46af182209d7f00c198f9a4ff78671a007953dc6a180c1c0797805935
+Fuentes: FDA: seguridad de los huevos — https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety
+Health Canada: seguridad alimentaria — https://www.canada.ca/en/health-canada/services/general-food-safety-tips/food-safety-you.html
+OMS: IA, errores y privacidad de datos de salud — https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health
+Límites: las fuentes respaldan precauciones de alimentación y privacidad, no avalan el libro ni respuestas individuales de IA. Roberto no se identifica como ficticio. Los ítems 119–123 son bienestar general, no tratamientos individualizados.
+MAESTROS Y CUERPOS WEB (SHA-256)
+{
+  "masters": [
+    {
+      "file": "IA_dia_a_dia_ES_SANITARIO.docx",
+      "sha256": "91765fbd5f88e7f204fe1708143f0b0fa0ee4e61a83f28c9564a22a44ff7d1a0"
+    },
+    {
+      "file": "IA_dia_a_dia_ES_SANITARIO.pdf",
+      "sha256": "e0b3e9ae95ddb443a22d296bfaa7bedc195b8cd8536d2c709be5b9cd176d9906"
+    },
+    {
+      "file": "IA_dia_a_dia_ES_SANITARIO.epub",
+      "sha256": "ff6553614dba6a826c9eabbbd7e83bb59020765b3432af7643a26f2838ab4da7"
+    }
+  ],
+  "bodies": [
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/creditos/",
+      "sha256": "172935e635b4b04923b52d6b40b2e929f50901e2b5c56a5d163e3b3af37ea5e5"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/antes-de-empezar/",
+      "sha256": "d9409f711464db1c89bc2186731dd8bead3d653aa179f947a8fdd375b0db0c01"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/arrancar-en-10-minutos/",
+      "sha256": "853757d3c707c5b699eb11953fcbcb204660ee30794ce9541ceb12cb642e012c"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/dinero-y-cuentas/",
+      "sha256": "cfb9191064fdca8418cee4ec118716244ff811a1ad0fb3c3c67edea3bdd9e1a9"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/comida-sin-complicaciones/",
+      "sha256": "0a3e4458d5849d66a65f2408dd67b35c9a20c43f21fc2db796dea3bcff3ddc8f"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/casa-tramites-y-reclamos/",
+      "sha256": "5a93b02cd3d815235775efaa60958ed9ee09ae7aef36de6e34aaddb4ac92aab4"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/trabajo-y-estudio/",
+      "sha256": "d036f7d7b983a8c9f6e56b03034eb7996463590c563cbb617605c542223ce60d"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/familia-y-ninos/",
+      "sha256": "13dba55de739933a6a91b391befd0af00f86cd1cbdc391ee1e0da2b71eefd78b"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/viajes-y-escapadas/",
+      "sha256": "f44f702f36c43273b208b8636bf6e66668b4fce7efc83e88273170ab7594673a"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/salud-y-bienestar/",
+      "sha256": "0599667d0685b66c67b125b45da44fd1f302da601bcccbdb3444dfe68b02f42e"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/aprender-y-crear/",
+      "sha256": "15a63a4ba4fe515d98c260b7da37d25bebe71cb4d3d9814e1a54e3145971d018"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/seguridad-y-privacidad/",
+      "sha256": "bdddd5ec61b0820eaef38be736fdf447f45e947970a37e2b2573954fcf0b2ddd"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/indice-de-pedidos/",
+      "sha256": "6fbe97973e5ebe7bdb605606826dc3d2b387c5d79302c8da59acb6d26d1b77f2"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/plantillas/",
+      "sha256": "7db715fb6f9a166c1f4fdbfb629a4e79528ca593267d5dda5584c14fafb2058e"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/glosario/",
+      "sha256": "4fa16e85b98f7f0f8508a126ac0aca65211364e938a8d2e4b5af2e2b06c47228"
+    },
+    {
+      "path": "/libros/ia-para-el-dia-a-dia/antes-de-cerrar/",
+      "sha256": "5123862eb439926ca55946715ed0a2476a61b15af21734c4338e0004a33f588d"
+    }
+  ]
+}

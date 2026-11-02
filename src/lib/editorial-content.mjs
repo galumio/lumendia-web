@@ -1,3 +1,4 @@
+import {evaluateRecord,registry} from './publication-policy.mjs';
 // Contrato editorial puro. El adaptador editorial-loader.mjs gestiona archivos y selección.
 export const contentSections = Object.freeze({guide:'guias',tutorial:'tutoriales',tip:'tips',story:'relatos'});
 const slugPattern=/^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -27,7 +28,7 @@ export function validateEditorialEntry(entry) {
   if(!text(entry.author?.name))errors.push('Autor real requerido');
   if(!['original','authorized'].includes(entry.rights?.kind)||!text(entry.rights?.evidence))errors.push('Derechos sin acreditar');
   if(entry.format!=='story'&&!entry.sources?.length)errors.push('Contenido práctico sin fuentes');
-  if(entry.healthContent&&(!text(entry.healthReview?.reviewer)||!date(entry.healthReview?.reviewedAt)||!text(entry.healthReview?.evidence)))errors.push('Falta revisión sanitaria');
+  if(entry.healthContent&&!evaluateRecord(registry.records['editorial:'+entry.slug]).eligible)errors.push('Falta revisión sanitaria');
  }
  return errors;
 }

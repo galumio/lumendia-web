@@ -1,3 +1,4 @@
+import {registry,effectiveBookRecords} from '../src/lib/publication-policy.mjs';
 // Compila, valida y empaqueta la biblioteca en .local/release/ para publicarla como artefacto.
 // Uso: node scripts/package-library.mjs [--dry-run]
 // --dry-run incluye el contenido aunque falten aprobaciones; el paquete queda marcado y publish-library.mjs lo rechaza.
@@ -19,6 +20,7 @@ export function packageLibrary({dryRun=false}={}){
  }
  run(process.execPath,['scripts/build.mjs',dryRun?'dry-run':'library']);
  run(process.execPath,['scripts/validate.mjs','dist-library',...(dryRun?['--dry-run']:[])]);
+ run(process.execPath,['scripts/verify-public-artifact.mjs','dist-library',...(dryRun?['--preview']:[])]);
  const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\..+/,'');
  const name=`lumendia-site-${stamp}${dryRun?'-DRY-RUN':''}.tar.gz`;
  mkdirSync('.local/release',{recursive:true});
@@ -26,7 +28,7 @@ export function packageLibrary({dryRun=false}={}){
  run('tar',['-czf',archive,'-C','dist-library','.']);
  const sha256=createHash('sha256').update(readFileSync(archive)).digest('hex');
  // Libros y recursos incluidos: publish-library.mjs los verifica en el sitio después de desplegar.
- const books=loadBooks().filter(b=>dryRun||publishable(b)).map(b=>({slug:b.slug,resources:(b.resources??[]).map(r=>({slug:r.slug,sha256:r.sha256}))}));
+ const books=loadBooks({proposed:dryRun}).filter(b=>dryRun||publishable(b)).map(b=>({slug:b.slug,resources:(b.resources??[]).map(r=>({slug:r.slug,book:b.slug,edition:effectiveBookRecords(registry,dryRun)[b.slug].edition,format:r.format??'pdf',path:`/recursos/${r.slug}.${r.format??'pdf'}`,size:statSync(r.file).size,sha256:r.sha256}))}));
  const manifest={name,archive,sha256,dryRun,books,files:walk('dist-library').length,createdAt:new Date().toISOString()};
  writeFileSync(archive+'.json',JSON.stringify(manifest,null,2));
  console.log(`Paquete ${dryRun?'de ENSAYO (no publicable) ':''}listo: ${archive}\nSHA-256 ${sha256} · ${manifest.files} archivos`);
