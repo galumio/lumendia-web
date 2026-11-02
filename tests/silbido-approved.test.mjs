@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {validateEditorialEntry,selectEditorialEntries} from '../src/lib/editorial-content.mjs';
+import {renderEditorialMarkdown} from '../src/lib/editorial-loader.mjs';
+test('Silbido: manuscrito aprobado íntegro y fecha autorizada y exclusión antes de publicarse',()=>{
+ const base='src/content/editorial/el-silbido-detras-del-monte';
+ const body=readFileSync(base+'.md');const meta=JSON.parse(readFileSync(base+'.json','utf8'));
+ assert.equal(createHash('sha256').update(body).digest('hex'),'a31571aef21a50680031760cc7cac3ff7b263c531e68590eba5ce2014243fc7c');
+ assert.deepEqual(validateEditorialEntry(meta),[]);
+ assert.equal(meta.author.name,'Gael Beltra');assert.equal(meta.publisher.name,'Galumio Studio');
+ assert.equal(meta.publishedAt,'2026-11-02');assert.equal(meta.reviewedAt,null);
+ assert.deepEqual(selectEditorialEntries([meta],'2026-11-01'),[]);
+ assert.equal(selectEditorialEntries([meta],'2026-11-02').length,1);
+ assert.deepEqual(selectEditorialEntries([{...meta,publishedAt:null}],'2099-12-31'),[]);
+ const rendered=renderEditorialMarkdown(body.toString('utf8'));
+ assert.deepEqual(rendered.toc.map(h=>h.title),['1. El regreso','2. El escritorio y la fotografía','3. El encuentro y el intento de rescate','4. La tranquera','5. La ventana a oscuras']);
+ assert.equal((rendered.html.match(/<p>/g)||[]).length,69);
+ assert.equal(body.toString('utf8').trim().split('\n').at(-1),'Afuera se escucharon unos pasos pesados cruzando el patio hacia el fondo. Luego, el roce seco de algo que arrastraba el plato junto al alambrado.');
+});

@@ -1,0 +1,35 @@
+{
+  "slug": "el-silbido-detras-del-monte",
+  "title": "El silbido detrás del monte",
+  "description": "Gabriel regresa a la casa familiar, en el interior de Corrientes, veintisiete años después de la desaparición de su hermano menor. Un silbido que vuelve a escucharse desde el monte lo obliga a enfrentarse con lo que ocurrió aquella tarde",
+  "format": "story",
+  "language": "es",
+  "status": "approved",
+  "scope": "complete",
+  "author": {
+    "type": "Person",
+    "name": "Gael Beltra",
+    "slug": "gael-beltra"
+  },
+  "publisher": {
+    "type": "Organization",
+    "name": "Galumio Studio"
+  },
+  "topics": [
+    "Terror sobrenatural",
+    "Terror rural"
+  ],
+  "audiences": [
+    "Personas interesadas en relatos de terror"
+  ],
+  "publishedAt": "2026-11-02",
+  "reviewedAt": null,
+  "sources": [],
+  "related": [],
+  "healthContent": false,
+  "rights": {
+    "kind": "original",
+    "evidence": "Manuscrito corregido aprobado por el responsable para integración y revisión local. Publicación íntegra autorizada expresamente por el responsable el 2026-11-02. SHA-256 del Word: 29cf4cf703470bc79589f4cd0b0813ba036ae88c4ecbe0ef9c686a6d88a8af1b"
+  },
+  "bodyPath": "el-silbido-detras-del-monte.md"
+}
