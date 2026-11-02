@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "resources": [
+    {
+      "path": "/recursos/plan-de-7-dias-antes-del-final.pdf",
+      "book": "como-estudiar-para-un-final",
+      "edition": "existing-94224150c35a",
+      "format": "pdf",
+      "size": 197012,
+      "sha256": "53f94ce95a64e10c62f69a57d81dc9960d75f9df377b771e05c5b26d20ca2e19",
+      "status": "approved",
+      "evidence": "Recurso preexistente permitido por deploy-library.yml en f03673a6cb8f52b001f7fc38437faf432892f50e"
+    },
+    {
+      "path": "/recursos/hoja-de-emergencia-del-cuidador.pdf",
+      "book": "cuidar-a-mama-o-papa",
+      "edition": "existing-aa0b213e34a4",
+      "format": "pdf",
+      "size": 209084,
+      "sha256": "abc5f12181054f412b911a93d75407dbb1a80124fbf726b7c7e0a009b7e26ba5",
+      "status": "approved",
+      "evidence": "Recurso preexistente permitido por deploy-library.yml en f03673a6cb8f52b001f7fc38437faf432892f50e"
+    },
+    {
+      "path": "/recursos/hoja-de-referencia-rapida-ia-para-docentes.pdf",
+      "book": "ia-para-docentes",
+      "edition": "existing-0335b81fb018",
+      "format": "pdf",
+      "size": 48954,
+      "sha256": "814dbebca17b21268003b16514433c809fceccdb3469fb2a9e1b72c7bc29d97a",
+      "status": "approved",
+      "evidence": "Recurso preexistente permitido por deploy-library.yml en f03673a6cb8f52b001f7fc38437faf432892f50e"
+    }
+  ]
+}

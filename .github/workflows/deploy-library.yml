@@ -24,6 +24,14 @@ jobs:
     permissions:
       contents: write # necesario para leer releases borrador
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: trusted
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
       - name: Descargar y verificar el artefacto
         env:
           GH_TOKEN: ${{ github.token }}
@@ -38,7 +46,7 @@ jobs:
           curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/octet-stream" -o site.tar.gz "$api/releases/assets/$asset_id"
           echo "$EXPECTED_SHA256  site.tar.gz" | sha256sum -c -
           mkdir site-out
-          tar -xzf site.tar.gz -C site-out
+          python3 trusted/scripts/extract-release.py site.tar.gz site-out
       - name: Comprobar contenido publicable
         working-directory: site-out
         run: |
@@ -46,13 +54,8 @@ jobs:
           test "$(tr -d '\r\n' < CNAME)" = lumendia.com.ar
           test -f index.html && test -f 404.html && test -f sitemap.xml
           if grep -rlq noindex --include='*.html' .; then echo "Hay páginas con noindex"; exit 1; fi
-          # Solo se admiten los recursos gratuitos aprobados; los PDF premium nunca se publican.
-          # Hoja de emergencia del cuidador · Plan de 7 días antes del final · Hoja de referencia rápida (IA para docentes)
-          allowed="abc5f12181054f412b911a93d75407dbb1a80124fbf726b7c7e0a009b7e26ba5 53f94ce95a64e10c62f69a57d81dc9960d75f9df377b771e05c5b26d20ca2e19 814dbebca17b21268003b16514433c809fceccdb3469fb2a9e1b72c7bc29d97a"
-          if find . -iname '*.epub' -o -iname '*.mobi' -o -iname '*.azw*' -o -iname '*.zip' | grep -q .; then echo "Archivo de libro no permitido"; exit 1; fi
-          find . -iname '*.pdf' -print0 | while IFS= read -r -d '' f; do
-            case " $allowed " in *" $(sha256sum "$f" | cut -d' ' -f1) "*) ;; *) echo "PDF no permitido: $f"; exit 1;; esac
-          done
+          # El verificador y los manifiestos proceden del commit del workflow, nunca del paquete.
+          node ../trusted/scripts/verify-public-artifact.mjs .
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site-out

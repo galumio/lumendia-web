@@ -1,6 +1,6 @@
 ---
 import type {Resource} from '../lib/catalog';
 interface Props {resource:Resource}
-const {resource}=Astro.props;
+const {resource}=Astro.props;const format=resource.format??"pdf";
 ---
-<section class="resource-band"><div class="resource-icon" aria-hidden="true">↓</div><div><span class="eyebrow">Un recurso para tener cerca</span><h2>{resource.title}</h2><p>{resource.description}</p><span class="small">PDF gratuito · Sin registro · Sin pedir tus datos</span></div><a class="button secondary" href={`/recursos/${resource.slug}.pdf`} download data-event="free_download">Descargar gratis ↓</a></section>
+<section class="resource-band"><div class="resource-icon" aria-hidden="true">↓</div><div><span class="eyebrow">Un recurso para tener cerca</span><h2>{resource.title}</h2><p>{resource.description}</p><span class="small">{format.toUpperCase()} gratuito · Sin registro · Sin pedir tus datos</span></div><a class="button secondary" href={`/recursos/${resource.slug}.${format}`} download data-event="free_download">Descargar gratis ↓</a></section>

@@ -1,0 +1,798 @@
+{
+  "version": 1,
+  "records": {
+    "book:ai-for-everyday-life": {
+      "policyVersion": "1",
+      "editionHash": "e4ae1267ca09a2e330ed9df278776db6c6e2ed1a070ba513ae333e5627c5b3ec",
+      "category": "legacy",
+      "status": "preserved",
+      "edition": "existing-e4ae1267ca09",
+      "routes": [
+        "/libros/ai-for-everyday-life/",
+        "/libros/ai-for-everyday-life/before-you-begin/",
+        "/libros/ai-for-everyday-life/practical-examples/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/ai-for-everyday-life/before-you-begin/",
+          "sha256": "8a979e0eddd67869ba8cfbe3df19e3e3baf68d83b73bf8920613f18ea921505b"
+        },
+        {
+          "path": "/libros/ai-for-everyday-life/practical-examples/",
+          "sha256": "ac3d7a0cfbc81137fd47c617bb0c2f0912d2ccf837231b7bb38ace816181e742"
+        }
+      ],
+      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
+      "book": "ai-for-everyday-life"
+    },
+    "book:como-estudiar-para-un-final": {
+      "policyVersion": "1",
+      "editionHash": "94224150c35af42e071f27e051a00add8d8cce000dc0d261843557009acb5700",
+      "category": "legacy",
+      "status": "preserved",
+      "edition": "existing-94224150c35a",
+      "routes": [
+        "/libros/como-estudiar-para-un-final/",
+        "/libros/como-estudiar-para-un-final/cuando-empezar-a-estudiar-para-un-final/",
+        "/libros/como-estudiar-para-un-final/cronograma-de-estudio-para-un-final/",
+        "/libros/como-estudiar-para-un-final/como-hacer-un-buen-resumen-para-estudiar/",
+        "/libros/como-estudiar-para-un-final/tecnicas-de-estudio-que-funcionan/",
+        "/libros/como-estudiar-para-un-final/como-practicar-con-finales-anteriores/",
+        "/libros/como-estudiar-para-un-final/como-estudiar-para-un-final-oral/",
+        "/libros/como-estudiar-para-un-final/como-estudiar-para-un-examen-escrito/",
+        "/libros/como-estudiar-para-un-final/como-concentrarse-para-estudiar/",
+        "/libros/como-estudiar-para-un-final/como-controlar-los-nervios-antes-de-un-examen/",
+        "/libros/como-estudiar-para-un-final/que-hacer-el-dia-del-examen/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/como-estudiar-para-un-final/cuando-empezar-a-estudiar-para-un-final/",
+          "sha256": "efa3a7924ecae189584d97665b9a916d55a77d0037153561788991f0b79fa98c"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/cronograma-de-estudio-para-un-final/",
+          "sha256": "290f39f3d2faa8f093428083a318f2a11dc77ec933ac5743ccaf0a5476349d66"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/como-hacer-un-buen-resumen-para-estudiar/",
+          "sha256": "8b47835d585931657d69a30fe8ac7c103fc927e9f7e070edc908575dc57398c1"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/tecnicas-de-estudio-que-funcionan/",
+          "sha256": "9e9d3cf26ad1e335c27429d6d61e65bf730c9243da0207fa27651bf578b5bb4f"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/como-practicar-con-finales-anteriores/",
+          "sha256": "3b9e4c13ecfb35e5fef6e1dbebebe62765d9b32062c9b33f8161c85af8323f25"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/como-estudiar-para-un-final-oral/",
+          "sha256": "de2ca1e34858cf683648a1f7b581f12a1d0f8d9785f656a733b925ffe255ab8b"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/como-estudiar-para-un-examen-escrito/",
+          "sha256": "df3eff72027a8c3f9aaaa9682a7bf0cba5256e7d148f3519c4466994ec18c6a2"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/como-concentrarse-para-estudiar/",
+          "sha256": "cdbb5ae6313f496418a0d5da6fdbd43b1e6858b5a52b97987e68916c525b2403"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/como-controlar-los-nervios-antes-de-un-examen/",
+          "sha256": "d5a6dcc96f449aacea1871d4bcc32983776b67084f94ed4fe5b0292b0272189a"
+        },
+        {
+          "path": "/libros/como-estudiar-para-un-final/que-hacer-el-dia-del-examen/",
+          "sha256": "e9b6c64a678b9997b097133183a7bbae4a3ed812cb18bc2dfcc645322aa86aa1"
+        }
+      ],
+      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
+      "book": "como-estudiar-para-un-final"
+    },
+    "book:cuidar-a-mama-o-papa": {
+      "policyVersion": "1",
+      "editionHash": "aa0b213e34a4f5a3360615021f7d4cc8390eb61006e0d1d920d65ab8c739c9a4",
+      "category": "B",
+      "status": "pending",
+      "edition": "existing-aa0b213e34a4",
+      "routes": [
+        "/libros/cuidar-a-mama-o-papa/",
+        "/libros/cuidar-a-mama-o-papa/actividades-para-personas-con-alzheimer/",
+        "/libros/cuidar-a-mama-o-papa/alimentacion-y-dificultad-para-tragar/",
+        "/libros/cuidar-a-mama-o-papa/antes-de-cerrar-y-fuentes/",
+        "/libros/cuidar-a-mama-o-papa/antes-de-empezar/",
+        "/libros/cuidar-a-mama-o-papa/bano-higiene-e-incontinencia/",
+        "/libros/cuidar-a-mama-o-papa/bano-ropa-e-higiene/",
+        "/libros/cuidar-a-mama-o-papa/casa-segura-para-una-persona-con-demencia/",
+        "/libros/cuidar-a-mama-o-papa/comida-bebida-y-sueno/",
+        "/libros/cuidar-a-mama-o-papa/como-explicar-el-alzheimer-a-los-nietos/",
+        "/libros/cuidar-a-mama-o-papa/como-hablar-con-una-persona-con-alzheimer/",
+        "/libros/cuidar-a-mama-o-papa/conductas-dificiles-en-la-demencia/",
+        "/libros/cuidar-a-mama-o-papa/confusion-y-percepciones/",
+        "/libros/cuidar-a-mama-o-papa/consultas-guardia-y-hospital/",
+        "/libros/cuidar-a-mama-o-papa/cuando-no-te-reconoce/",
+        "/libros/cuidar-a-mama-o-papa/cuando-pensar-en-una-residencia/",
+        "/libros/cuidar-a-mama-o-papa/cuatro-escenas/",
+        "/libros/cuidar-a-mama-o-papa/cuidar-al-que-cuida/",
+        "/libros/cuidar-a-mama-o-papa/decidir-por-etapas/",
+        "/libros/cuidar-a-mama-o-papa/dinero-papeles-y-decisiones-futuras/",
+        "/libros/cuidar-a-mama-o-papa/duelo-anticipado/",
+        "/libros/cuidar-a-mama-o-papa/enojo-angustia-y-animo/",
+        "/libros/cuidar-a-mama-o-papa/errores-frecuentes-al-cuidar/",
+        "/libros/cuidar-a-mama-o-papa/etapa-avanzada-de-la-demencia/",
+        "/libros/cuidar-a-mama-o-papa/familia-visitas-y-cuidadores/",
+        "/libros/cuidar-a-mama-o-papa/inquietud-al-atardecer-sindrome-vespertino/",
+        "/libros/cuidar-a-mama-o-papa/memoria-y-comunicacion/",
+        "/libros/cuidar-a-mama-o-papa/pareja-intimidad-y-afecto/",
+        "/libros/cuidar-a-mama-o-papa/primeros-meses-despues-del-diagnostico/",
+        "/libros/cuidar-a-mama-o-papa/que-es-la-demencia-y-que-esta-pasando/",
+        "/libros/cuidar-a-mama-o-papa/repartir-el-cuidado-en-la-familia/",
+        "/libros/cuidar-a-mama-o-papa/rutina-diaria-vestido-y-sueno/",
+        "/libros/cuidar-a-mama-o-papa/salud-consultas-y-cambios-bruscos/",
+        "/libros/cuidar-a-mama-o-papa/se-pierde-sale-de-casa-o-quiere-conducir/",
+        "/libros/cuidar-a-mama-o-papa/seguridad-salidas-y-autonomia/",
+        "/libros/cuidar-a-mama-o-papa/situaciones/",
+        "/libros/cuidar-a-mama-o-papa/tipos-de-demencia/",
+        "/libros/cuidar-a-mama-o-papa/visitas-salidas-y-viajes/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/actividades-para-personas-con-alzheimer/",
+          "sha256": "bb2b02977eb7fe0e133837ccbfddd1ac815c93b8f53e351ecd7338f37f508fc3"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/alimentacion-y-dificultad-para-tragar/",
+          "sha256": "704fe4f97a7940dabf84a92b2cb18ab8397cdc75ab2ff5abf743538369779a2e"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/antes-de-cerrar-y-fuentes/",
+          "sha256": "6e537dcddebd9ef6c5a1a4eecaf48fec23bf71c6df41bc1122ec090a071e4055"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/antes-de-empezar/",
+          "sha256": "d886a181b3cf74d179d5d9070f86f08cd5fb0f7e822cc7dad7484fad4ba11112"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/bano-higiene-e-incontinencia/",
+          "sha256": "f971081992e4c55d16ce487b3de518ada914ce95caea8483a8060ac8fcba76ff"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/bano-ropa-e-higiene/",
+          "sha256": "7760e772c0f76b50c8a9fa93f0bce0a2327f16fe5c57774f47a5b5403821c3be"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/casa-segura-para-una-persona-con-demencia/",
+          "sha256": "a68971c32dad71c55bcde71f84951661639e6e1e31ad956a3e98906384457363"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/comida-bebida-y-sueno/",
+          "sha256": "e5bb5df88a590a91c9c576b02ca1c4a01de0378de96fc4d1566d977b4e865da0"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/como-explicar-el-alzheimer-a-los-nietos/",
+          "sha256": "25481cb945097c42fef22ec06ec82af26ffaf84583fa8d7e71b07493b38634c1"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/como-hablar-con-una-persona-con-alzheimer/",
+          "sha256": "38c00ac31d2f30c34a0d7ce1ff15df174362c46b602be4216d8ce81a55a5bb86"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/conductas-dificiles-en-la-demencia/",
+          "sha256": "dc24b366e3f9a79dea6af01f47c01381e36c2c564790e8dcff3a227ec5190670"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/confusion-y-percepciones/",
+          "sha256": "1d02b1565545b0e206ed459ed4b4d95b41fdb2ca74cb4389dec6748eedccbc92"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/consultas-guardia-y-hospital/",
+          "sha256": "9ac2acb6fc8a50a8a5009cbb911a748046701aabd23c6f99b21aaec0c42aedda"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/cuando-no-te-reconoce/",
+          "sha256": "bb7678627ece8a252922bdd1a4a3ac2325408e1514bdad0719274be8f6331f89"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/cuando-pensar-en-una-residencia/",
+          "sha256": "fed8632c3e648362a7bb521da24a671c94655fe47db7f5cddbdf426d8ff7da66"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/cuatro-escenas/",
+          "sha256": "d5c07833dd95b991f774e6fb0ea20089d4b0aedd2141b074542fea25fc55d192"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/cuidar-al-que-cuida/",
+          "sha256": "1184b1253d395e8562291f6ce0a6d510f655db5c80590032f77d2384ea9628c9"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/decidir-por-etapas/",
+          "sha256": "7756fc4b0277d4cd7799571e08725534b9b8e3fcd94056c52dbe86212c111332"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/dinero-papeles-y-decisiones-futuras/",
+          "sha256": "885bfa1058b4e4e600446cac84f5cbdbc1135df41dbaddd311c667e6f684ce36"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/duelo-anticipado/",
+          "sha256": "1b00c2d5f0eb930e4239c837a3206506b55d4bc071ce8a682206fa569adfbc4a"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/enojo-angustia-y-animo/",
+          "sha256": "3e99a56e4c96d2cf314400cfc6767043a25ed6dcdd6ae51d2d552d8d9a5a98ab"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/errores-frecuentes-al-cuidar/",
+          "sha256": "55481bbf1d9600114f14aeb634e3526afd79e26386da5dfc7b79a1f63d595aec"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/etapa-avanzada-de-la-demencia/",
+          "sha256": "bf7a954d83c63db56fd67dfcdee6c934ba026698e7597bbbc5507c2706ffe096"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/familia-visitas-y-cuidadores/",
+          "sha256": "570b9f42ff0448488e8c5b03cced44bcba81d5be9aca7029b93f570f6ffd787a"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/inquietud-al-atardecer-sindrome-vespertino/",
+          "sha256": "8162adbfc92d7c822f91d82f38b9597a61695ea3cfc8326af5b8b160e3b2e03e"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/memoria-y-comunicacion/",
+          "sha256": "83844f1636847b2082a6622db8dc62866448c85b60554eec61f0d26aa25d5dc9"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/pareja-intimidad-y-afecto/",
+          "sha256": "059059e4a589f08249a4f45e6e65960f98e13fc8f8e53195da52ebf18e088a92"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/primeros-meses-despues-del-diagnostico/",
+          "sha256": "bc40b6a20c998f5f9bd9491b2b6d7136f0f1c4ed13b3c9a72ca2f5987735189f"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/que-es-la-demencia-y-que-esta-pasando/",
+          "sha256": "a1489dced8b950072a6f09529d68c829cca3e3681ae029eb6a08fc08f8a7127a"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/repartir-el-cuidado-en-la-familia/",
+          "sha256": "ada8dd0880f2e76141603eb0760c59508ef1b0e8314f0a602f5056711f719df1"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/rutina-diaria-vestido-y-sueno/",
+          "sha256": "bdc1beb25bc794d0c2f2ab356175d8070f81f1f8a5bc1c5303e146e6976ace95"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/salud-consultas-y-cambios-bruscos/",
+          "sha256": "b204c1d7d3d39b1954488001bf0b179913d8a52897974c2ddb207e623cf98c10"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/se-pierde-sale-de-casa-o-quiere-conducir/",
+          "sha256": "c33bddf8765338f4cefcdf50da4bf395141a37ceac6b8a7164a71d3c3fa34335"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/seguridad-salidas-y-autonomia/",
+          "sha256": "d8a8bc697c72b28219df39180ed6d6672b05bb6128353d10e87b4887ae388411"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/situaciones/",
+          "sha256": "79c26e2be0fb7fc66f4aaad2d090ad6b869a77b7abb904909a628af306b43875"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/tipos-de-demencia/",
+          "sha256": "92e7d28c3fe8a0ef2fdef0f379b791b7d4649bab416795f2400e991acadc30cd"
+        },
+        {
+          "path": "/libros/cuidar-a-mama-o-papa/visitas-salidas-y-viajes/",
+          "sha256": "2189eeeacddaae32e46a1d49cc527e5d5238ae9d307bb2a553c3a59c953ec4be"
+        }
+      ],
+      "rationale": "Manejo de demencia y decisiones sanitarias: exige revisión profesional.",
+      "examinedSections": [
+        "Contenido completo, situaciones y recursos sanitarios"
+      ],
+      "sources": [
+        {
+          "title": "FDA: seguridad de los huevos",
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety"
+        },
+        {
+          "title": "Health Canada: seguridad alimentaria",
+          "url": "https://www.canada.ca/en/health-canada/services/general-food-safety-tips/food-safety-you.html"
+        },
+        {
+          "title": "OMS: IA, errores y privacidad de datos de salud",
+          "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health"
+        }
+      ],
+      "editorialReview": null,
+      "professionalReview": null,
+      "book": "cuidar-a-mama-o-papa"
+    },
+    "book:everyday-ai-for-seniors": {
+      "policyVersion": "1",
+      "editionHash": "af2d7305fec4711479682c490817a9980660c39a555f0e6e0c16d29dbd45a8de",
+      "category": "legacy",
+      "status": "preserved",
+      "edition": "existing-af2d7305fec4",
+      "routes": [
+        "/libros/everyday-ai-for-seniors/",
+        "/libros/everyday-ai-for-seniors/before-you-begin/",
+        "/libros/everyday-ai-for-seniors/practical-examples/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/everyday-ai-for-seniors/before-you-begin/",
+          "sha256": "6351983f26c4df7c3ea3f9c0d7a864bb40cbd2d405d68f6c39efb07119cc5e80"
+        },
+        {
+          "path": "/libros/everyday-ai-for-seniors/practical-examples/",
+          "sha256": "9b7e08f790e6e4b2974e211edb5728bce81e303ee9966013529530a8287790ab"
+        }
+      ],
+      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
+      "book": "everyday-ai-for-seniors"
+    },
+    "book:ia-cotidiana-para-adultos-mayores": {
+      "policyVersion": "1",
+      "editionHash": "13f091194ba79371cdff0eb725ed48eb45508e80d25da917f0fec7da19ba0f18",
+      "category": "legacy",
+      "status": "preserved",
+      "edition": "existing-13f091194ba7",
+      "routes": [
+        "/libros/ia-cotidiana-para-adultos-mayores/",
+        "/libros/ia-cotidiana-para-adultos-mayores/antes-de-empezar/",
+        "/libros/ia-cotidiana-para-adultos-mayores/ejemplos-practicos/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/antes-de-empezar/",
+          "sha256": "d7ba4503e71ab0a3f90e3b77aee20c4279dc4d6d2beae06d38fb02763e715951"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/ejemplos-practicos/",
+          "sha256": "6a864982b814180fb1ee63a96f8c74ce2b0a22c6e644991a861b90cc28e11104"
+        }
+      ],
+      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
+      "book": "ia-cotidiana-para-adultos-mayores"
+    },
+    "book:ia-para-docentes": {
+      "policyVersion": "1",
+      "editionHash": "0335b81fb0189a2b4f1a4e3bd6d28e032fc19d31ff305935bae2afc8b2bd886d",
+      "category": "legacy",
+      "status": "preserved",
+      "edition": "existing-0335b81fb018",
+      "routes": [
+        "/libros/ia-para-docentes/",
+        "/libros/ia-para-docentes/que-es-un-asistente-de-ia/",
+        "/libros/ia-para-docentes/la-formula-de-un-buen-prompt/",
+        "/libros/ia-para-docentes/chatgpt-para-docentes/",
+        "/libros/ia-para-docentes/gemini-para-docentes/",
+        "/libros/ia-para-docentes/claude-para-docentes/",
+        "/libros/ia-para-docentes/cual-usar-para-cada-tarea/",
+        "/libros/ia-para-docentes/tres-ejemplos-paso-a-paso/",
+        "/libros/ia-para-docentes/biblioteca-de-prompts/",
+        "/libros/ia-para-docentes/errores-comunes-y-como-revisar/",
+        "/libros/ia-para-docentes/plan-de-7-dias/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/ia-para-docentes/que-es-un-asistente-de-ia/",
+          "sha256": "698820306d9d7dd395820da70b1075bea0ea8bc2435d95133713eae01e2225ae"
+        },
+        {
+          "path": "/libros/ia-para-docentes/la-formula-de-un-buen-prompt/",
+          "sha256": "f7ec1b3d33f358be856fc0e6c5b0064f01b075163cbfea8d6a6c8d2bec1f153f"
+        },
+        {
+          "path": "/libros/ia-para-docentes/chatgpt-para-docentes/",
+          "sha256": "9e738160b4ced907b80b941cc2a7ede7a25c00af4f0d5841f7f4c7d51dcdca77"
+        },
+        {
+          "path": "/libros/ia-para-docentes/gemini-para-docentes/",
+          "sha256": "e1173198ca18eda43a6552be88a8ab489c11f19112af996db0a3e89d1e51c171"
+        },
+        {
+          "path": "/libros/ia-para-docentes/claude-para-docentes/",
+          "sha256": "1358ab6f2a5eae65672a95782c3ae7de270d4bc31824ca794d26aaad7e13093a"
+        },
+        {
+          "path": "/libros/ia-para-docentes/cual-usar-para-cada-tarea/",
+          "sha256": "a50847c5eb5fac601267f92af6a71cdd644ccbe31da1c373646d1f4b92ac2d0b"
+        },
+        {
+          "path": "/libros/ia-para-docentes/tres-ejemplos-paso-a-paso/",
+          "sha256": "73fc0f0e53d104e1b38c8fcc2dc8edfeb0321db6217ed0bb416a8212bafa76fe"
+        },
+        {
+          "path": "/libros/ia-para-docentes/biblioteca-de-prompts/",
+          "sha256": "deb3cb3dbc1a323725bd4fb8452dad3b2344c0feef70c210cc3ee2d89e4e17da"
+        },
+        {
+          "path": "/libros/ia-para-docentes/errores-comunes-y-como-revisar/",
+          "sha256": "5a2d38a4a3b59daceb198298aab8afd3b124724d263f6ecd38421e6e4c942ca1"
+        },
+        {
+          "path": "/libros/ia-para-docentes/plan-de-7-dias/",
+          "sha256": "8c62c118ce0f7e4736ba652d00fe22600f8c4f15b8c06f6730eb59face9cd7cf"
+        }
+      ],
+      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
+      "book": "ia-para-docentes"
+    },
+    "book:ia-para-el-dia-a-dia": {
+      "policyVersion": "1",
+      "editionHash": "8d05e7e0034e51b4d579b3ccdee6f27ea5d03417c09b2ab5651bc448eabc8053",
+      "category": "A",
+      "status": "approved",
+      "edition": "IA_dia_a_dia_ES_SANITARIO",
+      "routes": [
+        "/libros/ia-para-el-dia-a-dia/",
+        "/libros/ia-para-el-dia-a-dia/creditos/",
+        "/libros/ia-para-el-dia-a-dia/antes-de-empezar/",
+        "/libros/ia-para-el-dia-a-dia/arrancar-en-10-minutos/",
+        "/libros/ia-para-el-dia-a-dia/dinero-y-cuentas/",
+        "/libros/ia-para-el-dia-a-dia/comida-sin-complicaciones/",
+        "/libros/ia-para-el-dia-a-dia/casa-tramites-y-reclamos/",
+        "/libros/ia-para-el-dia-a-dia/trabajo-y-estudio/",
+        "/libros/ia-para-el-dia-a-dia/familia-y-ninos/",
+        "/libros/ia-para-el-dia-a-dia/viajes-y-escapadas/",
+        "/libros/ia-para-el-dia-a-dia/salud-y-bienestar/",
+        "/libros/ia-para-el-dia-a-dia/aprender-y-crear/",
+        "/libros/ia-para-el-dia-a-dia/seguridad-y-privacidad/",
+        "/libros/ia-para-el-dia-a-dia/indice-de-pedidos/",
+        "/libros/ia-para-el-dia-a-dia/plantillas/",
+        "/libros/ia-para-el-dia-a-dia/glosario/",
+        "/libros/ia-para-el-dia-a-dia/antes-de-cerrar/",
+        "/libros/ia-para-el-dia-a-dia/ejemplos-practicos/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/creditos/",
+          "sha256": "172935e635b4b04923b52d6b40b2e929f50901e2b5c56a5d163e3b3af37ea5e5"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/antes-de-empezar/",
+          "sha256": "d9409f711464db1c89bc2186731dd8bead3d653aa179f947a8fdd375b0db0c01"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/arrancar-en-10-minutos/",
+          "sha256": "853757d3c707c5b699eb11953fcbcb204660ee30794ce9541ceb12cb642e012c"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/dinero-y-cuentas/",
+          "sha256": "cfb9191064fdca8418cee4ec118716244ff811a1ad0fb3c3c67edea3bdd9e1a9"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/comida-sin-complicaciones/",
+          "sha256": "0a3e4458d5849d66a65f2408dd67b35c9a20c43f21fc2db796dea3bcff3ddc8f"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/casa-tramites-y-reclamos/",
+          "sha256": "5a93b02cd3d815235775efaa60958ed9ee09ae7aef36de6e34aaddb4ac92aab4"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/trabajo-y-estudio/",
+          "sha256": "d036f7d7b983a8c9f6e56b03034eb7996463590c563cbb617605c542223ce60d"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/familia-y-ninos/",
+          "sha256": "13dba55de739933a6a91b391befd0af00f86cd1cbdc391ee1e0da2b71eefd78b"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/viajes-y-escapadas/",
+          "sha256": "f44f702f36c43273b208b8636bf6e66668b4fce7efc83e88273170ab7594673a"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/salud-y-bienestar/",
+          "sha256": "0599667d0685b66c67b125b45da44fd1f302da601bcccbdb3444dfe68b02f42e"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/aprender-y-crear/",
+          "sha256": "15a63a4ba4fe515d98c260b7da37d25bebe71cb4d3d9814e1a54e3145971d018"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/seguridad-y-privacidad/",
+          "sha256": "bdddd5ec61b0820eaef38be736fdf447f45e947970a37e2b2573954fcf0b2ddd"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/indice-de-pedidos/",
+          "sha256": "6fbe97973e5ebe7bdb605606826dc3d2b387c5d79302c8da59acb6d26d1b77f2"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/plantillas/",
+          "sha256": "7db715fb6f9a166c1f4fdbfb629a4e79528ca593267d5dda5584c14fafb2058e"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/glosario/",
+          "sha256": "4fa16e85b98f7f0f8508a126ac0aca65211364e938a8d2e4b5af2e2b06c47228"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/antes-de-cerrar/",
+          "sha256": "5123862eb439926ca55946715ed0a2476a61b15af21734c4338e0004a33f588d"
+        }
+      ],
+      "rationale": "Educación tecnológica con salud incidental; no diagnostica ni decide tratamiento. Ítems 112–118 organizan preguntas y plantillas; 119–123 bienestar general sin adaptación clínica.",
+      "examinedSections": [
+        "Créditos y límites generales",
+        "Capítulo 3: ítems 33, 37, 41, 42; ejemplo del huevo; alergias",
+        "Capítulo 8: ítems 112–123, ejemplo de Roberto y avisos",
+        "Capítulos 6, 7 y 10: emergencias, fuentes oficiales y privacidad"
+      ],
+      "sources": [
+        {
+          "title": "FDA: seguridad de los huevos",
+          "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety"
+        },
+        {
+          "title": "Health Canada: seguridad alimentaria",
+          "url": "https://www.canada.ca/en/health-canada/services/general-food-safety-tips/food-safety-you.html"
+        },
+        {
+          "title": "OMS: IA, errores y privacidad de datos de salud",
+          "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health"
+        }
+      ],
+      "editorialReview": {
+        "status": "approved",
+        "responsible": "Titular de Galumio Studio; aprobación confirmada por el usuario",
+        "reviewedAt": "2026-11-02",
+        "scope": "Edición corregida IA_dia_a_dia_ES_SANITARIO y sus 16 cuerpos web; Créditos y límites generales; Capítulo 3: ítems 33, 37, 41, 42; ejemplo del huevo; alergias; Capítulo 8: ítems 112–123, ejemplo de Roberto y avisos; Capítulos 6, 7 y 10: emergencias, fuentes oficiales y privacidad",
+        "evidence": "docs/APROBACION-EDITORIAL-IA-DIA-20261102.txt — confirmación expresa en esta conversación; registro editorial preparado conservado",
+        "sources": [
+          {
+            "title": "FDA: seguridad de los huevos",
+            "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety"
+          },
+          {
+            "title": "Health Canada: seguridad alimentaria",
+            "url": "https://www.canada.ca/en/health-canada/services/general-food-safety-tips/food-safety-you.html"
+          },
+          {
+            "title": "OMS: IA, errores y privacidad de datos de salud",
+            "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health"
+          }
+        ],
+        "category": "A",
+        "policyVersion": "1",
+        "editionHash": "8d05e7e0034e51b4d579b3ccdee6f27ea5d03417c09b2ab5651bc448eabc8053",
+        "classificationHash": "d87806a46af182209d7f00c198f9a4ff78671a007953dc6a180c1c0797805935"
+      },
+      "professionalReview": null,
+      "notes": [
+        "Roberto: carácter ficticio no confirmado; no se atribuye.",
+        "Cinco correcciones sanitarias cotejadas; no equivalen a aprobación editorial registrada.",
+        "Aprobación editorial confirmada por el usuario el 2026-11-02; constancia docs/APROBACION-EDITORIAL-IA-DIA-20261102.txt. El borrador pendiente se conserva como historial."
+      ],
+      "masters": [
+        {
+          "file": "IA_dia_a_dia_ES_SANITARIO.docx",
+          "sha256": "91765fbd5f88e7f204fe1708143f0b0fa0ee4e61a83f28c9564a22a44ff7d1a0"
+        },
+        {
+          "file": "IA_dia_a_dia_ES_SANITARIO.pdf",
+          "sha256": "e0b3e9ae95ddb443a22d296bfaa7bedc195b8cd8536d2c709be5b9cd176d9906"
+        },
+        {
+          "file": "IA_dia_a_dia_ES_SANITARIO.epub",
+          "sha256": "ff6553614dba6a826c9eabbbd7e83bb59020765b3432af7643a26f2838ab4da7"
+        }
+      ],
+      "book": "ia-para-el-dia-a-dia",
+      "distribution": "online-only",
+      "editorialReviewDraft": {
+        "status": "pending",
+        "responsible": null,
+        "reviewedAt": null,
+        "evidence": null,
+        "scope": [
+          "Créditos y límites generales",
+          "Capítulo 3: ítems 33, 37, 41, 42; ejemplo del huevo; alergias",
+          "Capítulo 8: ítems 112–123, ejemplo de Roberto y avisos",
+          "Capítulos 6, 7 y 10: emergencias, fuentes oficiales y privacidad"
+        ],
+        "sources": [
+          {
+            "title": "FDA: seguridad de los huevos",
+            "url": "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety"
+          },
+          {
+            "title": "Health Canada: seguridad alimentaria",
+            "url": "https://www.canada.ca/en/health-canada/services/general-food-safety-tips/food-safety-you.html"
+          },
+          {
+            "title": "OMS: IA, errores y privacidad de datos de salud",
+            "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health"
+          }
+        ],
+        "editionHash": "8d05e7e0034e51b4d579b3ccdee6f27ea5d03417c09b2ab5651bc448eabc8053",
+        "policyVersion": "1"
+      }
+    },
+    "editorial:aprender-algo-nuevo-paso-a-paso": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "f74725c5af34f5573036aae269a154d57117f3ebed889e0ff3fb38181ed6d852",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/aprender-algo-nuevo-paso-a-paso/",
+      "bodyHash": "de15219b06bf42c5e8383d2c4d45c255223732686ce72af79bce57e7eda42237"
+    },
+    "editorial:como-comprobar-una-respuesta-de-la-ia": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "092317096391c55ec5ec32da4ce07c8682585c7d8581653c2fe1f75d29eea8c6",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tutoriales/como-comprobar-una-respuesta-de-la-ia/",
+      "bodyHash": "987a95fe227b60ba1318c118ac69da7e74fb742707880f336601c9dbb7020578"
+    },
+    "editorial:como-escribir-un-buen-pedido-a-la-ia": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "ee0f9091d706a5ff73ef60446ff83c8b94229c1619662bff93e1080d22adc80d",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tutoriales/como-escribir-un-buen-pedido-a-la-ia/",
+      "bodyHash": "54b94537acc0eebbad2ce5a20de74d56ab1796c293ac010973e2adf325ddceb4"
+    },
+    "editorial:comparar-productos-antes-de-comprar": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "38f95d47658fef8f0f55c65e605a736750a4dde27efecaaefe74736b3953cca0",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/comparar-productos-antes-de-comprar/",
+      "bodyHash": "d45b8d0a1d6eb473a9b6c942767c94f0e2114c140bb8d12858043f1e1e287d53"
+    },
+    "editorial:crear-actividades-educativas": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "58a66f8144e15d6cc464be89cc0b09d892a4da80e317af545f127b48e75c2485",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/crear-actividades-educativas/",
+      "bodyHash": "e70b4c13d48d0c6ebc072f9e552aa22c02de057ddf9a6a99448a18f9bf07299a"
+    },
+    "editorial:el-silbido-detras-del-monte": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "d0aa89caf19e7fb15345090ec494925c8e490f5d56aa2db755c2496336bee8e9",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/relatos/el-silbido-detras-del-monte/",
+      "bodyHash": "a60271f5714f82d2eee6b4bc09c9850343568ed64eaaf26c346219c030558da4"
+    },
+    "editorial:empezar-con-la-ia-cinco-tareas-sencillas": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "e4667e6f4d5bee9134f2a8933d2d73b4c27abdaaa06283e1900a3ace2ca7217f",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/guias/empezar-con-la-ia-cinco-tareas-sencillas/",
+      "bodyHash": "60847297332c526570e5c4a8edb014706ebfaf474e752e7bd6dcfbb4670ac329"
+    },
+    "editorial:entender-un-documento-complicado": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "50312c7e0b8c29a4236760ee1921ecb38cd72719e4c11a9a805e804c96a700a4",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/entender-un-documento-complicado/",
+      "bodyHash": "b78dfda02570aeb1d4baf01295e764b93915c016798307338c7dbcbfb8976b78"
+    },
+    "editorial:escribir-un-correo-claro": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "01ac117fa8e9bfedcfd38dd44d1a760ed3a555548906c8ddd162bc81de1388a3",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/escribir-un-correo-claro/",
+      "bodyHash": "deb74d77090b8b01b1dcfa76758bbd7ece9e5e61351aeb672712e9a404e7b003"
+    },
+    "editorial:la-habitacion-que-no-figuraba": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "e009fdbda5af642a95e48584d94ef95d5cd3e6968836f6e71138aa13bc834247",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/relatos/la-habitacion-que-no-figuraba/",
+      "bodyHash": "8b805a713a6f605d69696dbb095a47ca6e34c7a51086a6a9a0b8f4f2d369049d"
+    },
+    "editorial:organizar-las-compras": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "9ccd9649fbc955998b3fef900c11b2f66f2661f3dc92592a7e3d98cf21c34622",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/organizar-las-compras/",
+      "bodyHash": "553c7ab41bc29ffbc170578c412aecdcce37b18494d966e39c8a9f335fc6bb2d"
+    },
+    "editorial:organizar-presupuesto-familiar": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "6ecdf400cbd7a9a90aee65939ece335e319cf865ac0e8e382da80213b793d1cc",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/organizar-presupuesto-familiar/",
+      "bodyHash": "c7202079fa9b507382da01b95e8acc0d31ebf6dc73b2f3f6577f78d53074c484"
+    },
+    "editorial:organizar-tareas-de-la-semana": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "ca4fd922ab4deef79d720f8894881dfec0d78ec384a0b3f03e381b3a709e2204",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/organizar-tareas-de-la-semana/",
+      "bodyHash": "4fea715ff445cc0db0fe159a1a79e0505537aa4fa5793769c95adfd7759f2110"
+    },
+    "editorial:practicar-ingles-con-ia": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "c035837e6984fdabb4244d0767db93bb014ce89457fa3a3ca1b194b3e14e2ef7",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/practicar-ingles-con-ia/",
+      "bodyHash": "807a2b09e130779f7a89dc1bf1233089c20000c5bad71f7bee769d967a50d093"
+    },
+    "editorial:preparar-menu-semanal-con-chatgpt": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "bcc3b3d4e5934ceb9f7cc39f857b9c3fd27301171f87664ff30d7c9ea6ad1080",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/preparar-menu-semanal-con-chatgpt/",
+      "bodyHash": "c5b0323b88d2b20bc4e7599fa1fa158e08bbe1ae990b66028ee127d7e94fab61"
+    },
+    "editorial:preparar-preguntas-para-una-reunion": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "6afd32413bb52bfa6b745e20a939797c6ecb54568cc39bfb84a27c99c0444804",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/preparar-preguntas-para-una-reunion/",
+      "bodyHash": "4f425d472c60154c147ebb22581bea4aeaaab40a0d4f945814f1d05e37038b6f"
+    },
+    "editorial:reconocer-senales-de-estafas-digitales": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "e9a2c6e12bcd044cbd1ac087f9cad75f1479b096a9860ead7cee2e36688099b2",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tips/reconocer-senales-de-estafas-digitales/",
+      "bodyHash": "ebcd8649793835f4cb9920aadc6af7cff5ec66f46116088baf9b2d6885eb6834"
+    },
+    "editorial:tu-primera-conversacion-con-una-ia": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "editionHash": "8eeb8ded85f56bc8e8364cc2c1a2919527d86a067e84c4cecc6b7edff085c563",
+      "provenance": "Contenido editorial preexistente en f03673a6cb8f52b001f7fc38437faf432892f50e; sin reclasificación.",
+      "path": "/tutoriales/tu-primera-conversacion-con-una-ia/",
+      "bodyHash": "61d6e275baca96617c4dab5c4df9c686084569d24c91fe3ffff57f00c3f4d605"
+    },
+    "book:ia-para-el-dia-a-dia:published": {
+      "policyVersion": "1",
+      "category": "legacy",
+      "status": "preserved",
+      "book": "ia-para-el-dia-a-dia",
+      "editionHash": "000ad658415138ed99fdcc62b06810b80adf62af1b71546afb4de13a21f582ad",
+      "edition": "published-sample-f03673a",
+      "provenance": "Muestra publicada en f03673a6cb8f52b001f7fc38437faf432892f50e, preservada sin modificaciones.",
+      "routes": [
+        "/libros/ia-para-el-dia-a-dia/",
+        "/libros/ia-para-el-dia-a-dia/antes-de-empezar/",
+        "/libros/ia-para-el-dia-a-dia/ejemplos-practicos/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/antes-de-empezar/",
+          "sha256": "c08204824b86e2a8cd520e86fbe8372331b9b37864fd4e346515138f708b59b8"
+        },
+        {
+          "path": "/libros/ia-para-el-dia-a-dia/ejemplos-practicos/",
+          "sha256": "4ebd2acf6e6077e3f6381d0c81ffb81774335881a1320ea570bfcf0a8c42cf68"
+        }
+      ]
+    }
+  }
+}

@@ -72,7 +72,7 @@ const pdfs=manifest.books.flatMap(b=>b.resources);
 for(let attempt=0;attempt<18;attempt++){
  const pagesOk=await Promise.all(checks.map(async([path,text])=>{const r=await fetch(SITE+path,{cache:'no-store'});return r.ok&&(await r.text()).includes(text)}));
  const excludedOk=await Promise.all(excludedPaths.map(async path=>(await fetch(SITE+path,{cache:'no-store'})).status===404));
- const pdfsOk=await Promise.all(pdfs.map(async r=>{const pdf=await fetch(`${SITE}/recursos/${r.slug}.pdf`,{cache:'no-store'});return pdf.ok&&createHash('sha256').update(Buffer.from(await pdf.arrayBuffer())).digest('hex')===r.sha256}));
+ const pdfsOk=await Promise.all(pdfs.map(async r=>{const pdf=await fetch(`${SITE}${r.path}`,{cache:'no-store'});return pdf.ok&&createHash('sha256').update(Buffer.from(await pdf.arrayBuffer())).digest('hex')===r.sha256}));
  if([...pagesOk,...excludedOk,...pdfsOk].every(Boolean)){console.log(`Biblioteca publicada y verificada en ${SITE} (${runInfo.html_url}). Libros: ${[...included].join(', ')}.`);process.exit(0)}
  await sleep(20000);
 }

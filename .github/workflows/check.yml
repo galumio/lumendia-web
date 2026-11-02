@@ -16,6 +16,7 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: node --test tests/*.test.mjs
+      - run: python3 scripts/test-release-archive.py
       - run: npm run build
       - run: node scripts/verify-tips-output.mjs dist
       - run: npm test
