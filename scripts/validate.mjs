@@ -49,7 +49,12 @@ for(const b of books){
   assert(b.premium?.url==='https://galumio.com.ar/productos/como-estudiar-para-un-final/'&&b.premium.cta==='Descargar PDF + 8 plantillas'&&b.premium.title==='Edición PDF con 8 plantillas imprimibles'&&!/ebook completo|edición completa/i.test(JSON.stringify(b.premium))&&b.premium.highlight===true,'Cómo estudiar: botón premium hacia la ficha de Galumio');
   assert(['55 páginas','10 capítulos','8 plantillas imprimibles'].every(t=>b.premium?.items.some(i=>i.includes(t))),'Cómo estudiar: la tarjeta debe mostrar 55 páginas, 10 capítulos y 8 plantillas');
  }
- if(b.slug==='ia-para-docentes'){
+ if(b.slug==='ia-para-docentes'&&b.completeReading){
+  const numbered=[...b.pages.find(p=>p.slug==='biblioteca-de-prompts').html.matchAll(/PROMPT\s+(\d+)/g)].map(m=>Number(m[1]));
+  assert(JSON.stringify(numbered)===JSON.stringify(Array.from({length:50},(_,i)=>i+1)),'Docentes completo: 50 prompts en orden');
+  assert(b.pages.length===15&&b.pages.some(p=>p.slug==='anexo')&&!b.premium,'Docentes completo: avisos, anexo y sin oferta de descarga');
+ }
+ if(b.slug==='ia-para-docentes'&&!b.completeReading){
   assert(b.healthContent===false&&b.pages.length===10,'IA para docentes: 10 capítulos, contenido no sanitario');
   // Del capítulo 8 solo se publica la muestra; los otros 44 prompts de la biblioteca son premium.
   const numbered=b.pages.flatMap(p=>[...p.html.replace(/<[^>]+>/g,' ').matchAll(/PROMPT\s+(\d+)/g)].map(m=>Number(m[1])));

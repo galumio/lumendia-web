@@ -663,12 +663,72 @@
     },
     "book:ia-para-docentes": {
       "policyVersion": "1",
-      "editionHash": "0335b81fb0189a2b4f1a4e3bd6d28e032fc19d31ff305935bae2afc8b2bd886d",
-      "category": "legacy",
-      "status": "preserved",
-      "edition": "existing-0335b81fb018",
+      "book": "ia-para-docentes",
+      "edition": "IA_para_docentes_ES_EDITORIAL_20261103",
+      "editionHash": "471cbd3f2e859745634a109103f9229e1ce4a233318db944ceef98d6563a8bc7",
+      "category": "A",
+      "status": "approved",
+      "rationale": "Propuesta: educación tecnológica para docentes. Prompts para planificación, evaluación y comunicación sujetos a revisión docente y normas institucionales. Los tres ejemplos se identifican como ilustrativos, no ejecuciones documentadas ni resultados garantizados. NotebookLM no garantiza exactitud: contrastar con documentos originales. No se atribuye aprobación por validación técnica ni por no pertenecer a KDP Select.",
+      "examinedSections": [
+        "Nota de transparencia y cómo usar el libro",
+        "Capítulo 4: NotebookLM y contraste de respuestas",
+        "Capítulo 7: tres ejemplos ilustrativos",
+        "Capítulo 8: 50 prompts íntegros",
+        "Capítulo 9 y anexo: privacidad, datos de alumnos y familias, revisión de resultados"
+      ],
+      "sources": [
+        {
+          "title": "Google: ayuda oficial de NotebookLM / Gemini Notebook",
+          "url": "https://support.google.com/notebooklm/answer/16164461?hl=es",
+          "scope": "La ayuda advierte que las respuestas pueden contener errores. Redirige actualmente a Gemini Notebook; no se renombra el manuscrito aprobado ni se avalan todas sus prestaciones actuales."
+        },
+        {
+          "title": "UNESCO: Guidance for generative AI in education and research",
+          "url": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+          "scope": "Privacidad y supervisión humana en educación. No constituye aprobación individual de esta edición."
+        }
+      ],
+      "editorialReview": {
+        "status": "approved",
+        "responsible": "Titular de Galumio Studio, aprobación confirmada expresamente por el usuario",
+        "reviewedAt": "2026-11-03",
+        "scope": "EPUB, PDF y 15 cuerpos web de IA_para_docentes_ES_EDITORIAL_20261103, identificados por los hashes de esta constancia.",
+        "evidence": "docs/APROBACION-EDITORIAL-DOCENTES-20261103.txt",
+        "policyVersion": "1",
+        "category": "A",
+        "editionHash": "471cbd3f2e859745634a109103f9229e1ce4a233318db944ceef98d6563a8bc7",
+        "classificationHash": "c5e07943ceba8cea61f18989b3dcf6623ef9480a5f2aad705b16de5a8f4ce4c0",
+        "sources": [
+          {
+            "title": "Google: ayuda oficial de NotebookLM / Gemini Notebook",
+            "url": "https://support.google.com/notebooklm/answer/16164461?hl=es",
+            "scope": "La ayuda advierte que las respuestas pueden contener errores. Redirige actualmente a Gemini Notebook; no se renombra el manuscrito aprobado ni se avalan todas sus prestaciones actuales."
+          },
+          {
+            "title": "UNESCO: Guidance for generative AI in education and research",
+            "url": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+            "scope": "Privacidad y supervisión humana en educación. No constituye aprobación individual de esta edición."
+          }
+        ]
+      },
+      "masters": [
+        {
+          "file": "IA_para_docentes_ES_EDITORIAL_20261103.epub",
+          "size": 181281,
+          "sha256": "8ebb200b1b47a5fc52d1fd5cf8077ce8f4404dca8c877397c589feec881670b7"
+        },
+        {
+          "file": "IA_para_docentes_ES_EDITORIAL_20261103.pdf",
+          "size": 126106,
+          "sha256": "e94a9e3ff794b76dd79d1a6a804fb7097ee252a621ba5b46843cc524546e9d48"
+        }
+      ],
       "routes": [
         "/libros/ia-para-docentes/",
+        "/libros/ia-para-docentes/portada-y-creditos/",
+        "/libros/ia-para-docentes/avisos/",
+        "/libros/ia-para-docentes/como-usar-este-libro/",
+        "/libros/ia-para-docentes/indice/",
         "/libros/ia-para-docentes/que-es-un-asistente-de-ia/",
         "/libros/ia-para-docentes/la-formula-de-un-buen-prompt/",
         "/libros/ia-para-docentes/chatgpt-para-docentes/",
@@ -678,52 +738,80 @@
         "/libros/ia-para-docentes/tres-ejemplos-paso-a-paso/",
         "/libros/ia-para-docentes/biblioteca-de-prompts/",
         "/libros/ia-para-docentes/errores-comunes-y-como-revisar/",
-        "/libros/ia-para-docentes/plan-de-7-dias/"
+        "/libros/ia-para-docentes/plan-de-7-dias/",
+        "/libros/ia-para-docentes/anexo/"
       ],
       "bodies": [
         {
+          "path": "/libros/ia-para-docentes/portada-y-creditos/",
+          "sha256": "f4849983aa68d0abde02b38027c5cfbdf817570d6dd45110ad523d942a192998"
+        },
+        {
+          "path": "/libros/ia-para-docentes/avisos/",
+          "sha256": "5998b721a243ab7f3a36ba8da8805b20e3ecdb7927da0af3b09a55cf3a76f418"
+        },
+        {
+          "path": "/libros/ia-para-docentes/como-usar-este-libro/",
+          "sha256": "91fc121f27c222bc00bc8eae7ad74c8b1719ee84c7ff3a87eee17da79a07bd45"
+        },
+        {
+          "path": "/libros/ia-para-docentes/indice/",
+          "sha256": "6f2cab8c4d65d9d9e5f6dc45b5dc9f5190e8ff751c0cf4d2e36fcddd23658b82"
+        },
+        {
           "path": "/libros/ia-para-docentes/que-es-un-asistente-de-ia/",
-          "sha256": "698820306d9d7dd395820da70b1075bea0ea8bc2435d95133713eae01e2225ae"
+          "sha256": "ba2a563705f43a0e6798cbd90e9294b9b137605a3d30cc53f76b61c761463d10"
         },
         {
           "path": "/libros/ia-para-docentes/la-formula-de-un-buen-prompt/",
-          "sha256": "f7ec1b3d33f358be856fc0e6c5b0064f01b075163cbfea8d6a6c8d2bec1f153f"
+          "sha256": "9d241d3a71b2a448f35eb03c5d1fb2f4e58ea900846cac60b88abd4c656b31fa"
         },
         {
           "path": "/libros/ia-para-docentes/chatgpt-para-docentes/",
-          "sha256": "9e738160b4ced907b80b941cc2a7ede7a25c00af4f0d5841f7f4c7d51dcdca77"
+          "sha256": "103f644b816a16195c2ae9da443a019fc39b148d722923aeaa28351148873720"
         },
         {
           "path": "/libros/ia-para-docentes/gemini-para-docentes/",
-          "sha256": "e1173198ca18eda43a6552be88a8ab489c11f19112af996db0a3e89d1e51c171"
+          "sha256": "eab47e036447ec73f4b97c2fcb44166f0e0351a2eb7923c9ba17ea32114d3014"
         },
         {
           "path": "/libros/ia-para-docentes/claude-para-docentes/",
-          "sha256": "1358ab6f2a5eae65672a95782c3ae7de270d4bc31824ca794d26aaad7e13093a"
+          "sha256": "9bd8cdec31a7cffb2588f1de9bf2ef1d6944c57e58d2def71b1ee256a06eb148"
         },
         {
           "path": "/libros/ia-para-docentes/cual-usar-para-cada-tarea/",
-          "sha256": "a50847c5eb5fac601267f92af6a71cdd644ccbe31da1c373646d1f4b92ac2d0b"
+          "sha256": "b64d7fefe3c4b25b1939452ddb1831c9870939f293f1e7cf1150ab894c7a2365"
         },
         {
           "path": "/libros/ia-para-docentes/tres-ejemplos-paso-a-paso/",
-          "sha256": "73fc0f0e53d104e1b38c8fcc2dc8edfeb0321db6217ed0bb416a8212bafa76fe"
+          "sha256": "7bd630926d61a8ddd4a025ff4e11e5f3ed5e5a22773057916bc4b296b30e48bd"
         },
         {
           "path": "/libros/ia-para-docentes/biblioteca-de-prompts/",
-          "sha256": "deb3cb3dbc1a323725bd4fb8452dad3b2344c0feef70c210cc3ee2d89e4e17da"
+          "sha256": "ac7cb7b68c0990fc34f425384337e48f48ab5e7bcc1e9df4814532a3ffb36d75"
         },
         {
           "path": "/libros/ia-para-docentes/errores-comunes-y-como-revisar/",
-          "sha256": "5a2d38a4a3b59daceb198298aab8afd3b124724d263f6ecd38421e6e4c942ca1"
+          "sha256": "e39a3fd417dbd45d60f3a174b3f69d158c13ce4b5ef789e48993621a41d43e72"
         },
         {
           "path": "/libros/ia-para-docentes/plan-de-7-dias/",
-          "sha256": "8c62c118ce0f7e4736ba652d00fe22600f8c4f15b8c06f6730eb59face9cd7cf"
+          "sha256": "28bb47754a72998de5237b0bc514ffafd2f9b1b79d8ffa0ce64a37cf3164fca1"
+        },
+        {
+          "path": "/libros/ia-para-docentes/anexo/",
+          "sha256": "f5d5afd8b40c052f7ff4aeb21ca31360b0b7211b29da77930b6ad53193165541"
         }
       ],
-      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
-      "book": "ia-para-docentes"
+      "distribution": "online-only",
+      "editorialReviewDraft": {
+        "status": "pending",
+        "responsible": null,
+        "reviewedAt": null,
+        "evidence": null,
+        "scope": "EPUB corregido como fuente principal, PDF como referencia; 15 cuerpos web identificados por hash."
+      },
+      "professionalReview": null
     },
     "book:ia-para-el-dia-a-dia": {
       "policyVersion": "1",
@@ -1123,6 +1211,70 @@
       ],
       "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
       "book": "ia-cotidiana-para-adultos-mayores"
+    },
+    "book:ia-para-docentes:published": {
+      "policyVersion": "1",
+      "editionHash": "0335b81fb0189a2b4f1a4e3bd6d28e032fc19d31ff305935bae2afc8b2bd886d",
+      "category": "legacy",
+      "status": "preserved",
+      "edition": "existing-0335b81fb018",
+      "routes": [
+        "/libros/ia-para-docentes/",
+        "/libros/ia-para-docentes/que-es-un-asistente-de-ia/",
+        "/libros/ia-para-docentes/la-formula-de-un-buen-prompt/",
+        "/libros/ia-para-docentes/chatgpt-para-docentes/",
+        "/libros/ia-para-docentes/gemini-para-docentes/",
+        "/libros/ia-para-docentes/claude-para-docentes/",
+        "/libros/ia-para-docentes/cual-usar-para-cada-tarea/",
+        "/libros/ia-para-docentes/tres-ejemplos-paso-a-paso/",
+        "/libros/ia-para-docentes/biblioteca-de-prompts/",
+        "/libros/ia-para-docentes/errores-comunes-y-como-revisar/",
+        "/libros/ia-para-docentes/plan-de-7-dias/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/ia-para-docentes/que-es-un-asistente-de-ia/",
+          "sha256": "698820306d9d7dd395820da70b1075bea0ea8bc2435d95133713eae01e2225ae"
+        },
+        {
+          "path": "/libros/ia-para-docentes/la-formula-de-un-buen-prompt/",
+          "sha256": "f7ec1b3d33f358be856fc0e6c5b0064f01b075163cbfea8d6a6c8d2bec1f153f"
+        },
+        {
+          "path": "/libros/ia-para-docentes/chatgpt-para-docentes/",
+          "sha256": "9e738160b4ced907b80b941cc2a7ede7a25c00af4f0d5841f7f4c7d51dcdca77"
+        },
+        {
+          "path": "/libros/ia-para-docentes/gemini-para-docentes/",
+          "sha256": "e1173198ca18eda43a6552be88a8ab489c11f19112af996db0a3e89d1e51c171"
+        },
+        {
+          "path": "/libros/ia-para-docentes/claude-para-docentes/",
+          "sha256": "1358ab6f2a5eae65672a95782c3ae7de270d4bc31824ca794d26aaad7e13093a"
+        },
+        {
+          "path": "/libros/ia-para-docentes/cual-usar-para-cada-tarea/",
+          "sha256": "a50847c5eb5fac601267f92af6a71cdd644ccbe31da1c373646d1f4b92ac2d0b"
+        },
+        {
+          "path": "/libros/ia-para-docentes/tres-ejemplos-paso-a-paso/",
+          "sha256": "73fc0f0e53d104e1b38c8fcc2dc8edfeb0321db6217ed0bb416a8212bafa76fe"
+        },
+        {
+          "path": "/libros/ia-para-docentes/biblioteca-de-prompts/",
+          "sha256": "deb3cb3dbc1a323725bd4fb8452dad3b2344c0feef70c210cc3ee2d89e4e17da"
+        },
+        {
+          "path": "/libros/ia-para-docentes/errores-comunes-y-como-revisar/",
+          "sha256": "5a2d38a4a3b59daceb198298aab8afd3b124724d263f6ecd38421e6e4c942ca1"
+        },
+        {
+          "path": "/libros/ia-para-docentes/plan-de-7-dias/",
+          "sha256": "8c62c118ce0f7e4736ba652d00fe22600f8c4f15b8c06f6730eb59face9cd7cf"
+        }
+      ],
+      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
+      "book": "ia-para-docentes"
     }
   }
 }

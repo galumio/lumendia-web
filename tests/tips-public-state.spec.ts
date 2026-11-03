@@ -13,7 +13,7 @@ test('Public tip routes, menu and sitemap follow the approved batch dates; priva
  expect((sitemap.match(/<loc>https:\/\/lumendia.com.ar\/tips\//g)||[]).length).toBe(published?13:0);
  for(const path of ['/','/biblioteca/']){
   await page.goto(path);
-  await expect(page.locator('header nav a[href="/tips/"]')).toHaveCount(published?1:0);
+  await expect(page.locator('header nav a[href="/tips/"]')).toHaveCount(0);await page.locator('#primary-navigation').getByRole('link',{name:'Aprendé IA',exact:true}).click();await expect(page).toHaveURL(/\/aprende-ia\/$/);const tips=page.locator('main').getByRole('link',{name:'Tips de IA',exact:true});await expect(tips).toHaveCount(published?1:0);if(published){await tips.click();await expect(page).toHaveURL(/\/tips\/$/);await expect(page.locator('#primary-navigation a[aria-current]')).toHaveText('Aprendé IA');}
   if(!published)await expect(page.locator('a[href^="/tips/"]')).toHaveCount(0);
  }
  for(const path of ['/.local/','/docs/editorial-history/tips-approved-v1.json',...entries.map((e:any)=>`/src/content/editorial/${e.slug}.md`)]){
