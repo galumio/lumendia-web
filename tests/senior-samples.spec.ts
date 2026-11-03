@@ -22,8 +22,7 @@ for(const edition of editions){
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
     expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
     const buy=page.locator(`main a[href="${edition.buy}"]`).first();
-    await expect(buy).toBeVisible();await expect(buy).toContainText(edition.language==='en'?'USD 4.99':'USD 4,99');
-    expect((await buy.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+    if(book.sample){await expect(buy).toBeVisible();await expect(buy).toContainText(edition.language==='en'?'USD 4.99':'USD 4,99');expect((await buy.boundingBox())!.height).toBeGreaterThanOrEqual(44);}else{await expect(buy).toHaveCount(0);expect(book.resources).toEqual([]);}
     await expect(page.locator('a[download],a[href$=".pdf"],a[href$=".epub"]')).toHaveCount(0);
     if(section){
      const expected=book.pages.find((p:{slug:string})=>section===p.slug+'/').html;
@@ -38,29 +37,34 @@ for(const edition of editions){
   await page.goto(root);
   expect(await page.locator('.book-hero img').evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBeTruthy();
   await page.getByRole('link',{name:edition.start}).click();
-  await expect(page).toHaveURL(root+edition.intro+'/');
+  await expect(page).toHaveURL(root+(book.readingOrder??book.toc.map((p:{slug:string})=>p.slug))[0]+'/');
   await page.getByRole('button',{name:edition.larger}).click();
   expect(await page.locator('.reader-content').evaluate(e=>e.style.getPropertyValue('--reader-size'))).toBe('22px');
   await page.getByRole('button',{name:edition.dark}).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
   expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
-  await page.locator('.chapter-nav a').last().click();await expect(page).toHaveURL(root+edition.examples+'/');
+  await page.locator('.chapter-nav a').last().click();await expect(page).toHaveURL(root+(book.readingOrder??book.toc.map((p:{slug:string})=>p.slug))[1]+'/');
   await page.locator('.reader-sidebar summary').click();
   await page.locator(`.reader-sidebar a[href="${root}${edition.intro}/"]`).click();
   await expect(page).toHaveURL(root+edition.intro+'/');
   await page.locator('.chapter-nav a').last().click();
   await page.locator('.chapter-nav a').first().click();await expect(page).toHaveURL(root+edition.intro+'/');
-  await page.locator('.chapter-nav a').first().click();await expect(page).toHaveURL(root);
+  const order=book.readingOrder??book.toc.map((p:{slug:string})=>p.slug);
+  const previous=order[order.indexOf(edition.intro)-1];
+  await page.locator('.chapter-nav a').first().click();await expect(page).toHaveURL(previous?root+previous+'/':root);
+  if(previous){await page.locator(`.breadcrumb a[href="${root}"]`).click();await expect(page).toHaveURL(root);}
   for(const json of await page.locator('script[type="application/ld+json"]').allTextContents())expect(JSON.parse(json).inLanguage).toBe(book.language);
   expect(await page.evaluate(()=>performance.getEntriesByType('resource').map(r=>r.name).filter(n=>/google-analytics|googlesyndication|googletagmanager/.test(n)))).toEqual([]);
   for(const path of [`/recursos/${edition.slug}.pdf`,`/${edition.slug}.pdf`,`/.local/originals/${edition.slug}/`,`/src/content/books/${edition.slug}.json`])expect((await request.get(path)).status()).toBe(404);
   expect(errors).toEqual([]);
  });
 }
-test('Catalog lists each language once and keeps existing books',async({page})=>{
+test('Biblioteca contains four complete books; commercial samples stay separate',async({page})=>{
  await page.goto('/biblioteca/');
- for(const edition of editions)await expect(page.locator(`.book-card h2 a[href="/libros/${edition.slug}/"]`)).toHaveCount(1);
- for(const slug of ['ia-para-docentes','como-estudiar-para-un-final'])await expect(page.locator(`.book-card h2 a[href="/libros/${slug}/"]`)).toHaveCount(1);
- await page.getByRole('searchbox').fill('Everyday AI for Seniors');await expect(page.locator('.book-card:visible')).toHaveCount(1);
- await expect(page.locator('.book-card:visible')).toContainText('Inglés');
+ const complete=['ia-cotidiana-para-adultos-mayores','ia-para-el-dia-a-dia','cuidar-a-mama-o-papa','como-estudiar-para-un-final'];
+ await expect(page.locator('.book-card')).toHaveCount(4);
+ for(const slug of complete)await expect(page.locator(`.book-card h2 a[href="/libros/${slug}/"]`)).toHaveCount(1);
+ await page.goto('/muestras/');
+ for(const slug of ['ai-for-everyday-life','everyday-ai-for-seniors'])await expect(page.locator(`.book-card h2 a[href="/libros/${slug}/"]`)).toHaveCount(1);
+ await expect(page.locator('.book-card h2 a[href="/libros/ia-cotidiana-para-adultos-mayores/"]')).toHaveCount(0);
 });

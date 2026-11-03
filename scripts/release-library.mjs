@@ -19,6 +19,7 @@ export function loadBooks({proposed=false}={}){
  const dir='src/content/books';
  const books=existsSync(dir)?readdirSync(dir).filter(f=>f.endsWith('.json')).map(f=>readJson(`${dir}/${f}`)):[];
  const previous=existsSync('.local/ia-dia-published-sample.json')?[readJson('.local/ia-dia-published-sample.json')]:[];
+ if(existsSync('.local/published-books')) previous.push(...readdirSync('.local/published-books').filter(f=>f.endsWith('.json')).map(f=>readJson('.local/published-books/'+f)));
  return selectBookEditions(books,previous,proposed);
 }
 

@@ -1,9 +1,9 @@
 ---
 import Discovery from '../layouts/Discovery.astro';
 import BookCard from '../components/BookCard.astro';
-import {available} from '../lib/catalog';
+import {available,preview,publishable} from '../lib/catalog';
 import {readingScope} from '../lib/editorial';
 import {publishedBook} from '../lib/discovery.mjs';
 const complete=available.filter(b=>readingScope(b)==='complete'&&publishedBook(b));
 ---
-<Discovery title="Libros para leer completos." description="Lectura gratuita online, sin registro. Los recursos PDF independientes tienen su propia sección."><div class="reading-grid">{complete.map(book=><BookCard book={book}/>)}</div><a href="/recursos/">Ver recursos gratuitos independientes →</a></Discovery>
+<Discovery title="Libros para leer completos." description="Lectura gratuita online, sin registro. Los recursos PDF independientes tienen su propia sección."><div class="reading-grid">{complete.map(book=><BookCard book={book}/>)}</div>{preview&&available.some(b=>publishable(b)&&!publishedBook(b)&&!b.sample)&&<section aria-label="Ediciones preparadas"><h2>Preparadas para publicación</h2><p>Vista previa local de ediciones elegibles. Su publicación todavía no está autorizada.</p><div class="reading-grid">{available.filter(b=>publishable(b)&&!publishedBook(b)&&!b.sample).map(book=><BookCard book={book}/>)}</div></section>}<a href="/recursos/">Ver recursos gratuitos independientes →</a></Discovery>
