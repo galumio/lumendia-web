@@ -505,27 +505,161 @@
     },
     "book:ia-cotidiana-para-adultos-mayores": {
       "policyVersion": "1",
-      "editionHash": "13f091194ba79371cdff0eb725ed48eb45508e80d25da917f0fec7da19ba0f18",
-      "category": "legacy",
-      "status": "preserved",
-      "edition": "existing-13f091194ba7",
+      "book": "ia-cotidiana-para-adultos-mayores",
+      "edition": "IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13",
+      "editionHash": "0e4b976df8fef07c77f885cfab23d29e66f46486cb4ff007c23e5dd920fdb97b",
+      "category": "A",
+      "status": "approved",
+      "rationale": "Educación tecnológica para adultos mayores: aprendizaje de herramientas, formulación de pedidos y organización de información. Los ejemplos sanitarios no autorizan diagnóstico, tratamiento ni evaluación clínica por IA. Los ejemplos de alimentación preparan consultas; el pedido 13 organiza exclusivamente ejercicios ya indicados por un profesional, sin cambios, nuevas propuestas, adaptación ni evaluación de seguridad. La explicación general de prospectos queda limitada por la remisión expresa de dosis, horarios y combinaciones al médico o farmacéutico. Se conservan las advertencias de confirmación profesional y minimización de datos; tapar datos identificatorios no equivale a anonimización completa. Aprobación editorial confirmada por el usuario para esta edición exacta, sin revisión profesional externa atribuida.",
+      "examinedSections": [
+        "Créditos: información general, no sustitución profesional; aplicaciones a octubre de 2026.",
+        "Capítulos 1, 3, 5, 6 y 10: límites sanitarios, privacidad, consultas, medicamentos, alimentación y confirmación profesional.",
+        "50 pedidos: números 6–13 y 20–26; pedido 13 limitado a organizar ejercicios ya indicados y consultar dudas con el profesional.",
+        "Cuaderno: cinco apartados; no debe contener claves reales ni datos clínicos en una IA."
+      ],
+      "sources": [
+        {
+          "title": "OMS: cinco claves para la inocuidad de los alimentos",
+          "url": "https://www.who.int/es/publications/i/item/9789241594639",
+          "scope": "Referencia para revisión de recetas y menús; no valida recetas generadas ni dietas individuales."
+        },
+        {
+          "title": "OMS: uso seguro y ético de IA para la salud",
+          "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health",
+          "scope": "Límites de exactitud, privacidad y supervisión; no acredita una revisión profesional del libro."
+        }
+      ],
+      "editorialReview": {
+        "status": "approved",
+        "responsible": "Titular de Galumio Studio; aprobación confirmada expresamente por el usuario",
+        "reviewedAt": "2026-11-03",
+        "scope": "Word, PDF y EPUB de IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13; 16 cuerpos web completos y ruta histórica de compatibilidad identificados por hashes. Lectura online sin descarga gratuita.",
+        "evidence": "docs/APROBACION-EDITORIAL-IA-MAYORES-20261103.txt — confirmación expresa del responsable editorial transmitida por el usuario en ChatGPT",
+        "category": "A",
+        "classificationHash": "d4c690523b9c4ab8ab604b1da298cf18af3444b5cc0ce69e5bdd3a66472dc4ae",
+        "policyVersion": "1",
+        "editionHash": "0e4b976df8fef07c77f885cfab23d29e66f46486cb4ff007c23e5dd920fdb97b",
+        "sources": [
+          {
+            "title": "OMS: cinco claves para la inocuidad de los alimentos",
+            "url": "https://www.who.int/es/publications/i/item/9789241594639",
+            "scope": "Referencia para revisión de recetas y menús; no valida recetas generadas ni dietas individuales."
+          },
+          {
+            "title": "OMS: uso seguro y ético de IA para la salud",
+            "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health",
+            "scope": "Límites de exactitud, privacidad y supervisión; no acredita una revisión profesional del libro."
+          }
+        ]
+      },
+      "masters": [
+        {
+          "file": "IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13.docx",
+          "size": 31493,
+          "sha256": "373a0c20afbf7020a69c8c5f4d4eb9536f5be36d1d70c58b6416e92cf6cc123c"
+        },
+        {
+          "file": "IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13.pdf",
+          "size": 366305,
+          "sha256": "ed1882e7b615cae03edf85237d7e6fc0da6932c49ccc5634afd1e8fb8a390c9f"
+        },
+        {
+          "file": "IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13.epub",
+          "size": 296890,
+          "sha256": "fda94be1fd946dd9e07220b68332d8cdfe0196dd04f47fadf6fbe1e328f233f6"
+        }
+      ],
       "routes": [
         "/libros/ia-cotidiana-para-adultos-mayores/",
+        "/libros/ia-cotidiana-para-adultos-mayores/creditos/",
         "/libros/ia-cotidiana-para-adultos-mayores/antes-de-empezar/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-1/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-2/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-3/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-4/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-5/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-6/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-7/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-8/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-9/",
+        "/libros/ia-cotidiana-para-adultos-mayores/capitulo-10/",
+        "/libros/ia-cotidiana-para-adultos-mayores/50-pedidos/",
+        "/libros/ia-cotidiana-para-adultos-mayores/cuaderno-de-practica/",
+        "/libros/ia-cotidiana-para-adultos-mayores/palabras-raras/",
+        "/libros/ia-cotidiana-para-adultos-mayores/antes-de-cerrar/",
         "/libros/ia-cotidiana-para-adultos-mayores/ejemplos-practicos/"
       ],
       "bodies": [
         {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/creditos/",
+          "sha256": "042eb0f4d9db8e4e7a59128c81f501030e42a8d119cac3d98d6e5156b4846444"
+        },
+        {
           "path": "/libros/ia-cotidiana-para-adultos-mayores/antes-de-empezar/",
-          "sha256": "d7ba4503e71ab0a3f90e3b77aee20c4279dc4d6d2beae06d38fb02763e715951"
+          "sha256": "6763a043785798b4ecf7379b68d9a40ecdfd340738e24fa079a69189daedf6ad"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-1/",
+          "sha256": "74d2e0b38047c48f00a10e26c24f8698c8146afc64e4dcb0d8da520da2f6affe"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-2/",
+          "sha256": "2ff3586e9779b005f2711bf59b6f88e12900f9f953160a10a8bb083ce564cea8"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-3/",
+          "sha256": "46d1e28a94db4e0714888f47a633e3dca5b82ce112a393abe480365578621e94"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-4/",
+          "sha256": "bf56592cb61df40e37b613f0cfab0eb7b5a3de644b790ce05fdc6d547e22b4f6"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-5/",
+          "sha256": "5c10132f8971203e083bb3558d33e2d022ef54c8a84c5af97b11ed643b447844"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-6/",
+          "sha256": "1c6c45b06853ee84a8d8fe25a8f71a8e0f8df8a00e5556108338290614cee13d"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-7/",
+          "sha256": "6a80f53f6130f4336602ddbdaf212e696fa826d39d286824f97f33c9fc79c382"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-8/",
+          "sha256": "c30149a27d2a3a3923feef7b2523c2789eceda114fd8aa11fbb2fc3bb86a8adf"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-9/",
+          "sha256": "138fdc794694e047cd8b30b27cb2771323aaf152713a917ea89657123893d374"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/capitulo-10/",
+          "sha256": "5d0d405f2efb830ef8e4e9848bfb6d26a4ddfb2c9f22298f6cbe2f4f4af0f5ea"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/50-pedidos/",
+          "sha256": "daf47e16dee22a7dd727144189eba2a9697c14b22b26d8c7375a621f00ed579c"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/cuaderno-de-practica/",
+          "sha256": "0d91c82fe0c9066dce2a1ca8930f0291a3fe00b28f2235c941d507cbc569101a"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/palabras-raras/",
+          "sha256": "32f9f45d0d3957ad485b5b12aae7499e9b6186b33e141e8025bfbef6e183724f"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/antes-de-cerrar/",
+          "sha256": "51b9767392d8fcc64703b1b103c49e11bf6a5e492402ae5f674fb1d37985d77f"
         },
         {
           "path": "/libros/ia-cotidiana-para-adultos-mayores/ejemplos-practicos/",
-          "sha256": "6a864982b814180fb1ee63a96f8c74ce2b0a22c6e644991a861b90cc28e11104"
+          "sha256": "f1e647d786c46230d8e125864f50e334da55a05eb0276f22475805b2ef1e25b5"
         }
       ],
-      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
-      "book": "ia-cotidiana-para-adultos-mayores"
+      "distribution": "online-only"
     },
     "book:ia-para-docentes": {
       "policyVersion": "1",
@@ -965,6 +1099,30 @@
           "sha256": "4ebd2acf6e6077e3f6381d0c81ffb81774335881a1320ea570bfcf0a8c42cf68"
         }
       ]
+    },
+    "book:ia-cotidiana-para-adultos-mayores:published": {
+      "policyVersion": "1",
+      "editionHash": "13f091194ba79371cdff0eb725ed48eb45508e80d25da917f0fec7da19ba0f18",
+      "category": "legacy",
+      "status": "preserved",
+      "edition": "existing-13f091194ba7",
+      "routes": [
+        "/libros/ia-cotidiana-para-adultos-mayores/",
+        "/libros/ia-cotidiana-para-adultos-mayores/antes-de-empezar/",
+        "/libros/ia-cotidiana-para-adultos-mayores/ejemplos-practicos/"
+      ],
+      "bodies": [
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/antes-de-empezar/",
+          "sha256": "d7ba4503e71ab0a3f90e3b77aee20c4279dc4d6d2beae06d38fb02763e715951"
+        },
+        {
+          "path": "/libros/ia-cotidiana-para-adultos-mayores/ejemplos-practicos/",
+          "sha256": "6a864982b814180fb1ee63a96f8c74ce2b0a22c6e644991a861b90cc28e11104"
+        }
+      ],
+      "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
+      "book": "ia-cotidiana-para-adultos-mayores"
     }
   }
 }

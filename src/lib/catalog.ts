@@ -4,7 +4,7 @@ import config from '../../site.config.json';
 import {featuredBookSlug,readingScope} from './editorial';
 export {config};
 export const preview = import.meta.env.DEV || process.env.LUMENDIA_PREVIEW === '1';
-const previousModules=import.meta.glob('../../.local/ia-dia-published-sample.json',{eager:true,import:'default'});
+const previousModules=import.meta.glob(['../../.local/ia-dia-published-sample.json','../../.local/published-books/*.json'],{eager:true,import:'default'});
 const modules = import.meta.glob('../content/books/*.json', {eager:true,import:'default'});
 export interface Page {slug:string;title:string;description:string;html:string;words:number;textHash:string}
 export interface Resource {format?:"pdf"|"epub";slug:string;title:string;description:string;file:string;sha256:string}

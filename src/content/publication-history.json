@@ -17,6 +17,11 @@
       "publishedAt": "2026-11-02",
       "verifiedInCommit": "0c122fe145a56973d9b3426b223781d81e41fbed",
       "evidence": "https://github.com/galumio/lumendia-web/actions/runs/41546963499"
+    },
+    "ia-cotidiana-para-adultos-mayores": {
+      "editionHash": "0e4b976df8fef07c77f885cfab23d29e66f46486cb4ff007c23e5dd920fdb97b",
+      "publishedAt": "2026-11-03",
+      "evidence": "Publicación autorizada expresamente por el usuario en ChatGPT para 2026-11-03; aprobación editorial en docs/APROBACION-EDITORIAL-IA-MAYORES-20261103.txt. Verificación de producción pendiente de este lanzamiento."
     }
   },
   "featured": []

@@ -1,0 +1,63 @@
+APROBACIÓN EDITORIAL — IA COTIDIANA PARA ADULTOS MAYORES (ES)
+Edición: IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13
+Categoría A — Educación tecnológica para adultos mayores.
+Responsable: titular de Galumio Studio, aprobación confirmada expresamente por el usuario.
+Fecha confirmada: 2026-11-03.
+Evidencia: mensaje del usuario en ChatGPT titulado «APROBACIÓN EDITORIAL CONFIRMADA — IA COTIDIANA PARA ADULTOS MAYORES», que identifica esta edición, fecha, responsable y alcance. Esta constancia transcribe la decisión; no contiene una firma ni atribuye matrícula o revisión sanitaria externa.
+
+ALCANCE
+Word, PDF y EPUB de IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13; 16 cuerpos web completos y ruta histórica de compatibilidad identificados por hashes. Lectura online sin descarga gratuita.
+Educación tecnológica para adultos mayores: aprendizaje de herramientas, formulación de pedidos y organización de información. Los ejemplos sanitarios no autorizan diagnóstico, tratamiento ni evaluación clínica por IA. Los ejemplos de alimentación preparan consultas; el pedido 13 organiza exclusivamente ejercicios ya indicados por un profesional, sin cambios, nuevas propuestas, adaptación ni evaluación de seguridad. La explicación general de prospectos queda limitada por la remisión expresa de dosis, horarios y combinaciones al médico o farmacéutico. Se conservan las advertencias de confirmación profesional y minimización de datos; tapar datos identificatorios no equivale a anonimización completa. Aprobación editorial confirmada por el usuario para esta edición exacta, sin revisión profesional externa atribuida.
+
+TRAZABILIDAD
+Hash integral antes de cambiar el estado editorial: c782f71c682379ff5768c0ea0f508d1b35bfc7046ff9f72375db0a8a018158c9
+Hash integral aprobado: 0e4b976df8fef07c77f885cfab23d29e66f46486cb4ff007c23e5dd920fdb97b
+La diferencia corresponde exclusivamente a editorialStatus pending → approved. Los cuerpos y el resto de metadatos no se modifican.
+Hash de clasificación: d4c690523b9c4ab8ab604b1da298cf18af3444b5cc0ce69e5bdd3a66472dc4ae
+Política: 1. Justificación, apartados y fuentes vinculados por classificationHash.
+
+MAESTROS
+IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13.docx | 31493 bytes | SHA-256 373a0c20afbf7020a69c8c5f4d4eb9536f5be36d1d70c58b6416e92cf6cc123c
+IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13.pdf | 366305 bytes | SHA-256 ed1882e7b615cae03edf85237d7e6fc0da6932c49ccc5634afd1e8fb8a390c9f
+IA_cotidiana_ES_EDITORIAL_20261103_PEDIDO13.epub | 296890 bytes | SHA-256 fda94be1fd946dd9e07220b68332d8cdfe0196dd04f47fadf6fbe1e328f233f6
+
+CUERPOS WEB
+/libros/ia-cotidiana-para-adultos-mayores/creditos/ | SHA-256 042eb0f4d9db8e4e7a59128c81f501030e42a8d119cac3d98d6e5156b4846444
+/libros/ia-cotidiana-para-adultos-mayores/antes-de-empezar/ | SHA-256 6763a043785798b4ecf7379b68d9a40ecdfd340738e24fa079a69189daedf6ad
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-1/ | SHA-256 74d2e0b38047c48f00a10e26c24f8698c8146afc64e4dcb0d8da520da2f6affe
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-2/ | SHA-256 2ff3586e9779b005f2711bf59b6f88e12900f9f953160a10a8bb083ce564cea8
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-3/ | SHA-256 46d1e28a94db4e0714888f47a633e3dca5b82ce112a393abe480365578621e94
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-4/ | SHA-256 bf56592cb61df40e37b613f0cfab0eb7b5a3de644b790ce05fdc6d547e22b4f6
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-5/ | SHA-256 5c10132f8971203e083bb3558d33e2d022ef54c8a84c5af97b11ed643b447844
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-6/ | SHA-256 1c6c45b06853ee84a8d8fe25a8f71a8e0f8df8a00e5556108338290614cee13d
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-7/ | SHA-256 6a80f53f6130f4336602ddbdaf212e696fa826d39d286824f97f33c9fc79c382
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-8/ | SHA-256 c30149a27d2a3a3923feef7b2523c2789eceda114fd8aa11fbb2fc3bb86a8adf
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-9/ | SHA-256 138fdc794694e047cd8b30b27cb2771323aaf152713a917ea89657123893d374
+/libros/ia-cotidiana-para-adultos-mayores/capitulo-10/ | SHA-256 5d0d405f2efb830ef8e4e9848bfb6d26a4ddfb2c9f22298f6cbe2f4f4af0f5ea
+/libros/ia-cotidiana-para-adultos-mayores/50-pedidos/ | SHA-256 daf47e16dee22a7dd727144189eba2a9697c14b22b26d8c7375a621f00ed579c
+/libros/ia-cotidiana-para-adultos-mayores/cuaderno-de-practica/ | SHA-256 0d91c82fe0c9066dce2a1ca8930f0291a3fe00b28f2235c941d507cbc569101a
+/libros/ia-cotidiana-para-adultos-mayores/palabras-raras/ | SHA-256 32f9f45d0d3957ad485b5b12aae7499e9b6186b33e141e8025bfbef6e183724f
+/libros/ia-cotidiana-para-adultos-mayores/antes-de-cerrar/ | SHA-256 51b9767392d8fcc64703b1b103c49e11bf6a5e492402ae5f674fb1d37985d77f
+/libros/ia-cotidiana-para-adultos-mayores/ejemplos-practicos/ | SHA-256 f1e647d786c46230d8e125864f50e334da55a05eb0276f22475805b2ef1e25b5
+
+APARTADOS EXAMINADOS
+Créditos: información general, no sustitución profesional; aplicaciones a octubre de 2026.
+Capítulos 1, 3, 5, 6 y 10: límites sanitarios, privacidad, consultas, medicamentos, alimentación y confirmación profesional.
+50 pedidos: números 6–13 y 20–26; pedido 13 limitado a organizar ejercicios ya indicados y consultar dudas con el profesional.
+Cuaderno: cinco apartados; no debe contener claves reales ni datos clínicos en una IA.
+
+CORRECCIONES CONSERVADAS
+Dos ejemplos de alimentación convertidos en preparación de consultas; aclaración sobre aplicaciones auténticas con funciones pagas; créditos y avisos del EPUB conciliados con Word; pedido 13 limitado a organizar ejercicios ya indicados, sin cambiarlos ni evaluar su seguridad. Informes originales: INFORME-CORRECCIONES-IA-MAYORES-ES-20261103.txt e INFORME-PEDIDO13-IA-MAYORES-20261103.txt, en la carpeta editorial privada. Copia histórica de clasificación en .local/REGISTRO-PEDIDO13-PREVIO-APROBACION.json.
+
+FUENTES Y LÍMITES
+OMS: cinco claves para la inocuidad de los alimentos
+https://www.who.int/es/publications/i/item/9789241594639
+Referencia para revisión de recetas y menús; no valida recetas generadas ni dietas individuales.
+
+OMS: uso seguro y ético de IA para la salud
+https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health
+Límites de exactitud, privacidad y supervisión; no acredita una revisión profesional del libro.
+Estas fuentes documentan criterios generales y no constituyen aval profesional de la obra ni aprobación de recetas concretas.
+
+DISTRIBUCIÓN
+Lectura completa gratuita, sin registro. Sin descargas gratuitas ni maestros en el artefacto público. La aprobación editorial habilita preparación técnica, NO autoriza commit, push, PR, merge ni despliegue. No se registra fecha ficticia de publicación ni un lanzamiento ya ocurrido.

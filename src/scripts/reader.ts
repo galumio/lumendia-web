@@ -11,10 +11,14 @@ if(reader&&article){
  smaller?.addEventListener('click',()=>{size=Math.max(16,size-2);apply()});larger?.addEventListener('click',()=>{size=Math.min(28,size+2);apply()});
  const progress=document.querySelector<HTMLProgressElement>('#reading-progress');const label=document.querySelector('#progress-label');
  const key='lumendia-progress-'+reader.dataset.book;
- try{const stored=JSON.parse(get(key)||'null');if(stored?.url===location.pathname&&!location.hash&&Number.isFinite(stored.scroll)){requestAnimationFrame(()=>window.scrollTo(0,stored.scroll))}}catch{}
- let timer:ReturnType<typeof setTimeout>;
- function update(){const top=article!.getBoundingClientRect().top+window.scrollY;const total=article!.offsetHeight-window.innerHeight;const value=Math.round(Math.min(100,Math.max(0,total>0?(window.scrollY-top)/total*100:100)));if(progress)progress.value=value;if(label)label.textContent=value+' %';clearTimeout(timer);timer=setTimeout(()=>save(key,JSON.stringify({url:location.pathname,title:reader!.dataset.title,scroll:window.scrollY,percent:value})),200)}
- window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
- document.querySelector('#share')?.addEventListener('click',async()=>{const feedback=document.querySelector('#reader-feedback');try{if(navigator.share){await navigator.share({title:document.title,url:location.href})}else{await navigator.clipboard.writeText(location.href);if(feedback)feedback.textContent=english?'Link copied':'Enlace copiado'}}catch(error){if(feedback)feedback.textContent=error instanceof DOMException&&error.name==='AbortError'?'':(english?'You can copy the link from the address bar.':'Podés copiar el enlace desde la barra de direcciones.')}});
+ // Finish responsive layout before restoring the saved position.
  if(matchMedia('(max-width:700px)').matches){document.querySelector('.reader-sidebar details')?.removeAttribute('open')}
+ try{const stored=JSON.parse(get(key)||'null');if(stored?.url===location.pathname&&!location.hash&&Number.isFinite(stored.scroll)){requestAnimationFrame(()=>{window.scrollTo({top:stored.scroll,behavior:'instant'});update()})}}catch{}
+ let timer:ReturnType<typeof setTimeout>;
+ function update(immediate=false){const top=article!.getBoundingClientRect().top+window.scrollY;const total=article!.offsetHeight-window.innerHeight;const value=Math.round(Math.min(100,Math.max(0,total>0?(window.scrollY-top)/total*100:100)));if(progress)progress.value=value;if(label)label.textContent=value+' %';clearTimeout(timer);const persist=()=>save(key,JSON.stringify({url:location.pathname,title:reader!.dataset.title,scroll:window.scrollY,percent:value}));if(immediate)persist();else timer=setTimeout(persist,200)}
+ window.addEventListener('scroll',()=>update(),{passive:true});window.addEventListener('resize',()=>update());
+ // Flush the debounce when leaving, including navigation into the back/forward cache.
+ window.addEventListener('pagehide',()=>update(true));update();
+ document.querySelector('#share')?.addEventListener('click',async()=>{const feedback=document.querySelector('#reader-feedback');try{if(navigator.share){await navigator.share({title:document.title,url:location.href})}else{await navigator.clipboard.writeText(location.href);if(feedback)feedback.textContent=english?'Link copied':'Enlace copiado'}}catch(error){if(feedback)feedback.textContent=error instanceof DOMException&&error.name==='AbortError'?'':(english?'You can copy the link from the address bar.':'Podés copiar el enlace desde la barra de direcciones.')}});
+
 }
