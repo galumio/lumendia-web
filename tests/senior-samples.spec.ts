@@ -59,10 +59,10 @@ for(const edition of editions){
   expect(errors).toEqual([]);
  });
 }
-test('Biblioteca contains four complete books; commercial samples stay separate',async({page})=>{
+test('Biblioteca contains five complete books; commercial samples stay separate',async({page})=>{
  await page.goto('/biblioteca/');
- const complete=['ia-cotidiana-para-adultos-mayores','ia-para-el-dia-a-dia','cuidar-a-mama-o-papa','como-estudiar-para-un-final'];
- await expect(page.locator('.book-card')).toHaveCount(4);
+ const complete=['ia-cotidiana-para-adultos-mayores','ia-para-el-dia-a-dia','cuidar-a-mama-o-papa','como-estudiar-para-un-final','ia-para-docentes'];
+ await expect(page.locator('.book-card')).toHaveCount(5);
  for(const slug of complete)await expect(page.locator(`.book-card h2 a[href="/libros/${slug}/"]`)).toHaveCount(1);
  await page.goto('/muestras/');
  for(const slug of ['ai-for-everyday-life','everyday-ai-for-seniors'])await expect(page.locator(`.book-card h2 a[href="/libros/${slug}/"]`)).toHaveCount(1);

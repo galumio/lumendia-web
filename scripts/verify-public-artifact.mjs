@@ -10,10 +10,12 @@ export function resourceSignature(bytes,format){
  const n=bytes.readUInt16LE(26),extra=bytes.readUInt16LE(28),offset=30+n+extra;
  return bytes.subarray(30,30+n).toString()==='mimetype'&&bytes.subarray(offset,offset+20).toString()==='application/epub+zip';
 }
+// Resolve the exact approved resource edition, including preserved historical resources.
+export const resourceRecord=(resource,policy)=>[policy.records['book:'+resource.book],policy.records['book:'+resource.book+':published']].find(r=>r?.edition===resource.edition);
 export function validateResourceManifest(manifest,policy){
  const errors=[],seen=new Set();if(manifest.version!==1||!Array.isArray(manifest.resources))return ['Manifiesto de recursos inválido'];
  for(const r of manifest.resources){
-  const record=policy.records['book:'+r.book];
+  const record=resourceRecord(r,policy);
   if(record?.distribution==='online-only')errors.push('Libro de lectura online sin descargas autorizables');
   if(!safeResourcePath(r.path)||!['pdf','epub'].includes(r.format)||!r.path.endsWith('.'+r.format))errors.push('Ruta/formato inválidos');
   if(seen.has(r.path))errors.push('Recurso duplicado');seen.add(r.path);
@@ -29,7 +31,7 @@ export function verifyArtifact(directory,{manifest=resources,policy=registry,pre
  function walk(dir){for(const name of readdirSync(dir)){const p=join(dir,name),stat=lstatSync(p);if(stat.isSymbolicLink()){errors.push('Enlace de sistema no permitido: '+p);continue;}if(stat.isDirectory())walk(p);else if(stat.isFile())files.push(p);else errors.push('Tipo de archivo no permitido');}}
  if(lstatSync(root).isSymbolicLink())return ['Raíz enlazada'];walk(root);
  const eligible=key=>preview||evaluateRecord(key.startsWith('book:')?bookRecords[key.slice(5)]:policy.records[key]).eligible;
- const allowed=manifest.resources.filter(r=>(preview||r.status==='approved')&&eligible('book:'+r.book)&&bookRecords[r.book]?.edition===r.edition);
+ const allowed=manifest.resources.filter(r=>(preview||r.status==='approved')&&(preview||evaluateRecord(resourceRecord(r,policy)).eligible));
  for(const f of files){const path='/'+relative(root,f).split('\\').join('/');
   if(!/\.(html|css|js|svg|png|jpe?g|webp|ico|xml|pdf|epub)$/i.test(path)&&!['/CNAME','/.nojekyll','/robots.txt','/ads.txt'].includes(path))errors.push('Archivo fuera de los formatos públicos: '+path);
   if(path.startsWith('/libros/')&&!path.endsWith('/index.html'))errors.push('Archivo no permitido dentro de libros: '+path);

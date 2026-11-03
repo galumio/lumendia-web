@@ -6,7 +6,7 @@ const path=`/guias/${entry.slug}/`;
 test('Guía publicada: catálogo, SEO, fuentes, móvil, teclado y cinco copias exactas',async({page,request})=>{
  await page.addInitScript(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async(text:string)=>{(window as any).copiedPrompt=text}}}));
  for(const width of [1440,390,320]){
-  await page.setViewportSize({width,height:900});await page.goto('/biblioteca/');
+  await page.setViewportSize({width,height:900});await page.goto('/');if(width<=1000){await page.locator('#navigation-toggle').click();await expect(page.locator('#navigation-toggle')).toHaveAttribute('aria-expanded','true');}await page.locator('#primary-navigation').getByRole('link',{name:'Aprendé IA',exact:true}).click();await expect(page).toHaveURL(/\/aprende-ia\/$/);await page.locator('main').getByRole('link',{name:'Guías',exact:true}).click();await expect(page).toHaveURL(/\/guias\/$/);
   await page.getByRole('link',{name:entry.title,exact:true}).click();
   await expect(page.locator('h1')).toHaveText(entry.title);
   await expect(page.locator('.editorial-reader header')).toContainText('Lectura completa gratuita');

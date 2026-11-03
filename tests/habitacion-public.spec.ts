@@ -28,7 +28,17 @@ test('Relato publicado: texto exacto, SEO, sitemap, autor, lectura móvil y priv
     await expect(page.locator('[data-ux-contrast]')).toHaveAttribute('aria-pressed','true');
     await page.locator('[data-ux-contrast]').click();
     await page.getByRole('link',{name:'Ir al índice',exact:true}).click();expect(page.url()).toContain('#reading-index');
-   }else await expect(page.locator(`main a[href="${paths[0]}"]`)).toBeVisible();
+   }else {
+    const links=page.locator(`main a[href="${paths[0]}"]`);
+    if(index===1){
+     await expect(links).toHaveCount(2);
+     for(const name of ['La habitación que no figuraba','Leer el relato completo →']){
+      // Filter the anchors themselves by accessible name, without selecting an arbitrary match.
+      const named=page.locator('main').getByRole('link',{name,exact:true}).and(links);
+      await expect(named).toBeVisible();await expect(named).toHaveAttribute('href',paths[0]);
+     }
+    }else {await expect(links).toHaveCount(1);await expect(links).toBeVisible();await expect(links).toHaveText('Leer el relato completo →');}
+   }
    expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
    await expect(page.locator('script[data-cf-beacon]')).toHaveCount(0);
    await page.evaluate(()=>scrollTo(0,0));

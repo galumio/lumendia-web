@@ -22,6 +22,11 @@
       "editionHash": "0e4b976df8fef07c77f885cfab23d29e66f46486cb4ff007c23e5dd920fdb97b",
       "publishedAt": "2026-11-03",
       "evidence": "Publicación autorizada expresamente por el usuario en ChatGPT para 2026-11-03; aprobación editorial en docs/APROBACION-EDITORIAL-IA-MAYORES-20261103.txt. Verificación de producción pendiente de este lanzamiento."
+    },
+    "ia-para-docentes": {
+      "editionHash": "471cbd3f2e859745634a109103f9229e1ce4a233318db944ceef98d6563a8bc7",
+      "publishedAt": "2026-11-03",
+      "evidence": "Publicación autorizada expresamente por el usuario en esta conversación el 2026-11-03; aprobación editorial en docs/APROBACION-EDITORIAL-DOCENTES-20261103.txt. Verificación del despliegue pendiente."
     }
   },
   "featured": []

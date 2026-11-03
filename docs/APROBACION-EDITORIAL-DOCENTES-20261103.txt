@@ -1,0 +1,57 @@
+APROBACIÓN EDITORIAL — IA PARA DOCENTES (ES)
+Edición: IA_para_docentes_ES_EDITORIAL_20261103
+Clasificación A — Educación tecnológica para docentes.
+Responsable: Titular de Galumio Studio, aprobación confirmada expresamente por el usuario
+Fecha confirmada: 2026-11-03.
+Evidencia: confirmación expresa del responsable editorial en esta conversación, transmitida por el usuario en el mensaje «APROBACIÓN EDITORIAL CONFIRMADA — IA PARA DOCENTES (ES)». Esta constancia registra la decisión y sus hashes; no contiene firma, credenciales ni revisión externa.
+
+ALCANCE
+EPUB, PDF y 15 cuerpos web de IA_para_docentes_ES_EDITORIAL_20261103, identificados por los hashes de esta constancia.
+Diez capítulos, 50 prompts numerados, 72 recuadros en total, ejemplos, avisos, créditos y anexo. Lectura online gratuita sin registro ni descargas del libro. El recurso independiente histórico sigue sujeto a su aprobación y hash propios.
+
+JUSTIFICACIÓN
+Propuesta: educación tecnológica para docentes. Prompts para planificación, evaluación y comunicación sujetos a revisión docente y normas institucionales. Los tres ejemplos se identifican como ilustrativos, no ejecuciones documentadas ni resultados garantizados. NotebookLM no garantiza exactitud: contrastar con documentos originales. No se atribuye aprobación por validación técnica ni por no pertenecer a KDP Select.
+Nota de transparencia y cómo usar el libro
+Capítulo 4: NotebookLM y contraste de respuestas
+Capítulo 7: tres ejemplos ilustrativos
+Capítulo 8: 50 prompts íntegros
+Capítulo 9 y anexo: privacidad, datos de alumnos y familias, revisión de resultados
+Se conserva íntegramente la corrección de ejemplos ilustrativos del capítulo 7 y la advertencia de contrastar NotebookLM con los originales del capítulo 4.
+
+TRAZABILIDAD
+Hash integral previo: 83fe46fdc7000cad8b822e5d1ffd158ed15b10e8bdbf1fc75b6f0f7de14feeda
+Hash integral aprobado: 471cbd3f2e859745634a109103f9229e1ce4a233318db944ceef98d6563a8bc7
+Solo cambia editorialStatus de pending a approved. Los cuerpos y demás metadatos del libro son idénticos.
+Hash de clasificación: c5e07943ceba8cea61f18989b3dcf6623ef9480a5f2aad705b16de5a8f4ce4c0
+Política: 1
+
+MAESTROS
+IA_para_docentes_ES_EDITORIAL_20261103.epub | 181281 bytes | SHA-256 8ebb200b1b47a5fc52d1fd5cf8077ce8f4404dca8c877397c589feec881670b7
+IA_para_docentes_ES_EDITORIAL_20261103.pdf | 126106 bytes | SHA-256 e94a9e3ff794b76dd79d1a6a804fb7097ee252a621ba5b46843cc524546e9d48
+
+CUERPOS WEB
+/libros/ia-para-docentes/portada-y-creditos/ | SHA-256 f4849983aa68d0abde02b38027c5cfbdf817570d6dd45110ad523d942a192998
+/libros/ia-para-docentes/avisos/ | SHA-256 5998b721a243ab7f3a36ba8da8805b20e3ecdb7927da0af3b09a55cf3a76f418
+/libros/ia-para-docentes/como-usar-este-libro/ | SHA-256 91fc121f27c222bc00bc8eae7ad74c8b1719ee84c7ff3a87eee17da79a07bd45
+/libros/ia-para-docentes/indice/ | SHA-256 6f2cab8c4d65d9d9e5f6dc45b5dc9f5190e8ff751c0cf4d2e36fcddd23658b82
+/libros/ia-para-docentes/que-es-un-asistente-de-ia/ | SHA-256 ba2a563705f43a0e6798cbd90e9294b9b137605a3d30cc53f76b61c761463d10
+/libros/ia-para-docentes/la-formula-de-un-buen-prompt/ | SHA-256 9d241d3a71b2a448f35eb03c5d1fb2f4e58ea900846cac60b88abd4c656b31fa
+/libros/ia-para-docentes/chatgpt-para-docentes/ | SHA-256 103f644b816a16195c2ae9da443a019fc39b148d722923aeaa28351148873720
+/libros/ia-para-docentes/gemini-para-docentes/ | SHA-256 eab47e036447ec73f4b97c2fcb44166f0e0351a2eb7923c9ba17ea32114d3014
+/libros/ia-para-docentes/claude-para-docentes/ | SHA-256 9bd8cdec31a7cffb2588f1de9bf2ef1d6944c57e58d2def71b1ee256a06eb148
+/libros/ia-para-docentes/cual-usar-para-cada-tarea/ | SHA-256 b64d7fefe3c4b25b1939452ddb1831c9870939f293f1e7cf1150ab894c7a2365
+/libros/ia-para-docentes/tres-ejemplos-paso-a-paso/ | SHA-256 7bd630926d61a8ddd4a025ff4e11e5f3ed5e5a22773057916bc4b296b30e48bd
+/libros/ia-para-docentes/biblioteca-de-prompts/ | SHA-256 ac7cb7b68c0990fc34f425384337e48f48ab5e7bcc1e9df4814532a3ffb36d75
+/libros/ia-para-docentes/errores-comunes-y-como-revisar/ | SHA-256 e39a3fd417dbd45d60f3a174b3f69d158c13ce4b5ef789e48993621a41d43e72
+/libros/ia-para-docentes/plan-de-7-dias/ | SHA-256 28bb47754a72998de5237b0bc514ffafd2f9b1b79d8ffa0ce64a37cf3164fca1
+/libros/ia-para-docentes/anexo/ | SHA-256 f5d5afd8b40c052f7ff4aeb21ca31360b0b7211b29da77930b6ad53193165541
+
+FUENTES Y LÍMITES
+Google: ayuda oficial de NotebookLM / Gemini Notebook
+https://support.google.com/notebooklm/answer/16164461?hl=es
+La ayuda advierte que las respuestas pueden contener errores. Redirige actualmente a Gemini Notebook; no se renombra el manuscrito aprobado ni se avalan todas sus prestaciones actuales.
+UNESCO: Guidance for generative AI in education and research
+https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research
+Privacidad y supervisión humana en educación. No constituye aprobación individual de esta edición.
+
+La aprobación editorial no constituye autorización de despliegue. Publicación pendiente de autorización expresa.

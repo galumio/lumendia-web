@@ -1,22 +1,26 @@
 import {test,expect,type Page} from '@playwright/test';import AxeBuilder from '@axe-core/playwright';import {createHash} from 'node:crypto';
-import {readFileSync} from 'node:fs';
+import {loadBooks} from '../scripts/release-library.mjs';
 // Sitio y libro "Cómo estudiar para un final". Corre sobre la salida de producción (dist-library) o el ensayo.
 const root='/libros/como-estudiar-para-un-final/';
 const axe=async(page:Page)=>expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
 const noOverflow=async(page:Page)=>expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 
-test('Alcance editorial, destacado manual y estructura sin páginas vacías',async({page,request})=>{
- await page.goto('/');await expect(page.locator('.hero-art img')).toHaveAttribute('alt','Portada de Cómo estudiar para un final');
- await expect(page.locator('.categories')).not.toContainText('Próximamente');
- await expect(page.locator('.resource-band')).toHaveCount(2);
- await page.goto('/biblioteca/');
- for(const [title,label] of [['Cómo estudiar para un final','Lectura completa gratuita'],['IA para docentes','Guía gratuita con contenido adicional de pago'],['IA para el día a día','Muestra del ebook comercial']])await expect(page.locator('.book-card',{hasText:title})).toContainText(label);
- await page.locator('.category-links').getByRole('link',{name:'Educación y docentes'}).click();await expect(page.locator('.book-card:visible')).toHaveCount(1);
- const book=JSON.parse(readFileSync('src/content/books/ia-para-docentes.json','utf8'));
- await page.goto('/libros/ia-para-docentes/');await expect(page.locator('.editorial-note')).toContainText('17, 22 y 33');
+test('Alcance editorial, novedades publicadas y estructura sin páginas vacías',async({page,request})=>{
+ await page.goto('/');
+ const featured=page.locator('.book-card',{hasText:'IA cotidiana para adultos mayores'});
+ await expect(featured).toHaveCount(1);await expect(featured.locator('img')).toHaveAttribute('src',/ia-cotidiana/);
+ await expect(page.locator('main')).not.toContainText('Próximamente');
+ await expect(page.locator('.book-card')).toHaveCount(3);
+ await page.goto('/biblioteca/');await expect(page.locator('.book-card')).toHaveCount(5);
+ for(const title of ['Cómo estudiar para un final','IA para el día a día','Cuidar a mamá o papá','IA cotidiana para adultos mayores','IA para docentes'])await expect(page.locator('.book-card',{hasText:title})).toContainText('Lectura completa gratuita');
+ await expect(page.locator('.book-card',{hasText:'IA para docentes'})).toHaveCount(1);
+ await page.getByRole('link',{name:'Ver recursos gratuitos independientes'}).click();await expect(page).toHaveURL(/\/recursos\/$/);await expect(page.locator('.resource-band')).toHaveCount(2);
+ // Compare the reader with the edition actually eligible for the public build, not its pending replacement.
+ const book=loadBooks().find((b:{slug:string})=>b.slug==='ia-para-docentes');
+ await page.goto('/libros/ia-para-docentes/');await expect(page.locator('.editorial-note')).toHaveCount(0);await expect(page.locator('.book-hero .eyebrow')).toContainText('Lectura completa gratuita');
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:900});await page.goto('/libros/ia-para-docentes/plan-de-7-dias/');
-  await expect(page.locator('.editorial-note')).toBeVisible();await noOverflow(page);await axe(page);
+  await expect(page.locator('.editorial-note')).toHaveCount(0);await noOverflow(page);await axe(page);
   const original=book.pages.find((p:{slug:string})=>p.slug==='plan-de-7-dias').html;
   expect(await page.locator('.reader-content').evaluate((e,html)=>{const d=document.createElement('div');d.innerHTML=html;return e.innerHTML===d.innerHTML},original)).toBe(true);
  }
@@ -24,9 +28,14 @@ test('Alcance editorial, destacado manual y estructura sin páginas vacías',asy
  for(const path of ['/temas/'])expect((await request.get(path)).status()).toBe(404);
 });
 
-test('Inicio, móvil y accesibilidad',async({page})=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));for(const width of [1440,768,390]){await page.setViewportSize({width,height:900});await page.goto('/');await expect(page.locator('h1')).toHaveText('¿Qué te gustaría hacer hoy?');for(const title of ['Cómo estudiar para un final','IA para docentes'])await expect(page.locator('.book-card',{hasText:title})).toHaveCount(1);await noOverflow(page);await page.screenshot({path:`.local/home-${width}.png`,fullPage:true});await axe(page)}await expect(page.locator('footer')).toContainText('Galumio Studio');expect(errors).toEqual([])});
+test('Inicio, móvil y accesibilidad',async({page})=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));for(const width of [1440,768,390]){await page.setViewportSize({width,height:900});await page.goto('/');await expect(page.locator('h1')).toHaveText('Un libro puede abrirte un camino.');await expect(page.locator('.book-card')).toHaveCount(3);for(const title of ['IA cotidiana para adultos mayores','Cuidar a mamá o papá','IA para docentes'])await expect(page.locator('.book-card',{hasText:title})).toHaveCount(1);await expect(page.locator('.book-card',{hasText:'IA para docentes'})).toHaveCount(1);await page.getByRole('link',{name:'Explorá la biblioteca'}).click();await expect(page).toHaveURL(/\/biblioteca\/$/);await expect(page.locator('.book-card')).toHaveCount(5);await page.goto('/');await noOverflow(page);await page.screenshot({path:`.local/home-${width}.png`,fullPage:true});await axe(page)}await expect(page.locator('footer')).toContainText('Galumio Studio');expect(errors).toEqual([])});
 
-test('Biblioteca: búsqueda y categorías',async({page})=>{await page.goto('/biblioteca/');await page.getByRole('searchbox').fill('final');await expect(page.locator('.book-card:visible',{hasText:'Cómo estudiar'})).toHaveCount(1);await page.getByRole('button',{name:'Limpiar filtros'}).click();await expect(page.getByRole('combobox').locator('option[value="Infografías"]')).toHaveCount(0);await page.goto('/biblioteca/?categoria=Estudio%20y%20universidad');await expect(page.locator('.book-card:visible')).toHaveCount(1)});
+test('Biblioteca: navegación a los cinco libros completos y compatibilidad histórica',async({page})=>{
+ const slugs=['como-estudiar-para-un-final','cuidar-a-mama-o-papa','ia-para-el-dia-a-dia','ia-cotidiana-para-adultos-mayores','ia-para-docentes'];
+ for(const slug of slugs){await page.goto('/biblioteca/');const link=page.locator(`.book-card h2 a[href="/libros/${slug}/"]`);await expect(link).toBeVisible();await link.click();await expect(page).toHaveURL(new RegExp(`/libros/${slug}/$`));await expect(page.locator('#primary-navigation a[aria-current]')).toHaveText('Biblioteca');await page.locator('.breadcrumb').getByRole('link',{name:'Biblioteca',exact:true}).click();await expect(page).toHaveURL(/\/biblioteca\/$/);}
+ // Former category query URLs still resolve to the complete catalogue; they no longer filter it.
+ await page.goto('/biblioteca/?categoria=Estudio%20y%20universidad');await expect(page.locator('.book-card')).toHaveCount(5);await expect(page.locator('.book-card',{hasText:'IA para docentes'})).toHaveCount(1);
+});
 
 test('Ficha del libro sin elementos de otros libros',async({page})=>{await page.goto(root);await expect(page.locator('h1')).toHaveText('Cómo estudiar para un final');await expect(page.locator('.book-meta')).toContainText('10 capítulos');await expect(page.getByText('situaciones',{exact:false})).toHaveCount(0);await expect(page.locator('#kit')).toHaveCount(1);await expect(page.getByText('atención médica')).toHaveCount(0);await expect(page.locator('.editorial-status')).toContainText('indicaciones de tu cátedra');await axe(page);await page.getByRole('link',{name:'Empezar a leer'}).click();await expect(page).toHaveURL(new RegExp(root+'cuando-empezar-a-estudiar-para-un-final/$'))});
 

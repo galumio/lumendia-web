@@ -50,3 +50,12 @@ node scripts/package-library.mjs --dry-run   # paquete marcado DRY-RUN, no publi
 `node scripts/publish-library.mjs --rollback-institutional` vuelve a ejecutar `deploy.yml`, que publica `site/`.
 
 Los releases borrador quedan como historial privado de despliegues; se pueden borrar desde GitHub > Releases.
+## IA para docentes — aprobación editorial del 2026-11-03
+
+La edición `IA_para_docentes_ES_EDITORIAL_20261103` tiene aprobación A documentada en `docs/APROBACION-EDITORIAL-DOCENTES-20261103.txt`, vinculada a EPUB, PDF y 15 cuerpos web. Es elegible para preparar lectura completa online: diez capítulos, 50 prompts, avisos y anexo, sin descargas del libro. La hoja de referencia independiente conserva exclusivamente su autorización histórica y hash.
+
+La aprobación editorial no registra una publicación ni autoriza el despliegue. Hasta la autorización final, la ficha aparece en la vista previa como preparada; no se añade fecha a `publication-history.json`. Al preparar el lanzamiento autorizado deberá registrarse la publicación de la edición exacta para incorporar la ficha al catálogo público y a las novedades, generar un artefacto nuevo y repetir las comprobaciones correspondientes.
+
+## Lanzamiento autorizado — IA para docentes (2026-11-03)
+
+El usuario autorizó expresamente publicar esta edición el 3 de noviembre de 2026, Argentina. `publication-history.json` identifica la edición aprobada y la fecha real para incorporar su ficha a Biblioteca. La autorización no sustituye las validaciones locales, CI aprobado ni la comprobación final en producción. No se agregan descargas del libro.

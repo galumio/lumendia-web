@@ -8,7 +8,7 @@ const previousModules=import.meta.glob(['../../.local/ia-dia-published-sample.js
 const modules = import.meta.glob('../content/books/*.json', {eager:true,import:'default'});
 export interface Page {slug:string;title:string;description:string;html:string;words:number;textHash:string}
 export interface Resource {format?:"pdf"|"epub";slug:string;title:string;description:string;file:string;sha256:string}
-export interface Book {language?:"es"|"en";sample?:boolean;slug:string;title:string;shortTitle?:string;subtitle:string;category:string;audience:string;description:string;cover:string;editorialStatus:string;
+export interface Book {language?:"es"|"en";sample?:boolean;completeReading?:boolean;slug:string;title:string;shortTitle?:string;subtitle:string;category:string;audience:string;description:string;cover:string;editorialStatus:string;
  /** Dato histórico de alcance; no habilita publicación. La elegibilidad está en publication-policy.mjs. */
  healthContent?:boolean;healthReview?:{reviewer:string;reviewedAt:string;evidence:string}|null;
  notice?:string;sourcesPage?:string;readingOrder?:string[];printPages?:number;publisher?:string;resources?:Resource[];
