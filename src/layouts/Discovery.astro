@@ -1,0 +1,6 @@
+---
+import Base from './Base.astro';
+import '../styles/discovery.css';
+const {title,description,eyebrow='Biblioteca digital gratuita'}=Astro.props;
+---
+<Base title={title} description={description}><div class="container"><div class="design-hero"><p class="eyebrow">{eyebrow}</p><h1>{title}</h1><p>{description}</p></div><slot/></div></Base>

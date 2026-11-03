@@ -1,0 +1,7 @@
+---
+import Discovery from '../layouts/Discovery.astro';
+import Tile from '../components/DiscoveryTile.astro';
+import {editorialEntries} from '../lib/editorial-catalog';
+const tips=editorialEntries.filter(e=>e.format==='tip').length;
+---
+<Discovery title="Aprendé IA, paso a paso." eyebrow="Aprendizaje gratuito" description="Elegí una tarea breve, una explicación con contexto o un recorrido guiado."><div class="reading-grid"><Tile title="Tips de IA" description={`${tips} consejos prácticos en cuatro grupos.`} href="/tips/"/><Tile title="Guías" description="Una guía para empezar con cinco tareas sencillas." href="/guias/"/><Tile title="Tutoriales" description="Tres recorridos paso a paso." href="/tutoriales/"/></div><h2>Para profundizar</h2><Tile title="IA para docentes" description="Guía web gratuita: diez capítulos y una selección de seis prompts. Contenido adicional de pago." href="/libros/ia-para-docentes/"/><Tile title="IA para el día a día" description="Libro completo en la Biblioteca." href="/libros/ia-para-el-dia-a-dia/"/></Discovery>
