@@ -1,0 +1,9 @@
+---
+import Discovery from '../layouts/Discovery.astro';
+import BookCard from '../components/BookCard.astro';
+import {available,publishable} from '../lib/catalog';
+import {readingScope} from '../lib/editorial';
+const order=['ai-for-everyday-life','ia-cotidiana-para-adultos-mayores','everyday-ai-for-seniors'];
+const samples=available.filter(b=>publishable(b)&&readingScope(b)==='sample').sort((a,b)=>(order.includes(a.slug)?order.indexOf(a.slug):99)-(order.includes(b.slug)?order.indexOf(b.slug):99));
+---
+<Discovery title="Muestras comerciales." description="Fragmentos de libros. Estas muestras no equivalen a una lectura completa gratuita."><div class="reading-grid">{samples.map(book=><BookCard book={book}/>)}</div></Discovery>

@@ -1,0 +1,23 @@
+{
+  "books": {
+    "como-estudiar-para-un-final": {
+      "editionHash": "94224150c35af42e071f27e051a00add8d8cce000dc0d261843557009acb5700",
+      "publishedAt": null,
+      "verifiedInCommit": "0c122fe145a56973d9b3426b223781d81e41fbed",
+      "evidence": "https://github.com/galumio/lumendia-web/actions/runs/41546963499"
+    },
+    "cuidar-a-mama-o-papa": {
+      "editionHash": "62ebe3395fabe4d1b78fc3e6e4b5dd01633df62868421e29fac894786a4f6fa1",
+      "publishedAt": "2026-11-02",
+      "verifiedInCommit": "0c122fe145a56973d9b3426b223781d81e41fbed",
+      "evidence": "https://github.com/galumio/lumendia-web/actions/runs/41546963499"
+    },
+    "ia-para-el-dia-a-dia": {
+      "editionHash": "8d05e7e0034e51b4d579b3ccdee6f27ea5d03417c09b2ab5651bc448eabc8053",
+      "publishedAt": "2026-11-02",
+      "verifiedInCommit": "0c122fe145a56973d9b3426b223781d81e41fbed",
+      "evidence": "https://github.com/galumio/lumendia-web/actions/runs/41546963499"
+    }
+  },
+  "featured": []
+}

@@ -2,6 +2,7 @@ import{test,expect}from'@playwright/test';
 import AxeBuilder from'@axe-core/playwright';
 import{existsSync,readFileSync}from'node:fs';
 const path='/herramientas/generador-de-prompts/';
+const origin=process.env.LUMENDIA_PRIVACY_TEST_ORIGIN||'http://127.0.0.1:4385';
 test('Seis tareas, edición, copia y borrado: cero red y cero almacenamiento de campos',async({page})=>{
  const external:string[]=[];page.on('request',r=>{if(new URL(r.url()).hostname!=='127.0.0.1')external.push(r.url())});
  await page.addInitScript(()=>{localStorage.setItem('lumendia-cloudflare-consent-v1','accepted');Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async(text:string)=>{(window as any).copied=text}}})});
@@ -36,22 +37,22 @@ test('Escritorio, tablet, móvil, teclado y accesibilidad del formulario y resul
 });
 test('Inicio y biblioteca: accesos existentes, lectores accesibles y etiquetas',async({page,request})=>{
  for(const width of [1440,768,390,320]){
-  await page.setViewportSize({width,height:900});await page.goto('/');await expect(page.locator('h1')).toHaveText('¿Qué te gustaría hacer hoy?');
-  for(const link of await page.locator('.start-card').all())expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
+  await page.setViewportSize({width,height:900});await page.goto('/');await expect(page.locator('h1')).toHaveText('Un libro puede abrirte un camino.');
+  for(const link of await page.locator('#primary-navigation a').all())expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);await page.screenshot({path:`.local/ux-home-${width}.png`,fullPage:true});
  }
- await page.goto('/biblioteca/');await expect(page.getByText('Este buscador filtra los libros', {exact:false})).toBeVisible();await expect(page.locator('.book-meta').filter({hasText:'Muestra del ebook comercial'}).first()).toBeVisible();
+ await page.goto('/biblioteca/');await expect(page.locator('.book-card')).toHaveCount(3);await expect(page.locator('.book-meta').filter({hasText:'Muestra del ebook comercial'})).toHaveCount(0);await expect(page.locator('.book-meta').filter({hasText:'Lectura completa gratuita'})).toHaveCount(3);await page.goto('/muestras/');await expect(page.locator('.book-meta').filter({hasText:'Muestra del ebook comercial'})).toHaveCount(3);
  await page.goto('/guias/empezar-con-la-ia-cinco-tareas-sencillas/');await page.getByRole('button',{name:'Letra más grande',exact:true}).click();await expect(page.locator('[data-ux-size]')).toHaveText('22 px');await page.getByRole('button',{name:'Alto contraste',exact:true}).click();await expect(page.locator('[data-ux-contrast]')).toHaveAttribute('aria-pressed','true');expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);await page.getByRole('link',{name:'Ir al índice'}).click();await expect(page).toHaveURL(/#reading-index$/);
 });
 test('Sin JavaScript no hay envío de formulario; herramienta pública',async({browser})=>{
- const c=await browser.newContext({javaScriptEnabled:false});try{const p=await c.newPage();await p.goto('http://127.0.0.1:4385'+path);await expect(p.locator('#prompt-form')).not.toBeVisible();await expect(p.getByText('Para preparar una plantilla necesitás JavaScript.',{exact:false})).toBeVisible();}finally{await c.close()}
- expect(existsSync('dist-library'+path+'index.html')).toBe(true);expect(readFileSync('dist-library/index.html','utf8')).toContain('¿Qué te gustaría');expect(readFileSync('dist-library/sitemap.xml','utf8')).toContain(path);
+ const c=await browser.newContext({javaScriptEnabled:false});try{const p=await c.newPage();await p.goto(origin+path);await expect(p.locator('#prompt-form')).not.toBeVisible();await expect(p.getByText('Para preparar una plantilla necesitás JavaScript.',{exact:false})).toBeVisible();}finally{await c.close()}
+ expect(existsSync('dist-library'+path+'index.html')).toBe(true);expect(readFileSync('dist-library/index.html','utf8')).toContain('Un libro puede abrirte un camino.');expect(readFileSync('dist-library/sitemap.xml','utf8')).toContain(path);
 });
 test('Dominio de producción simulado: consentimiento previo no carga beacon en la herramienta',async({page,context})=>{
  const unexpected:string[]=[];
  await context.route('**/*',async route=>{
   const u=new URL(route.request().url());
-  if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:'http://127.0.0.1:4385'+u.pathname});await route.fulfill({response:r});return;}
+  if(u.hostname==='lumendia.com.ar'){const r=await route.fetch({url:origin+u.pathname});await route.fulfill({response:r});return;}
   unexpected.push(u.href);await route.abort();
  });
  await page.addInitScript(()=>localStorage.setItem('lumendia-cloudflare-consent-v1','accepted'));
@@ -77,7 +78,7 @@ test('Ayuda, ejemplo ficticio y resultado con movimiento reducido',async({page})
 });
 
 test('Artefacto publicable: generador rastreable, cinco accesos y ningún borrador',async({page,request})=>{
- await page.goto('/');await expect(page.locator('.start-card')).toHaveCount(5);
+ await page.goto('/');await expect(page.locator('#primary-navigation a')).toHaveText(['Inicio','Biblioteca','Relatos','Aprendé IA','Herramientas']);
  await page.goto(path);await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href','https://lumendia.com.ar'+path);await expect(page.locator('meta[name="robots"]')).toHaveCount(0);await expect(page.locator('.preview-note')).toHaveCount(0);
  const schema=JSON.parse(await page.locator('script[type="application/ld+json"]').innerText());expect(schema['@type']).toBe('WebApplication');expect(schema.isAccessibleForFree).toBe(true);
  for(const url of ['/.local/editorial/','/src/content/editorial/','/tutoriales/como-utilizar-la-voz-para-hablar-con-la-ia/'])expect((await request.get(url)).status()).toBe(404);

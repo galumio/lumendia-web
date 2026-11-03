@@ -1,0 +1,10 @@
+---
+import {navigation,activeSection} from '../lib/navigation.mjs';
+import {available,publishable} from '../lib/catalog';
+import {readingScope} from '../lib/editorial';
+import {translator} from '../lib/i18n';
+const {language='es'}=Astro.props;const t=translator(language);
+const active=activeSection(Astro.url.pathname,available.filter(b=>publishable(b)&&readingScope(b)==='complete').map(b=>b.slug));
+---
+<header class="header"><div class="container header-inner"><a href="/" class="brand" aria-label={t('Lumendia, inicio')}><span class="brand-symbol" aria-hidden="true">✳</span>lumendia<span class="brand-dot">.</span></a><nav id="primary-navigation" aria-label={t('Principal')} lang="es">{navigation.map(([href,label])=><a href={href} aria-current={active===href?(Astro.url.pathname===href?'page':'location'):undefined}>{label}</a>)}</nav><button class="icon-button" id="theme" aria-label={t('Activar modo oscuro')} title={t('Cambiar tema')}>◐</button><button type="button" id="navigation-toggle" aria-controls="primary-navigation" aria-expanded="false" data-open-label={language==='en'?'Menu':'Menú'} data-close-label={language==='en'?'Close menu':'Cerrar menú'} hidden>{language==='en'?'Menu':'Menú'}</button></div></header>
+<style>.header nav{flex-wrap:wrap}.header nav a{display:inline-flex;align-items:center;min-height:44px}.header nav a[aria-current]{font-weight:700;text-decoration:underline;text-underline-offset:6px}@media(min-width:1001px){.header .header-inner{flex-wrap:nowrap;gap:20px}.header nav{min-width:0;gap:12px}}</style>
