@@ -16,6 +16,7 @@ export function validateResourceManifest(manifest,policy){
  const errors=[],seen=new Set();if(manifest.version!==1||!Array.isArray(manifest.resources))return ['Manifiesto de recursos inválido'];
  for(const r of manifest.resources){
   const record=resourceRecord(r,policy);
+  if(record?.category==='F')errors.push('F no autoriza descargas');
   if(record?.distribution==='online-only')errors.push('Libro de lectura online sin descargas autorizables');
   if(!safeResourcePath(r.path)||!['pdf','epub'].includes(r.format)||!r.path.endsWith('.'+r.format))errors.push('Ruta/formato inválidos');
   if(seen.has(r.path))errors.push('Recurso duplicado');seen.add(r.path);
@@ -30,7 +31,7 @@ export function verifyArtifact(directory,{manifest=resources,policy=registry,pre
  const root=resolve(directory),errors=validateResourceManifest(manifest,policy),files=[];
  function walk(dir){for(const name of readdirSync(dir)){const p=join(dir,name),stat=lstatSync(p);if(stat.isSymbolicLink()){errors.push('Enlace de sistema no permitido: '+p);continue;}if(stat.isDirectory())walk(p);else if(stat.isFile())files.push(p);else errors.push('Tipo de archivo no permitido');}}
  if(lstatSync(root).isSymbolicLink())return ['Raíz enlazada'];walk(root);
- const eligible=key=>preview||evaluateRecord(key.startsWith('book:')?bookRecords[key.slice(5)]:policy.records[key]).eligible;
+ const eligible=key=>preview||evaluateRecord(key.startsWith('book:')?bookRecords[key.slice(5)]:policy.records[key],{recordKey:key}).eligible;
  const allowed=manifest.resources.filter(r=>(preview||r.status==='approved')&&(preview||evaluateRecord(resourceRecord(r,policy)).eligible));
  for(const f of files){const path='/'+relative(root,f).split('\\').join('/');
   if(!/\.(html|css|js|svg|png|jpe?g|webp|ico|xml|pdf|epub)$/i.test(path)&&!['/CNAME','/.nojekyll','/robots.txt','/ads.txt'].includes(path))errors.push('Archivo fuera de los formatos públicos: '+path);
@@ -40,7 +41,8 @@ export function verifyArtifact(directory,{manifest=resources,policy=registry,pre
   if(/^\/(guias|tips|relatos|tutoriales)\/[^/]+\/index\.html$/.test(path)){
    const route=path.slice(0,-10),pair=Object.entries(policy.records).find(([k,r])=>k.startsWith('editorial:')&&r.path===route);
    if(!pair||!eligible(pair[0]))errors.push('Entrada editorial no autorizada: '+route);
-   else {const actual=readFileSync(f,'utf8').match(/<article\b[^>]*class="reader-content"[^>]*>([\s\S]*?)<\/article>/)?.[1];if(actual===undefined||sha256(actual.trim())!==pair[1].bodyHash)errors.push('Texto editorial alterado: '+route);}
+   if(pair?.[1].category==='F')for(const asset of pair[1].assets??[]){const target=join(root,asset.path);if(!/^\/images\/[a-z0-9-]+\.(webp|png|jpg)$/.test(asset.path)||!existsSync(target)||lstatSync(target).isSymbolicLink()||!lstatSync(target).isFile()||lstatSync(target).size!==asset.size||sha256(readFileSync(target))!==asset.sha256)errors.push('Ilustración F ausente o alterada: '+asset.path);}
+   if(pair&&eligible(pair[0])){const actual=readFileSync(f,'utf8').match(/<article\b[^>]*class="reader-content"[^>]*>([\s\S]*?)<\/article>/)?.[1];if(actual===undefined||sha256(actual.trim())!==pair[1].bodyHash)errors.push('Texto editorial alterado: '+route);}
   }
   if(path.startsWith('/libros/')&&path.endsWith('/index.html')){
    const slug=path.split('/')[2],record=bookRecords[slug],route=path.slice(0,-10);

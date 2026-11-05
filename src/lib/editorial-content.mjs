@@ -24,6 +24,9 @@ export function validateEditorialEntry(entry) {
  if(entry.author?.type!==undefined&&!['Person','Organization'].includes(entry.author.type))errors.push('Tipo de autor no admitido');
  if(entry.author?.slug!==undefined&&(!slugPattern.test(entry.author.slug)||entry.author.type!=='Person'))errors.push('Identificador de autor inválido');
  if(entry.publisher!==undefined&&(!text(entry.publisher?.name)||entry.publisher.type!=='Organization'))errors.push('Sello editorial inválido');
+ if(entry.readingProgress!==undefined&&(typeof entry.readingProgress!=='boolean'||entry.format!=='story'))errors.push('Progreso literario inválido');
+ if(entry.preserveLineBreaks!==undefined&&(typeof entry.preserveLineBreaks!=='boolean'||entry.format!=='story'))errors.push('Saltos literarios inválidos');
+ if(entry.illustration!==undefined&&(!/^\/images\/[a-z0-9-]+\.webp$/.test(entry.illustration?.src??'')||!text(entry.illustration?.alt)||![entry.illustration?.width,entry.illustration?.height].every(n=>Number.isInteger(n)&&n>0&&n<=4000)))errors.push('Ilustración inválida');
  if(entry.status==='approved'){
   if(!text(entry.author?.name))errors.push('Autor real requerido');
   if(!['original','authorized'].includes(entry.rights?.kind)||!text(entry.rights?.evidence))errors.push('Derechos sin acreditar');

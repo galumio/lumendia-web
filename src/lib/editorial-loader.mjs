@@ -1,4 +1,4 @@
-import {editorialEligibility,registry} from './publication-policy.mjs';
+import {editorialEligibility,registry,sha256} from './publication-policy.mjs';
 // Adaptador de compilación: nunca se importa desde scripts del navegador.
 import {existsSync,readdirSync,readFileSync,lstatSync,realpathSync} from 'node:fs';
 import {resolve,join} from 'node:path';
@@ -7,7 +7,7 @@ import {validateEditorialEntry,selectEditorialEntries,editorialUrl} from './edit
 const escape=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 // Subconjunto deliberado: H2/H3, párrafos, listas sin numeración y pedidos en citas.
 // Sin HTML, imágenes, enlaces, código ni MDX. Las fuentes y relaciones usan metadatos validados.
-export function renderEditorialMarkdown(markdown){
+export function renderEditorialMarkdown(markdown,{preserveLineBreaks=false}={}){
  if(!markdown.trim())throw Error('Texto editorial vacío');
  if(/<|^#\s|^#{4,}\s|```|!\[|\]\(|^\s*\d+[.)]\s/m.test(markdown))throw Error('Markdown editorial no admitido');
  const toc=[];let section=0;let copyNext=false;
@@ -18,7 +18,7 @@ export function renderEditorialMarkdown(markdown){
   const copy=copyNext;copyNext=false;
   if(lines.every(l=>l.startsWith('- ')))return '<ul>'+lines.map(l=>`<li>${escape(l.slice(2))}</li>`).join('')+'</ul>';
   if(lines.every(l=>l.startsWith('> '))){const quote=`<blockquote><p>${escape(lines.map(l=>l.slice(2)).join(' '))}</p></blockquote>`;return copy?`<div data-copy-prompt>${quote}<button type="button" class="button secondary copy-prompt" hidden aria-describedby="seccion-${section}">Copiar pedido</button><p class="copy-feedback" role="status" aria-live="polite"></p></div>`:quote;}
-  return `<p>${escape(lines.join(' '))}</p>`;
+  return `<p>${preserveLineBreaks?lines.map(escape).join('<br>'):escape(lines.join(' '))}</p>`;
  }).join('\n');
  const words=markdown.replace(/^#{2,3} |^> |^- /gm,'').trim().split(/\s+/u).length;
  return {html,toc,words};
@@ -43,6 +43,15 @@ export function loadEditorial({root,preview=false,today,relatedTargets=[],policy
  const selected=selectEditorialEntries(publicRecords,today);
  for(const {directory,privateDraft,...entry} of selected){
   const result=editorialEligibility(entry,plainFile(join(directory,entry.bodyPath)),policyRecords);
+  const record=policyRecords['editorial:'+entry.slug];
+  if(record?.category==='F'&&!preview){
+   if(sha256(renderEditorialMarkdown(plainFile(join(directory,entry.bodyPath)),{preserveLineBreaks:entry.preserveLineBreaks===true}).html.trim())!==record.bodyHash)throw Error('HTML literario alterado: '+entry.slug);
+   for(const asset of record.assets??[]){
+    if(!/^\/images\/[a-z0-9-]+\.(webp|png|jpg)$/.test(asset.path))throw Error('Ruta de ilustración F inválida');
+    const path=join(root,'public',asset.path),stat=lstatSync(path);
+    if(!stat.isFile()||stat.isSymbolicLink()||realpathSync(path)!==resolve(path)||stat.size!==asset.size||sha256(readFileSync(path))!==asset.sha256)throw Error('Ilustración F alterada: '+asset.path);
+   }
+  }
   if(!result.eligible&&!preview)throw Error('Política editorial: '+entry.slug+': '+result.errors.join('; '));
  }
  const drafts=preview?records(join(root,'.local/editorial'),true):[];
@@ -59,6 +68,6 @@ export function loadEditorial({root,preview=false,today,relatedTargets=[],policy
    if(!validUrl)throw Error('Relación no disponible: '+r.slug);
    return {title:target.title,url:target.url};
   });
-  return {...entry,url:editorialUrl(entry),relatedLinks,...renderEditorialMarkdown(plainFile(join(directory,entry.bodyPath)))};
+  return {...entry,url:editorialUrl(entry),relatedLinks,...renderEditorialMarkdown(plainFile(join(directory,entry.bodyPath)),{preserveLineBreaks:entry.preserveLineBreaks===true})};
  });
 }

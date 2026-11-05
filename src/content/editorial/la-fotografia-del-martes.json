@@ -1,0 +1,42 @@
+{
+  "slug": "la-fotografia-del-martes",
+  "title": "La fotografía del martes",
+  "description": "Cada martes, un sobre llega al estudio de Marcos con una fotografía antigua. Cuando su hija Vera reconoce una imagen que no encaja con sus recuerdos, las preguntas empiezan a cambiar la forma de mirar el pasado.",
+  "format": "story",
+  "language": "es",
+  "status": "approved",
+  "scope": "complete",
+  "author": {
+    "type": "Person",
+    "name": "Gael Beltra",
+    "slug": "gael-beltra"
+  },
+  "publisher": {
+    "type": "Organization",
+    "name": "Galumio Studio"
+  },
+  "topics": [
+    "Misterio"
+  ],
+  "audiences": [
+    "Personas interesadas en relatos de misterio"
+  ],
+  "publishedAt": "2026-11-05",
+  "reviewedAt": null,
+  "sources": [],
+  "related": [],
+  "healthContent": false,
+  "rights": {
+    "kind": "original",
+    "evidence": "Fuentes definitivas proporcionadas y aprobadas por el usuario. TXT SHA-256 adee152298069923013c2aa13aa8a8aa1a4d7212dbb3f8e61c7a5da1160bd394. Publicación autorizada expresamente por el usuario el 2026-11-05; constancia docs/APROBACION-EDITORIAL-FOTOGRAFIA-20261105.txt."
+  },
+  "bodyPath": "la-fotografia-del-martes.md",
+  "preserveLineBreaks": true,
+  "illustration": {
+    "src": "/images/la-fotografia-del-martes.webp",
+    "alt": "Ilustración de un sobre y copias fotográficas sobre el mostrador de un estudio.",
+    "width": 1200,
+    "height": 800
+  },
+  "readingProgress": true
+}
