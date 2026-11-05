@@ -66,3 +66,47 @@ El estado pendiente descrito en la preparación anterior queda como historial. E
 ## Aprobación Alzheimer — edición FOCALIZADO_CIERRE
 
 Las referencias anteriores a B pendiente describen el estado histórico. El titular de Galumio Studio confirmó, mediante el usuario, la aprobación editorial A de la edición CIERRE el 2026-11-02, con P1/P2 corregidos. La constancia es `docs/APROBACION-EDITORIAL-ALZHEIMER-20261102.txt`. Los 39 cuerpos se conservan por hash; solo cambia el estado editorial del catálogo. No se atribuye revisión profesional. La regla B continúa vigente para asesoramiento especializado. Esta aprobación prepara lectura online sin descargas y no autoriza el despliegue actual.
+
+## Propuesta local — F: ficción original gratuita (2026-11-05)
+
+Ampliación aditiva de la versión 1, pendiente de aprobación final e integración.
+No modifica la definición, las firmas ni las aprobaciones A/B/legacy existentes.
+
+F admite exclusivamente relatos completos originales de Gael Beltra (Person,
+slug gael-beltra), identificados individualmente por slug y ruta /relatos/<slug>/.
+El registro debe usar la clave editorial:<slug>, formato story, scope complete,
+rights original, healthContent false y distribution online-only. No habilita
+libros, guías, tips, tutoriales, muestras comerciales, otros autores ni descargas.
+No es una excepción sanitaria ni un modo de reclasificar obras anteriores.
+
+Cada relato necesita aprobación editorial individual documentada: responsable
+real, fecha válida no futura, alcance, evidencia, versión de política, hash de
+edición y classificationHash. Para F las fuentes son los manuscritos originales
+con nombre de archivo y SHA-256; la revisión se vincula a sourceArtifactsHash.
+No se inventan fuentes HTTPS ni se exige una revisión sanitaria de una ficción.
+Los originales y la conversación privada no se distribuyen con el artefacto.
+
+La firma de clasificación F incorpora alcance, autor, derechos, ruta, fuentes,
+hash del cuerpo fuente, hash del HTML y lista de ilustraciones (ruta, tamaño y
+SHA-256). Cambiar cualquiera invalida la aprobación. La compilación contrasta
+entrada y texto reales; el verificador de artefactos usado por CI contrasta ruta,
+HTML e ilustraciones contra el manifiesto confiable. F queda rechazada bajo una
+clave book: y no puede autorizar recursos PDF/EPUB, incluso con otro manifiesto.
+
+Una categoría válida no publica por sí sola: son necesarios estado y revisión
+aprobados, fecha editorial explícita, compilación, validaciones, aprobación de CI
+y autorización de lanzamiento. Ningún workflow se modifica en esta propuesta.
+
+La fotografía del martes cumple el alcance material: obra original autorizada,
+texto íntegro, cuatro separadores y desenlace cotejados con el TXT/Word, ficha e
+ilustración aprobadas por el usuario. Se prepara el registro F con sus hashes,
+pero status/editorialReview continúan pending y publishedAt continúa null hasta
+la aprobación final de esta ampliación. No se reclasifican los otros dos relatos.
+
+## Aprobación de F y lanzamiento de La fotografía del martes — 2026-11-05
+
+El usuario aprobó expresamente la ampliación F y el lanzamiento controlado del
+relato. La propuesta anterior queda como historial; el registro individual está
+aprobado y vinculado a la constancia docs/APROBACION-EDITORIAL-FOTOGRAFIA-20261105.txt.
+La fecha editorial es 2026-11-05, Argentina. Se mantienen íntegros sus límites y
+las verificaciones. La autorización no reemplaza CI ni la comprobación pública.

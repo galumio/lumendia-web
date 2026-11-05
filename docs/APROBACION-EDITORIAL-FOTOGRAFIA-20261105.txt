@@ -1,0 +1,37 @@
+APROBACIÓN EDITORIAL Y LANZAMIENTO — LA FOTOGRAFÍA DEL MARTES
+Fecha real: 2026-11-05, Argentina.
+Autor: Gael Beltra. Sello: Galumio Studio.
+Responsable: usuario que autoriza la publicación en esta conversación de ChatGPT.
+Evidencia: solicitud «AUTORIZACIÓN DE LANZAMIENTO» que aprueba expresamente la
+política F y el texto, ilustración, ficha y navegación, y autoriza el lanzamiento
+condicionado a validaciones satisfactorias, CI y comprobación pública.
+Esta constancia registra esa decisión; no contiene firma ni atribuye identidad
+legal no proporcionada, credenciales o revisión profesional externa.
+Alcance: relato completo original en /relatos/la-fotografia-del-martes/; sin descargas.
+Hash de edición (metadatos con fecha y cuerpo): bebb926b41c4cabf3c0836e3eccf539197cc86abed2f9604f50ee27a9c01feb4
+Hash de clasificación: 314153ba8bf5c8731fffff7972e04c7c2dfb09739a8bbeaf511f8909106899e6
+Hash del cuerpo fuente: 1114ba7ed715be61a3f6a6065edd354a6c051e301610494ab5bcc131acbdf058
+Hash del HTML: 0705476a2d7974f7858196dfc2846faf52bc26ac6e784f02f0af4106612e4135
+Fuentes editoriales y recursos aprobados:
+{
+  "sources": [
+    {
+      "name": "La_fotografia_del_martes_Gael_Beltra_Lumendia_FINAL.txt",
+      "sha256": "adee152298069923013c2aa13aa8a8aa1a4d7212dbb3f8e61c7a5da1160bd394"
+    },
+    {
+      "name": "La_fotografia_del_martes_Gael_Beltra_Editorial_FINAL.docx",
+      "sha256": "f8ed4d770e7bdead65bcf4683127301ed6a5985a1ccefcf133778d43360d1b5e"
+    }
+  ],
+  "assets": [
+    {
+      "path": "/images/la-fotografia-del-martes.webp",
+      "size": 97530,
+      "sha256": "e4315e410fb653e4136e891143eff626f6cad54f70f8dccb928f42153178be19"
+    }
+  ]
+}
+Los originales quedan privados. La aprobación no permite modificar el texto ni
+la ilustración. Un cambio de edición/clasificación invalida sus firmas.
+El lanzamiento no se considera completado hasta verificar producción.

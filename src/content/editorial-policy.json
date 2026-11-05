@@ -1275,6 +1275,61 @@
       ],
       "provenance": "Compatibilidad del contenido publicado en origin/main f03673a6cb8f52b001f7fc38437faf432892f50e; no constituye reclasificación ni revisión nueva.",
       "book": "ia-para-docentes"
+    },
+    "editorial:la-fotografia-del-martes": {
+      "policyVersion": "1",
+      "category": "F",
+      "status": "approved",
+      "edition": "La_fotografia_del_martes_FINAL",
+      "editionHash": "bebb926b41c4cabf3c0836e3eccf539197cc86abed2f9604f50ee27a9c01feb4",
+      "path": "/relatos/la-fotografia-del-martes/",
+      "rationale": "Ficción original gratuita de Gael Beltra, relato completo para lectura web. El usuario aprobó expresamente la política F, el texto, la ilustración, la ficha, el lector, la navegación y el lanzamiento controlado. No habilita libros, descargas ni otros contenidos.",
+      "examinedSections": [
+        "Texto completo: 99 bloques, cuatro separadores y desenlace íntegro."
+      ],
+      "sources": [],
+      "editorialReview": {
+        "status": "approved",
+        "responsible": "Usuario que autoriza la publicación en esta conversación de ChatGPT",
+        "reviewedAt": "2026-11-05",
+        "scope": "Edición definitiva TXT y Word, cuerpo web íntegro, ilustración, ficha y navegación de La fotografía del martes, exclusivamente lectura online.",
+        "evidence": "docs/APROBACION-EDITORIAL-FOTOGRAFIA-20261105.txt: autorización expresa de lanzamiento y aprobación de la política F en esta conversación.",
+        "policyVersion": "1",
+        "category": "F",
+        "editionHash": "bebb926b41c4cabf3c0836e3eccf539197cc86abed2f9604f50ee27a9c01feb4",
+        "classificationHash": "314153ba8bf5c8731fffff7972e04c7c2dfb09739a8bbeaf511f8909106899e6",
+        "sourceArtifactsHash": "4bc09fceddacf3ac33b6ade4d1a24fbccd1d17d0e49a87eeb11e5738d92a443a"
+      },
+      "bodyHash": "0705476a2d7974f7858196dfc2846faf52bc26ac6e784f02f0af4106612e4135",
+      "slug": "la-fotografia-del-martes",
+      "format": "story",
+      "scope": "complete",
+      "author": {
+        "type": "Person",
+        "name": "Gael Beltra",
+        "slug": "gael-beltra"
+      },
+      "rights": "original",
+      "healthContent": false,
+      "distribution": "online-only",
+      "sourceBodyHash": "1114ba7ed715be61a3f6a6065edd354a6c051e301610494ab5bcc131acbdf058",
+      "sourceArtifacts": [
+        {
+          "name": "La_fotografia_del_martes_Gael_Beltra_Lumendia_FINAL.txt",
+          "sha256": "adee152298069923013c2aa13aa8a8aa1a4d7212dbb3f8e61c7a5da1160bd394"
+        },
+        {
+          "name": "La_fotografia_del_martes_Gael_Beltra_Editorial_FINAL.docx",
+          "sha256": "f8ed4d770e7bdead65bcf4683127301ed6a5985a1ccefcf133778d43360d1b5e"
+        }
+      ],
+      "assets": [
+        {
+          "path": "/images/la-fotografia-del-martes.webp",
+          "size": 97530,
+          "sha256": "e4315e410fb653e4136e891143eff626f6cad54f70f8dccb928f42153178be19"
+        }
+      ]
     }
   }
 }
